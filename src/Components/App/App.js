@@ -1,15 +1,17 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
-import logo from './logo.svg';
 import './App.css';
 
 //Importing React Components
-import Navbar from '../Navbar/Navbar';
-import HeaderBanner from '../HeaderBanner/HeaderBanner';
-import Gallery from '../Gallery/Gallery';
-import Footer from '../Footer/Footer';
+import Landing from '../Landing/Landing';
+import LandingUser from '../Landing/LandingUser';
 
 console.log("Start of Component App.js.");
 
@@ -17,15 +19,16 @@ class App extends Component {
   constructor(props) {
     super(props);
   };
-  
+
   render() {
     return (
-      <div className="App">
-          <Navbar />
-          <HeaderBanner />
-          <Gallery />
-          <Footer />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Landing}/>
+          <Route path="/:id" component={LandingUser}/>
+          <Route path="/usertest" component={LandingUser}/>
+        </Switch>
+      </Router>
     );
   }
 }
