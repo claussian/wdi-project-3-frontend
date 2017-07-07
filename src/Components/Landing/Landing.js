@@ -7,8 +7,8 @@ import './Landing.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import HeaderBanner from '../Landing/HeaderBanner/HeaderBanner';
-import Gallery from '../Landing/Gallery/Gallery';
+import HeaderBanner from './HeaderBanner/HeaderBanner';
+import Gallery from './Gallery/Gallery';
 
 console.log("Start of Component Landing.js. The landing page everyone sees without logging in.");
 
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.title}</h1>
+        <h1>Component - Landing</h1>
         <Navbar />
         <HeaderBanner />
         <Gallery />

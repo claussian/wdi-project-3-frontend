@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 import './Landing.css';
 
 //Importing React Components
-import Navbar from '../Landing/Navbar/Navbar';
-import HeaderBanner from '../Landing/HeaderBanner/HeaderBanner';
-import Gallery from '../Landing/Gallery/Gallery';
-import Footer from '../Landing/Footer/Footer';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import HeaderBanner from './HeaderBanner/HeaderBanner';
+import Gallery from './Gallery/Gallery';
 
 console.log("Start of Component Landing.js. The landing page when the user is logged in.");
 
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.title}</h1>
+        <h1>Component - Landing User</h1>
         <Navbar />
         <HeaderBanner />
         <Gallery />
