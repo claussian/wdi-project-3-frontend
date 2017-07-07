@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 
 //Importing static assets (i.e. stylesheets, images)
-import './Navbar.css';
+import './Footer.css';
 
-console.log("Start of Component Navbar.js.");
+console.log("Start of Component Footer.js.");
 
-class Navbar extends Component {
+class Footer extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,12 +14,13 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <h1>Component - Navbar</h1>
+        <h1>Component - Footer</h1>
       </div>
     );
   }
 }
 
-console.log("End of Component Navbar.js.");
 
-export default Navbar;
+console.log("End of Component Footer.js.");
+
+export default Footer;

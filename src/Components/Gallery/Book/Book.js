@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 
 //Importing static assets (i.e. stylesheets, images)
-import './Navbar.css';
+import './Book.css';
 
-console.log("Start of Component Navbar.js.");
+console.log("Start of Component Book.js.");
 
-class Navbar extends Component {
+class Book extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,12 +14,13 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <h1>Component - Navbar</h1>
+        <h2>Component - Book {this.props.title}</h2>
       </div>
     );
   }
 }
 
-console.log("End of Component Navbar.js.");
 
-export default Navbar;
+console.log("End of Component Book.js.");
+
+export default Book;
