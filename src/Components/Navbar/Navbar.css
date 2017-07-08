@@ -1,0 +1,125 @@
+/*Entire header styling - for that beige*/
+.navbar-inverse {
+  background-color: rgba(248,240,214,1);
+  border: solid rgba(110,107,102,1) 5px;
+  border-radius: 0em 0em 0.5em 0.5em;
+}
+
+.navbar-brand {
+  height: 100%;
+}
+
+/*These styles below are for the button that drops down the mobile menu.*/
+.navbar-inverse .navbar-toggle {
+  border: 2px solid;
+  border-color: rgba(124,35,69,1);
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus {
+  border: 2px solid;
+  border-color: rgba(124,35,69,1);
+  background-color: rgba(124,35,69,1);
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: rgba(124,35,69,1);
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: rgba(248,240,214,1);
+}
+
+.navbar-inverse .navbar-toggle .icon-bar:hover:active {
+  background-color: rgba(248,240,214,1);
+}
+
+.navbar-inverse .navbar-toggle:hover:active {
+  border: 2px solid;
+  border-color: rgba(124,35,69,1);
+  background-color: rgba(124,35,69,1);
+}
+/*These styles above are for the button that drops down the mobile menu.*/
+
+/*This sets all styles exclusive to tablets and desktop display sizes.*/
+@media only screen and (min-width: 768px) {
+
+  #root > div > div:nth-child(2) > nav {
+    position: relative;
+    height: 100%;
+  }
+
+  /*These styles below take care of the "button group"/ul named login/signup as a whole.*/
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul {
+    position: relative;
+    top: 25px;
+  }
+  /*These styles above take care of the "button group"/ul named login/signup as a whole.*/
+  /*These styles below take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
+  #bs-example-navbar-collapse-1 ul li:first-child{
+    border: 2px solid rgba(124,35,69,1);
+    border-radius: 0.5em 0em 0em 0.5em;
+  }
+
+  #bs-example-navbar-collapse-1 ul li:nth-child(2){
+    border: 2px solid rgba(124,35,69,1);
+    color: rgba(124,35,69,1);
+    border-radius: 0em 0.5em 0.5em 0em;
+    left: -2px;
+  }
+  /*These styles above take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
+  /*These styles below takes care of the clicked grey border of the log in/signup button.*/
+  #bs-example-navbar-collapse-1 ul li:first-child:active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0em 0em 0.5em;
+  }
+
+  #bs-example-navbar-collapse-1 ul li:nth-child(2):active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0em 0.5em 0.5em 0em;
+  }
+
+  #bs-example-navbar-collapse-1 ul li:first-child:active:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0em 0em 0.5em;
+  }
+
+  #bs-example-navbar-collapse-1 ul li:nth-child(2):active:hover{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0em 0.5em 0.5em 0em;
+  }
+  /*These styles above takes care of the clicked grey border of the log in/signup button.*/
+
+  /* See below. I couldn't get the inner text "log in/sign up" to display in the maroon colour I wanted so I had to resort to this archaic reference to do so. No idea why, but it works so meh. Only for colour of backgrounds and fonts when active/hover/focus */
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a,
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a {
+    color: rgba(124,35,69,1);
+  }
+
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a:hover,
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:hover {
+    background-color: rgba(124,35,69,1);
+    color: rgba(248,240,214,1);
+  }
+
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a:active:hover,
+  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:active:hover {
+    color: rgba(248,240,214,1);
+    background-color: rgba(110,107,102,1);
+  }
+
+  /*See above comment*/
+
+}
+/*Above this comment are styles exclusive to tablets and desktop display sizes.*/
