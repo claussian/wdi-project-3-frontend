@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
           <div className="container">
             <div className="navbar-header">
                 <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -28,21 +28,21 @@ class Navbar extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div className="row">
-                  <div className="col-lg-2">
+                  <div className="col-lg-7">
                   </div>
                   <div className="col-lg-4">
                     <ul className="nav navbar-nav">
                         <li>
-                            <a href="#">Log In</a>
+                            <a href="./usertest">Log In</a>
                         </li>
                         <li>
-                            <a href="#">Sign Up</a>
+                            <a href="./signup">Sign Up</a>
                         </li>
                         <li>
                         </li>
                     </ul>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-1">
                   </div>
                 </div>
             </div>
