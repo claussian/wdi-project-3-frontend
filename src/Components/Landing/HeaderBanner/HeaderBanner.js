@@ -13,7 +13,7 @@ class HeaderBanner extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <header className="jumbotron welcome-msg">
           <h1>Welcome to Swap Books!</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.

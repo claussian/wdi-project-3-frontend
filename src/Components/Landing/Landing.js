@@ -7,6 +7,7 @@ import './Landing.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import Search from './Search/Search';
 import HeaderBanner from './HeaderBanner/HeaderBanner';
 import Gallery from './Gallery/Gallery';
 
@@ -19,8 +20,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Navbar />
+        <Search />
         <HeaderBanner />
         <Gallery />
         <Footer />

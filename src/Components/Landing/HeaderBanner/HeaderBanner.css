@@ -1,33 +1,3 @@
-/*These styles below are for the main search bar on the nav bar.*/
-.search-bar > div > input {
-  background-color: rgba(223,217,198,1);
-}
-/*These styles above are for the main search bar on the nav bar.*/
-
-/*These styles below are for the search button on the main nav bar.*/
-.search-bar > div > span > button {
-  background-color: rgba(110,107,102,0);
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(124,35,69,1);
-  padding: 5px 9px 5px 9px;
-  color: rgba(124,35,69,1);
-}
-
-.search-bar > div > span > button:hover,
-.search-bar > div > span > button:active,
-.search-bar > div > span > button:focus {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
-}
-
-.search-bar > div > span > button:active:hover {
-  background-color: rgba(110,107,102,1);
-  border-color: rgba(110,107,102,1);
-}
-
-/*These styles above are for the search button on the search-bar.*/
 /*These styles below are for the find-out-more button on the header banner.*/
 .find-out-more-btn {
   color: rgba(254,239,154,1);
