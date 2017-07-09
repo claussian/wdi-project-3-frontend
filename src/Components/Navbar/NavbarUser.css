@@ -40,25 +40,24 @@
   /*Mobile Post a Book Button - below*/
 
   #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn {
-    background-color: rgba(248,240,214,1);
+    background-color: rgba(124,35,69,1);
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     width: 110px;
-    color: rgba(124,35,69,1);
   }
 
     #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn > a {
-      color: rgba(124,35,69,1);
+      color: rgba(248,240,214,1);
     }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover {
-    background-color: rgba(124,35,69,1);
+    background-color: rgba(248,240,214,1);
     border: 2px solid rgba(124,35,69,1);
     width: 110px;
   }
 
     #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover > a {
-      color: rgba(248,240,214,1);
+      color: rgba(124,35,69,1);
     }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover:active {
@@ -79,6 +78,39 @@
       color: rgba(248,240,214,1);
     }
   /*Mobile Post a Book Button - above*/
+  /* Log out Button - below*/
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn {
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    border: 2px solid rgba(110,107,102,1);
+    background-color: rgba(110,107,102,1);
+    color: rgba(248,240,214,1);
+    margin-top: 10px;
+    width: 85px;
+  }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a {
+      color: rgba(248,240,214,1);
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover {
+    border: 2px solid rgba(124,35,69,1);
+    background-color: rgba(124,35,69,1);
+  }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a {
+      color: rgba(248,240,214,1);
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active {
+    border: 2px solid rgba(124,35,69,1);
+    background-color: rgba(248,240,214,1);
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a {
+      color: rgba(124,35,69,1);
+    }
+
+  /* Log out Button - above*/
   /*These styles below are for the button that drops down the mobile menu.*/
 }
 /*These styles above are exclusive to small tablets and mobile display sizes.*/
