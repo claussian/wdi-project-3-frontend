@@ -19,8 +19,9 @@ class Navbar extends Component {
           <div className="container">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                <span className="sr-only">Toggle navigation</span>
+                {/*Three Icon Bars in mobile displays*/}
+                <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
               </button>
               <a className="navbar-brand" href="/"><img src={logo} alt="Swap Books" /></a>
             </div>

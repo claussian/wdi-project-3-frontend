@@ -20,7 +20,7 @@ class Search extends Component {
               <input type="text" className="search-query form-control" placeholder="Search title" />
               <span className="input-group-btn">
                 <button className="btn btn-md btn-primary btn-block" type="submit">
-                  Search
+                  <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
             </div>
