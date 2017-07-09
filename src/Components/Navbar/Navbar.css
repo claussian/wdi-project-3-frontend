@@ -93,7 +93,13 @@
     }
 
     #exampleInputEmail3 {
-      
+      border-radius: 4px 0 0 4px;
+      border: solid rgba(110,107,102,0.2) 2px 1px 2px 2px;
+    }
+
+    #exampleInputPassword3 {
+      border-radius: 0 0 0 0;
+      border: solid rgba(110,107,102,0.2) 2px 2px 2px 1px;
     }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button {
