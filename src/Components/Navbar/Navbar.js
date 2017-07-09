@@ -26,7 +26,7 @@ class Navbar extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <div className="row">
-                <div className="col-lg-offset-4 col-lg-8">
+                <div className="col-md-push-2 col-md-8 col-lg-push-4 col-lg-6">
                   <ul className="nav navbar-nav">
                     <li>
                     {/*Email and Password Login & its button*/}

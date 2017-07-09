@@ -5,6 +5,11 @@
   border-radius: 0em 0em 0.5em 0.5em;
 }
 
+#bs-example-navbar-collapse-1 > .row {
+  position: relative;
+  float: inherit;
+}
+
 /*These styles below are exclusive to small tablets and mobile display sizes.*/
 @media only screen and (max-width: 767px) {
 
@@ -61,7 +66,6 @@
   #bs-example-navbar-collapse-1 > div > .col-lg-4 > ul > li > a:hover {
     text-decoration: underline;
   }
-
 }
 /*These styles above are exclusive to small tablets and mobile display sizes.*/
 /*These styles below are exclusive to tablets and desktop display sizes.*/
@@ -71,11 +75,6 @@
     position: relative;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-  }
-
-  #bs-example-navbar-collapse-1 > div.row > div > div:nth-child(2) {
-    position: relative;
-    float: right;
   }
 
   /*These styles below take care of the "button group"/ul named login/signup as a whole.*/
@@ -91,14 +90,15 @@
 
   /*These styles below take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
 
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button {
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button {
+    background-color: rgba(248,240,214,1);
     border: 2px solid rgba(124,35,69,1);
     color: rgba(124,35,69,1);
     border-radius: 0em 0.5em 0.5em 0em;
     left: 10px;
   }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2){
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) {
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     height: 60px;
@@ -113,54 +113,55 @@
   /*These styles above take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
   /*These styles below takes care of the clicked grey border of the log in/signup button.*/
 
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:active {
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:active {
     border-style: solid;
     border-width: 2px;
-    border-color: rgba(110,107,102,1);
+    border-color: rgba(124,35,69,1);
     border-radius: 0em 0.5em 0.5em 0em;
-  }
-
-  #bs-example-navbar-collapse-1 ul li:nth-child(2):active {
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(110,107,102,1);
-    border-radius: 0em 0.5em 0.5em 0em;
-  }
-
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:hover {
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(110,107,102,1);
-    border-radius: 0em 0.5em 0.5em 0em;
-  }
-
-  #bs-example-navbar-collapse-1 ul li:nth-child(2):active:hover {
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(110,107,102,1);
-    border-radius: 0em 0.5em 0.5em 0em;
-  }
-  /*These styles above takes care of the clicked grey border of the log in/signup button.*/
-
-  /* See below. I couldn't get the inner text "log in/sign up" to display in the maroon colour I wanted so I had to resort to this archaic reference to do so. No idea why, but it works so meh. Only for colour of backgrounds and fonts when active/hover/focus */
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button,
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a {
-    color: rgba(124,35,69,1);
-  }
-
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:hover,
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:hover {
     background-color: rgba(124,35,69,1);
     color: rgba(248,240,214,1);
   }
 
-  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:active:hover,
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:active:hover {
-    color: rgba(248,240,214,1);
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(110,107,102,1);
+    background-color: rgba(124,35,69,1);
+    color: rgba(248,240,214,1);
   }
 
-  /*See above comment*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(124,35,69,1);
+    border-radius: 0em 0.5em 0.5em 0em;
+    background-color: rgba(124,35,69,1);
+    color: rgba(248,240,214,1)
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(124,35,69,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(110,107,102,1);
+    background-color: rgba(124,35,69,1);
+  }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover > a {
+      color: rgba(248,240,214,1);
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):active:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(110,107,102,1);
+  }
+  /*These styles above takes care of the clicked grey border of the log in/signup button.*/
 
 }
 /*These styles below are exclusive to tablets and desktop display sizes.*/
