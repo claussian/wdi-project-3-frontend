@@ -1,7 +1,7 @@
 /*Entire header styling - for that beige*/
 .navbar-inverse {
   background-color: rgba(248,240,214,1);
-  border: solid rgba(110,107,102,1) 5px;
+  border: solid rgba(94,96,94,1) 5px;
   border-radius: 0em 0em 0.5em 0.5em;
 }
 
@@ -57,15 +57,43 @@
   }
 
   /*These styles above are for the button that drops down the mobile menu.*/
-
-  #bs-example-navbar-collapse-1 > div > .col-lg-4 > ul > li > a {
-    color: black;
-    font-size: 20px;
+  /*These styles below are for the login form and button on the UL.*/
+  #bs-example-navbar-collapse-1 > div > div > ul {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
-  #bs-example-navbar-collapse-1 > div > .col-lg-4 > ul > li > a:hover {
-    text-decoration: underline;
+
+  .login-group > div > input {
+    background-color: rgba(223,217,198,1);
   }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button {
+    background-color: rgba(248,240,214,1);
+    border: 2px solid rgba(124,35,69,1);
+    color: rgba(124,35,69,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    left: 10px;
+  }
+
+  /*Sign Up Button - below*/
+  /*Sign Up Button > Default - below*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) {
+    background-color: rgba(248,240,214,1);
+    color: rgba(124,35,69,1);
+    margin-top: 10px;
+    border: 2px solid rgba(124,35,69,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    height: 35px;
+    width: 90px;
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) > a {
+      top: -5px;
+      color: rgba(124,35,69,1);
+    }
+  /*Sign Up Button > Default - above*/
+
+  /*These styles above are for the login form and button on the UL.*/
 }
 /*These styles above are exclusive to small tablets and mobile display sizes.*/
 /*These styles below are exclusive to tablets and desktop display sizes.*/
