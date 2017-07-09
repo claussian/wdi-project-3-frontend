@@ -41,7 +41,7 @@ class Navbar extends Component {
                         <button type="submit" className="btn btn-default">Log in</button>
                       </form>
                     </li>
-                    <li>
+                    <li className="nav-sign-up">
                       <a href="./usertest">Sign up</a>
                     </li>
                   </ul>

@@ -32,20 +32,20 @@ class Navbar extends Component {
                   <ul className="nav navbar-nav">
                     <li>
                       {/*User Login*/}
-                      <div className="row">
-                        <div className="col-sm-5">
+                      <div className="row user-profile-group">
+                        <div className="col-xs-4 col-sm-5">
                           <a className="profile-picture" href="./usertest"><img src="http://via.placeholder.com/70x70"/></a>
                         </div>
-                        <div className="col-sm-7">
+                        <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
                           <h4>{this.props.username}</h4>
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li className="post-a-book-btn">
                       <a href="./post">Post a book</a>
                     </li>
-                    <li>
+                    <li className="log-out-btn">
                       <a href="./">Log out</a>
                     </li>
                   </ul>

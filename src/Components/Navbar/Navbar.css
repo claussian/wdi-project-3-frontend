@@ -1,3 +1,5 @@
+/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */
+
 /*Entire header styling - for that beige*/
 .navbar-inverse {
   background-color: rgba(248,240,214,1);
@@ -81,60 +83,49 @@
     background-color: rgba(124,35,69,1);
     border: 2px solid rgba(124,35,69,1);
     color: rgba(248,240,214,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    left: 10px;
   }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover:active {
     background-color: rgba(110,107,102,1);
     border: 2px solid rgba(110,107,102,1);
     color: rgba(248,240,214,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    left: 10px;
   }
 
   /*Mobile Log In Button - above*/
   /*Mobile Sign Up Button - below*/
   /*Mobile Sign Up Button : default - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up {
     background-color: rgba(124,35,69,1);
     margin-top: 10px;
     border: 2px solid rgba(124,35,69,1);
+    color: rgba(248,240,214,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
-    height: 35px;
-    width: 90px;
+    height: 100%;
+    width: 30%;
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) > a {
-      top: -5px;
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > a {
+      top: 0;
+      left: 10px;
       color: rgba(248,240,214,1);
     }
   /*Mobile Sign Up Button : default - above*/
   /*Mobile Sign Up Button : Hover - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover {
     background-color: rgba(248,240,214,1);
-    margin-top: 10px;
     border: 2px solid rgba(124,35,69,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    height: 35px;
-    width: 90px;
+    color: rgba(124,35,69,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover > a {
-      top: -5px;
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
       color: rgba(124,35,69,1);
     }
   /*Mobile Sign Up Button : Hover - above*/
   /*Mobile Sign Up Button : Hover : Active - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover:active {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active {
     background-color: rgba(110,107,102,1);
     color: rgba(248,240,214,1);
-    margin-top: 10px;
     border: 2px solid rgba(110,107,102,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    height: 35px;
-    width: 90px;
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover:active > a {
-      top: -5px;
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
       color: rgba(248,240,214,1);
     }
   /*Mobile Sign Up Button : Hover : Active - above*/
@@ -216,21 +207,22 @@
 
   /*These styles below are for the sign up button*/
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up {
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(124,35,69,1);
+    color: rgba(248,240,214,1);
     height: 60px;
     top: 15px;
     left: 20px;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up> a {
       color: rgba(248,240,214,1);
       top: 2px;
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):active {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
@@ -239,7 +231,7 @@
     color: rgba(248,240,214,1);
   }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(124,35,69,1);
@@ -248,18 +240,18 @@
     background-color: rgba(248,240,214,1);
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
       color: rgba(124,35,69,1);
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover:active {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(110,107,102,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2):hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
       color: rgba(248,240,214,1);
     }
   /*These styles below are for the sign up button*/
@@ -281,3 +273,5 @@
     height: 60px;
     width: 191px;
   }
+
+/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */
