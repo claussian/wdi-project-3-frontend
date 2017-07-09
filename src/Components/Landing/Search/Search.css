@@ -1,0 +1,52 @@
+/*The Welcome Message and Explanation*/
+.search-form {
+    margin-top: 50px;
+    background-color: rgba(110,107,102,1);
+}
+
+  .search-form h1 {
+    color: rgba(254,239,154,1);
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+  }
+
+  .search-form p {
+    color: white;
+  }
+
+/*These styles below are for the main search bar on the nav bar.*/
+.search-bar > div > input {
+  background-color: rgba(223,217,198,1);
+  font-size: 25px;
+  padding: 5px 9px 5px 9px;
+  height: 49px;
+}
+/*These styles above are for the main search bar on the nav bar.*/
+
+/*These styles below are for the search button on the main nav bar.*/
+.search-bar > div > span > button {
+  background-color: rgba(124,35,69,1);
+  border-color: rgba(124,35,69,1);
+  color: rgba(223,217,198,1);
+  font-size: 25px;
+  height: 100%;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px 9px 5px 9px;
+}
+
+.search-bar > div > span > button:hover,
+.search-bar > div > span > button:active,
+.search-bar > div > span > button:focus {
+  background-color: rgba(124,35,69,1);
+  border-color: rgba(124,35,69,1);
+  color: rgba(223,217,198,1);
+}
+
+.search-bar > div > span > button:active:hover {
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(124,35,69,1);
+  color: rgba(110,107,102,1);
+}
+
+/*These styles above are for the search button on the search-bar.*/

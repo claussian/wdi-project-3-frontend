@@ -13,8 +13,15 @@ class Footer extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Component - Footer</h1>
+      <div className="container">
+        <hr />
+        <footer>
+            <div className="row footer">
+                <div className="col-lg-12">
+                    <p>Project 3 (Hanif, Tiffany & Woody) - WDI-10 Singapore </p>
+                </div>
+            </div>
+        </footer>
       </div>
     );
   }

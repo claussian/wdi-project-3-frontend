@@ -1,0 +1,39 @@
+/*These styles below are for the find-out-more button on the header banner.*/
+.find-out-more-btn {
+  color: rgba(254,239,154,1);
+  background-color: rgba(254,239,154,0);
+  border: 2px solid rgba(254,239,154,1);
+}
+
+/*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
+.find-out-more-btn:hover,
+.find-out-more-btn:active:focus,
+.find-out-more-btn:focus,
+.find-out-more-btn:active {
+  color: rgba(110,107,102,1);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(254,239,154,1);
+}
+
+.find-out-more-btn:active:hover {
+  color: white;
+  background-color: rgba(124,35,69,1);
+  border: 2px solid rgba(124,35,69,1);
+}
+/*These styles above are for the find-out-more button on the header banner.*/
+
+/*The Welcome Message and Explanation*/
+.welcome-msg {
+    margin-top: 50px;
+    background-color: rgba(110,107,102,1);
+}
+
+  .welcome-msg h1 {
+    color: rgba(254,239,154,1);
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+  }
+
+  .welcome-msg p {
+    color: white;
+  }
