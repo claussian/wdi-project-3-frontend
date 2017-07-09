@@ -42,7 +42,7 @@ class Navbar extends Component {
                       </form>
                     </li>
                     <li>
-                      <a href="./signup">Sign Up</a>
+                      <a href="./signup">Sign up</a>
                     </li>
                   </ul>
                 </div>
