@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
+import './NavbarUser.css';
 import logo from './swap-books-med-logo.svg';
 
-console.log("Start of Component Navbar.js.");
+console.log("Start of Component Navbar User.js.");
 
 class Navbar extends Component {
   constructor(props) {
@@ -27,22 +28,25 @@ class Navbar extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <div className="row">
-                <div className="col-md-push-2 col-md-8 col-lg-push-4 col-lg-6">
+                <div className="col-md-push-2 col-md-8 col-lg-push-4 col-lg-5">
                   <ul className="nav navbar-nav">
                     <li>
-                    {/*Email and Password Login & its button*/}
-                      <form className="form-inline login-group">
-                        <div className="form-group">
-                          <input type="email" className="form-control" id="exampleInputEmail3" placeholder="Email"/>
+                      {/*User Login*/}
+                      <div className="row user-profile-group">
+                        <div className="col-xs-4 col-sm-5">
+                          <a className="profile-picture" href="./usertest"><img src="http://via.placeholder.com/70x70"/></a>
                         </div>
-                        <div className="form-group">
-                          <input type="password" className="form-control" id="exampleInputPassword3" placeholder="Password"/>
+                        <div className="col-xs-8 col-sm-7">
+                          <h3>Welcome,</h3>
+                          <h4>{this.props.username}</h4>
                         </div>
-                        <button type="submit" className="btn btn-default">Log in</button>
-                      </form>
+                      </div>
                     </li>
-                    <li className="nav-sign-up">
-                      <a href="./usertest">Sign up</a>
+                    <li className="post-a-book-btn">
+                      <a href="./post">Post a book</a>
+                    </li>
+                    <li className="log-out-btn">
+                      <a href="./">Log out</a>
                     </li>
                   </ul>
                 </div>
@@ -55,6 +59,6 @@ class Navbar extends Component {
   }
 }
 
-console.log("End of Component Navbar.js.");
+console.log("End of Component Navbar User.js.");
 
 export default Navbar;

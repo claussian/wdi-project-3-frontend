@@ -17,10 +17,10 @@ class Search extends Component {
         <header className="jumbotron search-form">
           <div className="search-bar">
             <div className="input-group">
-              <input type="text" className="search-query form-control" placeholder="Search book by title" />
+              <input type="text" className="search-query form-control" placeholder="Search title" />
               <span className="input-group-btn">
                 <button className="btn btn-md btn-primary btn-block" type="submit">
-                  Search
+                  <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
             </div>
