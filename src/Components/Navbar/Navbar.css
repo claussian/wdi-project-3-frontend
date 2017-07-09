@@ -5,74 +5,119 @@
   border-radius: 0em 0em 0.5em 0.5em;
 }
 
-/*These styles below are for the button that drops down the mobile menu.*/
-.navbar-inverse .navbar-toggle {
-  border: 2px solid;
-  border-color: rgba(124,35,69,1);
-}
+/*These styles below are exclusive to small tablets and mobile display sizes.*/
+@media only screen and (max-width: 767px) {
 
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:active,
-.navbar-inverse .navbar-toggle:focus {
-  border: 2px solid;
-  border-color: rgba(124,35,69,1);
-  background-color: rgba(124,35,69,1);
-}
+  /*These styles below are for the button that drops down the mobile menu.*/
+  .navbar-inverse .navbar-toggle {
+    border: 2px solid;
+    border-color: rgba(124,35,69,1);
+  }
 
-.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: rgba(124,35,69,1);
-}
+  .navbar-inverse .navbar-toggle:hover,
+  .navbar-inverse .navbar-toggle:active,
+  .navbar-inverse .navbar-toggle:focus {
+    border: 2px solid;
+    border-color: rgba(124,35,69,1);
+    background-color: rgba(124,35,69,1);
+  }
 
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:active,
-.navbar-inverse .navbar-toggle:focus {
-  background-color: rgba(248,240,214,1);
-}
+  .navbar-header > button {
+    height: 60px;
+    width: 60px;
+    top: 7px;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+  }
 
-.navbar-inverse .navbar-toggle .icon-bar:hover:active {
-  background-color: rgba(248,240,214,1);
-}
+  .navbar-header > button > .glyphicon-menu-hamburger {
+    color: rgba(124,35,69,1);
+    font-size: 25px;
+    top: 3px;
+  }
 
-.navbar-inverse .navbar-toggle:hover:active {
-  border: 2px solid;
-  border-color: rgba(124,35,69,1);
-  background-color: rgba(124,35,69,1);
-}
-/*These styles above are for the button that drops down the mobile menu.*/
+  .navbar-inverse .navbar-toggle:hover,
+  .navbar-inverse .navbar-toggle:active,
+  .navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(248,240,214,1);
+  }
 
-/*This sets all styles exclusive to tablets and desktop display sizes.*/
+  .navbar-header > button > .glyphicon-menu-hamburger:hover:active {
+    color: rgba(248,240,214,1);
+  }
+
+  .navbar-inverse .navbar-toggle:hover:active {
+    border: 2px solid;
+    border-color: rgba(124,35,69,1);
+    background-color: rgba(124,35,69,1);
+  }
+
+  /*These styles above are for the button that drops down the mobile menu.*/
+
+  #bs-example-navbar-collapse-1 > div > .col-lg-4 > ul > li > a {
+    color: black;
+    font-size: 20px;
+  }
+
+  #bs-example-navbar-collapse-1 > div > .col-lg-4 > ul > li > a:hover {
+    text-decoration: underline;
+  }
+
+}
+/*These styles above are exclusive to small tablets and mobile display sizes.*/
+/*These styles below are exclusive to tablets and desktop display sizes.*/
 @media only screen and (min-width: 768px) {
 
-  #root > div > div:nth-child(2) > nav {
+  #bs-example-navbar-collapse-1 > div > div {
     position: relative;
-    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+  #bs-example-navbar-collapse-1 > div.row > div > div:nth-child(2) {
+    position: relative;
+    float: right;
   }
 
   /*These styles below take care of the "button group"/ul named login/signup as a whole.*/
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul {
+
+  .login-group {
     position: relative;
-    top: 18px;
-  }
-  /*These styles above take care of the "button group"/ul named login/signup as a whole.*/
-  /*These styles below take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
-  #bs-example-navbar-collapse-1 ul li:first-child{
-    border: 2px solid rgba(124,35,69,1);
-    border-radius: 0.5em 0em 0em 0.5em;
+    width: 100%;
+    top: 25px;
+    float: right;
   }
 
-  #bs-example-navbar-collapse-1 ul li:nth-child(2){
+  /*These styles above take care of the "button group"/ul named login/signup as a whole.*/
+
+  /*These styles below take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
+
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button {
     border: 2px solid rgba(124,35,69,1);
     color: rgba(124,35,69,1);
     border-radius: 0em 0.5em 0.5em 0em;
-    left: -2px;
+    left: 10px;
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2){
+    border: 2px solid rgba(124,35,69,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    height: 60px;
+    top: 15px;
+    left: 20px;
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(2) > a {
+    color: rgba(124,35,69,1);
+    top: 2px;
   }
   /*These styles above take care of the default border and bg colours of the login signup buttons so they appear joined. They are actually part of an unordered list (ul).*/
   /*These styles below takes care of the clicked grey border of the log in/signup button.*/
-  #bs-example-navbar-collapse-1 ul li:first-child:active {
+
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
-    border-radius: 0.5em 0em 0em 0.5em;
+    border-radius: 0em 0.5em 0.5em 0em;
   }
 
   #bs-example-navbar-collapse-1 ul li:nth-child(2):active {
@@ -82,14 +127,14 @@
     border-radius: 0em 0.5em 0.5em 0em;
   }
 
-  #bs-example-navbar-collapse-1 ul li:first-child:active:hover {
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:hover {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
-    border-radius: 0.5em 0em 0em 0.5em;
+    border-radius: 0em 0.5em 0.5em 0em;
   }
 
-  #bs-example-navbar-collapse-1 ul li:nth-child(2):active:hover{
+  #bs-example-navbar-collapse-1 ul li:nth-child(2):active:hover {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
@@ -98,18 +143,18 @@
   /*These styles above takes care of the clicked grey border of the log in/signup button.*/
 
   /* See below. I couldn't get the inner text "log in/sign up" to display in the maroon colour I wanted so I had to resort to this archaic reference to do so. No idea why, but it works so meh. Only for colour of backgrounds and fonts when active/hover/focus */
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a,
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button,
   #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a {
     color: rgba(124,35,69,1);
   }
 
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a:hover,
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:hover,
   #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:hover {
     background-color: rgba(124,35,69,1);
     color: rgba(248,240,214,1);
   }
 
-  #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:first-child > a:active:hover,
+  #bs-example-navbar-collapse-1 > div > div > div:nth-child(2) > ul > li:nth-child(1) > form > button:active:hover,
   #bs-example-navbar-collapse-1 > div > div.col-lg-4 > ul > li:nth-child(2) > a:active:hover {
     color: rgba(248,240,214,1);
     background-color: rgba(110,107,102,1);
@@ -118,7 +163,7 @@
   /*See above comment*/
 
 }
-/*Above this comment are styles exclusive to tablets and desktop display sizes.*/
+/*These styles below are exclusive to tablets and desktop display sizes.*/
 
 .navbar-toggle {
   top: 20px;
