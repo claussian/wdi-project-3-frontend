@@ -5,7 +5,7 @@ import App from './Components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 
-import { getUser } from './actions/user';
+import { getUser } from './Actions/userActions';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -19,7 +19,7 @@ const store = initStore();
 store.dispatch(getUser());
 
 ReactDOM.render( <Provider store={store}>
-                 <App />
+                  <App />
                  </Provider>,
                  document.getElementById('root'));
 registerServiceWorker();
