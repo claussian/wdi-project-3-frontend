@@ -1,0 +1,40 @@
+/*Jumbotron Box Editing*/
+
+.notification-hidden {
+  display: none;
+}
+
+.notification-reserved {
+  background-color: rgba(0,103,109,1);
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border: solid 2px;
+  border-color: rgba(0,103,109,1);
+  position: relative;
+}
+
+  .notification-reserved h2 {
+    color: rgba(223,217,198,1);
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    position: relative;
+    top: -2px;
+  }
+
+  .notification-reserved p {
+    color: rgba(223,217,198,1);
+  }
+
+.notification-error {
+  background-color: rgba(124,35,69,1);
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border: solid 2px;
+  border-color: rgba(254,239,154,1);
+  position: relative;
+}
+  .notification-error h2 {
+    color: rgba(254,239,154,1);
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    position: relative;
+    top: -5px;
+  }

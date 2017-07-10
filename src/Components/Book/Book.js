@@ -25,7 +25,7 @@ class Book extends Component {
     console.log("e.target.id is", e.target.id);
   }
 
-  render(){
+  render() {
 
     let bgColor = this.state.isReserved ? "red" : "green";
 

@@ -6,6 +6,7 @@ import './Gallery.css';
 
 //Importing React Components
 import Book from '../Book/Book';
+import NotificationHeader from '../NotificationHeader/NotificationHeader';
 
 console.log("Start of Component Gallery.js.");
 
@@ -19,6 +20,7 @@ class Gallery extends Component {
       <div class="container">
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
+        <NotificationHeader/>
         <div className="row" id="gallery">
           {/*Book components get generated below via axios.*/}
           <Book title="A Medium Book Title" author="Author McAuthor"/>
