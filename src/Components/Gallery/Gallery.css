@@ -1,0 +1,8 @@
+#gallery {
+  float: none;
+  margin: 0 auto;
+}
+
+#gallery-header {
+  color: rgba(248,240,214,1);
+}

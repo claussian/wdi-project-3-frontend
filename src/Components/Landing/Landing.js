@@ -7,9 +7,9 @@ import './Landing.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import Search from './Search/Search';
-import HeaderBanner from './HeaderBanner/HeaderBanner';
-import Gallery from './Gallery/Gallery';
+import Search from '../Search/Search';
+import HeaderBanner from '../HeaderBanner/HeaderBanner';
+import Gallery from '../Gallery/Gallery';
 
 console.log("Start of Component Landing.js. The landing page everyone sees without logging in.");
 

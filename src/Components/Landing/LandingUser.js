@@ -7,9 +7,9 @@ import './Landing.css';
 //Importing React Components
 import NavbarUser from '../Navbar/NavbarUser';
 import Footer from '../Footer/Footer';
-import Search from './Search/Search';
-import HeaderBanner from './HeaderBanner/HeaderBanner';
-import Gallery from './Gallery/Gallery';
+import Search from '../Search/Search';
+import HeaderBanner from '../HeaderBanner/HeaderBanner';
+import Gallery from '../Gallery/Gallery';
 
 console.log("Start of Component Landing User.js. The landing page when the user is logged in.");
 
