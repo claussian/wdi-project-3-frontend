@@ -1,0 +1,36 @@
+.col-md-3 {
+  position: relative;
+  border-style: dashed;
+  height: 270px;
+  width: 320px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: auto;
+  z-index: 100;
+}
+.bookpic {
+  position: absolute;
+  height: 170px;
+  width: 320px;
+  top: 1px;
+  right: -10px;
+  z-index: 10;
+}
+.bookreview {
+  position: absolute;
+  height: 170px;
+  width: 320px;
+  top: 1px;
+  right: -10px;
+  z-index: 11;
+}
+.reservebook {
+  height: 270px;
+  width: 320px;
+  z-index: 13;
+}
