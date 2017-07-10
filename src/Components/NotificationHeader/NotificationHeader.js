@@ -6,7 +6,7 @@ import './NotificationHeader.css';
 
 console.log("Start of Component Search.js.");
 
-class Search extends Component {
+class NotificationHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,9 +36,16 @@ class Search extends Component {
 
     return (
       <div className={notificationState}>
-        <header>
-          <h2>{notificationMessage}</h2>
-        </header>
+        <div className="row">
+          <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+            <button id="notification-close-btn">
+              <span className="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div className="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+            <h2>{notificationMessage}</h2>
+          </div>
+        </div>
       </div>
     );
   }
@@ -46,4 +53,4 @@ class Search extends Component {
 
 console.log("End of Component Search.js.");
 
-export default Search;
+export default NotificationHeader;
