@@ -1,8 +1,8 @@
 import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
 
-import bookReducer from '../reducers/bookReducer.js'
-import userReducer from '../reducers/userReducer.js'
+import bookReducer from '../Reducers/bookReducer.js'
+import userReducer from '../Reducers/userReducer.js'
 
 
 export let initStore = () => {
