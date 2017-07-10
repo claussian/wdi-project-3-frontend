@@ -10,8 +10,16 @@ class NotificationHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isReserved: false,
+      isReserved: true,
     }
+  }
+
+  onClick = (e) => {
+    console.log("clicked", "notificationState = ", notificationState, "notificationMessage = ", notificationMessage);
+    let notificationState;
+    let notificationMessage;
+    this.notificationState = "notification-hidden";
+    this.notificationMessage = "";
   }
 
   render() {
@@ -36,14 +44,17 @@ class NotificationHeader extends Component {
 
     return (
       <div className={notificationState}>
-        <div className="row">
-          <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-            <button id="notification-close-btn">
-              <span className="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-            </button>
-          </div>
-          <div className="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-            <h2>{notificationMessage}</h2>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+              <button id="notification-close-btn"
+                      onClick={this.onClick}>
+                <span className="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div className="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+              <h2>{notificationMessage}</h2>
+            </div>
           </div>
         </div>
       </div>
