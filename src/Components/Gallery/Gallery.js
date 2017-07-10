@@ -21,15 +21,15 @@ class Gallery extends Component {
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
           {/*Book components get generated below via axios.*/}
-          <Book title="1"/>
-          <Book title="2"/>
-          <Book title="3"/>
-          <Book title="4"/>
-          <Book title="5"/>
-          <Book title="6"/>
-          <Book title="7"/>
-          <Book title="8"/>
-          <Book title="9"/>
+          <Book title="A Medium Book Title" author="Author McAuthor"/>
+          <Book title="Book!" author="A. A. Auth"/>
+          <Book title="A Very Super Long Book Title Hot Damn!" author="The Author With A Really Long Name"/>
+          <Book title="Bk" author="Abo Ok"/>
+          <Book title="A Fairly Alright Book" author="Apret Tymed Iumname"/>
+          <Book title="The Longest Book In The History of the World And Its Still Going And Going" author="Anincrediblylong Nameanditsstillgoing Andgoingandgoingand going"/>
+          <Book title="Book!" author="A. A. Auth"/>
+          <Book title="Book!" author="A. A. Auth"/>
+          <Book title="Book!" author="A. A. Auth"/>
           {/*Book components get generated above via axios.*/}
         </div>
         <hr />
