@@ -53,7 +53,6 @@ class Gallery extends Component {
             <Book title="Book!" author="A. A. Auth"/>
             Book components get generated above via axios.
           </div> */}
-        <hr/>
       </div>
     </div>
     );

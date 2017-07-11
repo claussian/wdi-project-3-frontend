@@ -14,6 +14,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="container">
+        <hr />
         <footer>
             <div className="row footer">
                 <div className="col-lg-12">
