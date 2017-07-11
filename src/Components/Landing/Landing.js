@@ -31,7 +31,7 @@ class Landing extends Component {
       <div className="container">
         <div className="row">
         {isLoggedIn ? (
-          <NavbarUser user={this.props.user}/>
+          <NavbarUser user={this.props.user} linkRef="/mybooks" linkTitle="My books"/>
         ) : (
           <Navbar />
         )}

@@ -33,27 +33,83 @@ label.help-block {
 }
 /*Post/Update A Book above*/
 
-/*These styles below are for the submit button on the header banner.*/
-.submit-btn {
+/*These styles below are for the post-book button on the header banner.*/
+.post-book-btn {
   color: rgba(254,239,154,1);
   background-color: rgba(254,239,154,0);
   border: 2px solid rgba(254,239,154,1);
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 /*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
-.submit-btn:hover,
-.submit-btn:active:focus,
-.submit-btn:focus,
-.submit-btn:active {
+.post-book-btn:hover,
+.post-book-btn:active:focus,
+.post-book-btn:focus,
+.post-book-btn:active {
   color: rgba(110,107,102,1);
   background-color: rgba(254,239,154,1);
   border: 2px solid rgba(254,239,154,1);
 }
 
-.submit-btn:active:hover {
+.post-book-btn:active:hover {
   color: white;
   background-color: rgba(124,35,69,1);
   border: 2px solid rgba(124,35,69,1);
 }
-/*These styles above are for the submit button on the header banner.*/
+/*These styles above are for the post-book button on the header banner.*/
+
+/*These styles below are for the update-book button on the header banner.*/
+.update-book-btn {
+  color: white;
+  background-color: rgba(0,103,109,0.7);
+  border: 2px solid rgba(0,103,109,0.7);
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  left: -10px;
+  position: relative;
+}
+
+/*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
+.update-book-btn:hover,
+.update-book-btn:active:focus,
+.update-book-btn:focus,
+.update-book-btn:active {
+  color: rgba(0,103,109,0.7);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(0,103,109,0.7);
+}
+
+.update-book-btn:active:hover {
+  color: rgba(110,107,102,1);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(254,239,154,1);
+}
+/*These styles above are for the update-book button on the header banner.*/
+
+/*These styles below are for the delete-book button on the header banner.*/
+.delete-book-btn {
+  color: white;
+  background-color: rgba(124,35,69,1);
+  border: 2px solid rgba(124,35,69,1);
+  font-size: 20px;
+}
+
+/*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
+.delete-book-btn:hover,
+.delete-book-btn:active:focus,
+.delete-book-btn:focus,
+.delete-book-btn:active {
+  color: rgba(254,239,154,1);
+  background-color: rgba(254,239,154,0);
+  border: 2px solid rgba(254,239,154,1);
+}
+
+.delete-book-btn:active:hover {
+  color: rgba(110,107,102,1);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(254,239,154,1);
+}
+/*These styles above are for the delete-book button on the header banner.*/

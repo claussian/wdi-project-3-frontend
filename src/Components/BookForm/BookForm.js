@@ -35,14 +35,25 @@ class BookForm extends Component {
           </div>
           <div className="form-group">
             <label>Your review</label>
-            <textarea className="form-control" rows="3" placeholder="What do you think about your book? Write it here!"></textarea>
+            <textarea className="form-control" rows="3" placeholder="Reviews are for readers, not writers. If I get a bad one, I shrug it off. If I get a good one, I don't believe it. ~ William Meikle"></textarea>
           </div>
           <div className="form-group">
             <label>Upload book cover</label>
             <input className="upload-book-cover-file" type="file" />
             <label className="help-block">You should only upload jpg, png files. - Cloudinary</label>
           </div>
-          <button type="submit" className="btn btn-default submit-btn">Post / Update</button>
+          <div className="row">
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <button type="submit" className="btn btn-default post-book-btn">Post</button>
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <button type="submit" className="btn btn-default update-book-btn">Update</button>
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <button type="submit" className="btn btn-default delete-book-btn">Delete</button>
+            </div>
+          </div>
+
         </form>
         </header>
       </div>

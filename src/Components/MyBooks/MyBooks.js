@@ -30,7 +30,7 @@ class MyBooks extends Component {
         <div className="row">
           {/*This if statement toggles between logged-in navbar and public navbar below*/}
           {isLoggedIn ? (
-            <NavbarUser user={this.props.user}/>
+            <NavbarUser user={this.props.user} linkRef="/" linkTitle="Home"/>
           ) : (
             <Navbar />
           )}
