@@ -1,0 +1,72 @@
+/*Jumbotron Box Editing*/
+
+.notification-hidden {
+  display: none;
+}
+
+#notification-close-btn {
+  position: absolute;
+  padding-top: 0;
+  top: 10px;
+  background-color: rgba(0,103,109,0);
+  border-color: rgba(0,103,109,0);
+}
+  #notification-close-btn span {
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: rgba(223,217,198,0.7);
+  }
+
+#notification-close-btn:hover {
+}
+  #notification-close-btn:hover span:hover {
+    color: rgba(223,217,198,1);
+  }
+
+#notification-close-btn:hover:active {
+}
+  #notification-close-btn:hover:active span:hover:active {
+    color: rgba(254,239,154,1);
+  }
+
+.notification-reserved {
+  position: absolute;
+  box-shadow: 0px 0px 30px black;
+  top: 26px;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border: solid 2px;
+  border-color: rgba(0,103,109,0.7);
+  padding-left: 10px;
+  background-color: rgba(0,103,109,1);
+}
+
+  .notification-reserved h2 {
+    color: rgba(223,217,198,1);
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    position: relative;
+    top: -2px;
+  }
+
+  .notification-reserved p {
+    color: rgba(223,217,198,1);
+  }
+
+.notification-error {
+  position: absolute;
+  box-shadow: 0px 0px 30px black;
+  top: 26px;
+  margin-right: 20px;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  border: solid 5px;
+  border-color: rgba(94,96,94,0.7);
+  background-color: rgba(124,35,69,1);
+}
+  .notification-error h2 {
+    color: rgba(254,239,154,1);
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    position: relative;
+    top: -5px;
+  }
