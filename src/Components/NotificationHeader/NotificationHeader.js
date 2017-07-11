@@ -10,16 +10,16 @@ class NotificationHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isReserved: true,
+      isReserved: null,
     }
   }
 
   onClick = (e) => {
-    console.log("clicked", "notificationState = ", notificationState, "notificationMessage = ", notificationMessage);
     let notificationState;
     let notificationMessage;
-    this.notificationState = "notification-hidden";
-    this.notificationMessage = "";
+    console.log("clicked", "notificationState = ", notificationState, "notificationMessage = ", notificationMessage);
+    notificationState = "notification-hidden";
+    notificationMessage = "";
   }
 
   render() {
@@ -42,6 +42,8 @@ class NotificationHeader extends Component {
 
     console.log("Notification class is '",notificationState,"'.");
 
+    console.log("End of Component Search.js.");
+
     return (
       <div className={notificationState}>
         <div className="container">
@@ -61,7 +63,5 @@ class NotificationHeader extends Component {
     );
   }
 }
-
-console.log("End of Component Search.js.");
 
 export default NotificationHeader;

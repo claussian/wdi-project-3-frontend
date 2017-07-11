@@ -5,7 +5,7 @@
 }
 
 #notification-close-btn {
-  position: sticky;
+  position: absolute;
   padding-top: 0;
   top: 10px;
   background-color: rgba(0,103,109,0);
@@ -16,7 +16,6 @@
     width: 100%;
     font-size: 30px;
     color: rgba(223,217,198,0.7);
-    top: 15px;
   }
 
 #notification-close-btn:hover {
