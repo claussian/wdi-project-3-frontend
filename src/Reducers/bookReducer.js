@@ -4,9 +4,9 @@ const bookReducer = (state = [], action) => {
 
   switch (action.type) {
     case "CREATE_BOOK":
-      console.log("create book action");;
       break;
-    case "READ_BOOK":
+    case "LOAD_BOOKS":
+      return action.books || [];
       break;
     case "UPDATE_BOOK":
       break;
