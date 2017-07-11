@@ -38,12 +38,12 @@ class Book extends Component {
           <div className="bookreview"
                id={this.props.contents.title}
                onMouseOver={this.onMouseOver}>
-            <h5>Book review here</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
+            <p>{this.props.contents.review}</p>
           </div>
           <hr className="book-footer-line"/>
           <div className="row">
-            <div className="col-md-6 col-sm-6">
+            <div className="col-md-6 col-sm-6 col-xs-6">
               {/*<div className="ratings">
                 <span className="glyphicon glyphicon-star"></span>
                 <span className="glyphicon glyphicon-star"></span>
@@ -51,8 +51,11 @@ class Book extends Component {
                 <span className="glyphicon glyphicon-star"></span>
                 <span className="glyphicon glyphicon-star-empty"></span>
               </div>*/}
+              <button className="btn btn-success book-available-btn">
+                Available
+              </button>
             </div>
-            <div className="col-md-6 col-sm-6">
+            <div className="col-md-6 col-sm-6 col-xs-6">
               <button className="btn btn-success book-reserve-btn"
                       style={{backgroundColor: bgColor}}
                       onClick={this.changeColor.bind(this)}>
