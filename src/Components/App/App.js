@@ -25,8 +25,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Landing}/>
-          <Route path="/:id" component={LandingUser}/>
-          <Route path="/usertest" component={LandingUser}/>
+          <Route path="/post" component={###}/>
         </Switch>
       </Router>
     );
