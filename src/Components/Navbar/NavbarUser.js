@@ -68,7 +68,8 @@ class NavbarUser extends Component {
             </div>{/* /bs-example-navbar-collapse-1 */}
           <div className="row">
             <div className="col-lg-12">
-              <NotificationHeader />
+            {this.props.notification ?
+              <NotificationHeader user={this.props.user} /> : null}
             </div>
           </div>
           </div>{/* container */}
@@ -82,7 +83,8 @@ class NavbarUser extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    notification: state.notification
   }
 }
 

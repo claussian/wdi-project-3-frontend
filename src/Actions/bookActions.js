@@ -16,7 +16,8 @@ export const getBooks = () => {
       })
       .catch((error)=> {
         console.error("AJAX: Could not get books @ '/api/book'")
-        dispatch(loadBooks({}));
+        console.log(error);
+        // dispatch(loadBooks({}));
       });
   };
 }

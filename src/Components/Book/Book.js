@@ -1,5 +1,9 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
+// Import action-creator
+import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Book.css';
@@ -10,15 +14,24 @@ class Book extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      isReserved: false,
-    }
+    // this.state = {
+    //   isReserved: false,
+    // }
   }
 
-  changeColor() {
-    this.setState({
-      isReserved: !this.state.isReserved
-    })
+  // changeColor() {
+  //   this.setState({
+  //     isReserved: !this.state.isReserved
+  //   })
+  // }
+
+  onClick = (e) => {
+    if (!this.props.user._id) {
+      this.props.triggerNotification("Please log in or sign up to borrow a book");
+    }
+
+    // e.target.id check against this.props.contents.reserved
+
   }
 
   onMouseOver = (e) => {
@@ -27,7 +40,7 @@ class Book extends Component {
 
   render() {
 
-    let bgColor = this.state.isReserved ? "rgba(124,35,69,1)" : "rgba(0,103,109,0.7)";
+    let bgColor = this.props.contents.reserved ? "rgba(124,35,69,1)" : "rgba(0,103,109,0.7)";
 
     return (
       <div className="col-lg-3 col-md-3 col-sm-5 col-lg-push-1 col-md-push-1 book-container">
@@ -58,7 +71,8 @@ class Book extends Component {
             <div className="col-md-6 col-sm-6 col-xs-6">
               <button className="btn btn-success book-reserve-btn"
                       style={{backgroundColor: bgColor}}
-                      onClick={this.changeColor.bind(this)}>
+                      onClick={this.onClick}
+                      id={this.props.id}>
                 Reserve
               </button>
             </div>
@@ -69,4 +83,20 @@ class Book extends Component {
   }
 }
 
-export default Book;
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    notification: state.notification
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+  }
+}
+console.log("End of Component Navbar.js.");
+
+export default connect(mapStateToProps, mapDispatchToProps)(Book);

@@ -3,13 +3,15 @@ import thunk from 'redux-thunk'
 
 import bookReducer from '../Reducers/bookReducer.js'
 import userReducer from '../Reducers/userReducer.js'
+import appReducer from '../Reducers/appReducer.js'
 
 
 export let initStore = () => {
 
   const reducer = combineReducers( {
     books: bookReducer,
-    user: userReducer
+    user: userReducer,
+    notification: appReducer
   });
 
   /* thunk middleware enables dispatch of functions as actions */
