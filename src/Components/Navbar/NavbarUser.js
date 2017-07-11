@@ -48,7 +48,7 @@ class NavbarUser extends Component {
                       {/*User Login*/}
                       <div className="row user-profile-group">
                         <div className="col-xs-4 col-sm-5">
-                          <a className="profile-picture" href="./usertest"><img src="http://via.placeholder.com/70x70"/></a>
+                          <a className="profile-picture"><img src="http://via.placeholder.com/70x70"/></a>
                         </div>
                         <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
@@ -57,7 +57,7 @@ class NavbarUser extends Component {
                       </div>
                     </li>
                     <li className="post-a-book-btn">
-                      <a href="./post">Post a book</a>
+                      <a href="./mybooks">My books</a>
                     </li>
                     <li className="log-out-btn">
                       <a onClick={this.execLogout}>Log out</a>

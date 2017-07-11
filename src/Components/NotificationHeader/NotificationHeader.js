@@ -10,7 +10,7 @@ class NotificationHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isReserved: true,
+      isReserved: null,
     }
   }
 

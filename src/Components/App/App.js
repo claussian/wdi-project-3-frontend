@@ -11,7 +11,7 @@ import './App.css';
 
 //Importing React Components
 import Landing from '../Landing/Landing';
-import LandingUser from '../Landing/LandingUser';
+import MyBooks from '../MyBooks/MyBooks';
 
 console.log("Start of Component App.js.");
 
@@ -25,7 +25,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Landing}/>
-          <Route path="/post" component={###}/>
+          <Route path="/mybooks" component={MyBooks}/>
         </Switch>
       </Router>
     );
