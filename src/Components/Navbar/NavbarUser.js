@@ -1,5 +1,9 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
+// Import thunk
+import {localLogout} from '../../Actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
@@ -11,9 +15,14 @@ import NotificationHeader from '../NotificationHeader/NotificationHeader';
 
 console.log("Start of Component Navbar User.js.");
 
-class Navbar extends Component {
+class NavbarUser extends Component {
   constructor(props) {
     super(props);
+  }
+
+  execLogout = (e) => {
+    e.preventDefault();
+    this.props.Logout();
   }
 
   render() {
@@ -43,7 +52,7 @@ class Navbar extends Component {
                         </div>
                         <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
-                          <h4>{this.props.username}</h4>
+                          <h4>{this.props.user.username}</h4>
                         </div>
                       </div>
                     </li>
@@ -51,7 +60,7 @@ class Navbar extends Component {
                       <a href="./post">Post a book</a>
                     </li>
                     <li className="log-out-btn">
-                      <a href="./">Log out</a>
+                      <a onClick={this.execLogout}>Log out</a>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
@@ -69,6 +78,20 @@ class Navbar extends Component {
   }
 }
 
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    Logout: () => {dispatch(localLogout()); }
+  }
+}
+
 console.log("End of Component Navbar User.js.");
 
-export default Navbar;
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarUser);

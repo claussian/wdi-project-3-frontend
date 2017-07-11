@@ -30,7 +30,7 @@ class Gallery extends Component {
         }
         return books.map( (book) => {
           return (
-            <Book id={book._id} key={book_.id} contents={book}/>
+            <Book id={book._id} key={book._id} contents={book}/>
           )
         });
       }
