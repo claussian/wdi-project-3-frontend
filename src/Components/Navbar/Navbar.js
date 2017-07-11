@@ -78,10 +78,10 @@ class Navbar extends Component {
                     {/*Email and Password Login & its button*/}
                       <form className="form-inline login-group">
                         <div className="form-group">
-                          <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.onChange}/>
+                          <input type="email" name="email" className="form-control" id="navbar-email-input" placeholder="Email" onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                          <input type="password" name="password" className="form-control" placeholder="Password" onChange={this.onChange}/>
+                          <input type="password" name="password" className="form-control" id="navbar-password-input" placeholder="Password" onChange={this.onChange}/>
                         </div>
                         <button type="submit" className="btn btn-default" onClick={this.localLogin}>Log in</button>
                       </form>
