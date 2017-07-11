@@ -20,6 +20,7 @@
 
   .book-thumbnail img {
     width: 100%;
+    box-shadow: 0px 0px 30px rgba(94,96,94,1);
   }
 
 .book-footer-line {
@@ -30,4 +31,5 @@
 
 .book-reserve-btn {
   border-width: 0px;
+  float: right;
 }
