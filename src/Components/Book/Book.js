@@ -32,11 +32,11 @@ class Book extends Component {
     return (
       <div className="col-lg-3 col-md-3 col-sm-5 col-lg-push-1 col-md-push-1 book-container">
         <span className="book-thumbnail">
-          <img src="http://placehold.it/130x198" alt="..." />
-          <h3>{this.props.title}</h3>
-          <h4>{this.props.author}</h4>
+          <img src={this.props.contents.cover} alt="..." />
+          <h3>{this.props.contents.title}</h3>
+          <h4>{this.props.contents.author}</h4>
           <div className="bookreview"
-               id={this.props.title}
+               id={this.props.contents.title}
                onMouseOver={this.onMouseOver}>
             <h5>Book review here</h5>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
