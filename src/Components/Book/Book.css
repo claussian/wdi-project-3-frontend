@@ -17,6 +17,10 @@
   transition: all 0.5s;
 }
 
+  .book-thumbnail img {
+    width: 100%;
+  }
+
 .book-footer-line {
   margin-bottom: 5px;
   border-color: solid 1px rgba(94,96,94,1);
