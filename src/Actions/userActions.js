@@ -17,7 +17,7 @@ export const getUser = () => {
       })
       .catch((error)=> {
         console.error("AJAX: Could not get user @ '/auth/user'")
-        dispatch(updateUser({}));
+        // dispatch(updateUser({}));
       });
   };
 }

@@ -15,7 +15,7 @@ export const getBooks = () => {
         dispatch(loadBooks(books));
       })
       .catch((error)=> {
-        console.error("AJAX: Could not get books @ '/api/book'")
+        console.error("AJAX: Could not get books @ '/api/book'");
         console.log(error);
         // dispatch(loadBooks({}));
       });
@@ -26,13 +26,21 @@ export const reserveBook = (id) => {
   return (dispatch) => {
     axios.put('/api/reserve/'+ id)
       .then( (response) => {
-        const books = response.data;
-        dispatch(loadBooks(books));
+        const book = response.data;
+        dispatch(getBooks());
+        dispatch(reserveBookAction(book));
       })
       .catch((error)=> {
-        console.error("AJAX: Could not reserve book'")
-        dispatch(loadBooks({}));
+        console.error("AJAX: Could not reserve book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
       });
   }
+}
 
+const reserveBookAction = (book) => {
+  return {
+    type: "RESERVE_BOOK_ACTION",
+    book
+  }
 }
