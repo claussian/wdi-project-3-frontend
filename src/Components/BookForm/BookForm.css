@@ -1,56 +1,59 @@
-/*Jumbotron Box Editing*/
-.search-form {
+/*Post/Update A Book below*/
+.book-form {
     margin-top: 50px;
     background-color: rgba(110,107,102,1);
 }
 
-  .search-form h1 {
+  .book-form h2 {
     color: rgba(254,239,154,1);
     font-family: 'Karla', sans-serif;
     font-weight: 700;
   }
 
-  .search-form p {
+  .book-form p {
     color: white;
   }
 
-/*These styles below are for the main search bar.*/
-.search-bar > div > input {
-  background-color: rgba(223,217,198,1);
-  font-size: 25px;
-  padding: 5px 9px 5px 9px;
-  height: 49px;
-}
-/*These styles above are for the main search bar.*/
+  .book-form label {
+    color: white;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
 
-/*These styles below are for the search button.*/
-.search-bar > div > span > button {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
-  font-size: 25px;
-  height: 100%;
-  border-style: solid;
-  border-width: 2px;
-  padding: 5px 9px 5px 9px;
-}
-/*This style below is for the glyphicon on the search button.*/
-.search-bar > div > span > button > span {
-  top: 3px;
+label.help-block {
+  color: rgba(223,217,198,0.6);
+  font-size: 12px;
 }
 
-.search-bar > div > span > button:hover,
-.search-bar > div > span > button:active,
-.search-bar > div > span > button:focus {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+.upload-book-cover-file {
+  color: rgba(254,239,154,1);
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+/*Post/Update A Book above*/
+
+/*These styles below are for the submit button on the header banner.*/
+.submit-btn {
+  color: rgba(254,239,154,1);
+  background-color: rgba(254,239,154,0);
+  border: 2px solid rgba(254,239,154,1);
+  font-size: 20px;
 }
 
-.search-bar > div > span > button:active:hover {
-  background-color: rgba(223,217,198,1);
-  border-color: rgba(124,35,69,1);
+/*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
+.submit-btn:hover,
+.submit-btn:active:focus,
+.submit-btn:focus,
+.submit-btn:active {
   color: rgba(110,107,102,1);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(254,239,154,1);
 }
 
-/*These styles above are for the search button on the search-bar.*/
+.submit-btn:active:hover {
+  color: white;
+  background-color: rgba(124,35,69,1);
+  border: 2px solid rgba(124,35,69,1);
+}
+/*These styles above are for the submit button on the header banner.*/

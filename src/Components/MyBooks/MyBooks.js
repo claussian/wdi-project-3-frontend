@@ -36,12 +36,17 @@ class MyBooks extends Component {
           )}
         {/*This if statement toggles between logged-in navbar and public navbar above*/}
         </div>
-        <MySharedBooks />
-        <MyBorrowedBooks />
-        <BookForm />
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <MySharedBooks />
+            <MyBorrowedBooks />
+          </div>
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <BookForm />
+          </div>
+        </div> {/* /row */}
         <Footer />
       </div>
-
     );
   }
 }

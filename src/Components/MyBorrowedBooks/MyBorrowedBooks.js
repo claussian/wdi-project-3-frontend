@@ -14,7 +14,7 @@ class MyBorrowedBooks extends Component {
   render() {
     return (
       <div>
-        <header className="jumbotron search-form">
+        <header className="jumbotron my-borrowed-books">
           <div className="search-bar">
             <div className="input-group">
               <input type="text" className="search-query form-control" placeholder="MyBorrowedBooks title" />

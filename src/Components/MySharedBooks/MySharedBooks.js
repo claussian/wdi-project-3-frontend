@@ -14,7 +14,7 @@ class MySharedBooks extends Component {
   render() {
     return (
       <div>
-        <header className="jumbotron search-form">
+        <header className="jumbotron my-shared-books">
           <div className="search-bar">
             <div className="input-group">
               <input type="text" className="search-query form-control" placeholder="MySharedBooks title" />
