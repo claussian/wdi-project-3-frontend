@@ -27,7 +27,7 @@ class Book extends Component {
 
   render() {
 
-    let bgColor = this.state.isReserved ? "red" : "green";
+    let bgColor = this.state.isReserved ? "rgba(124,35,69,1)" : "rgba(0,103,109,0.7)";
 
     return (
       <div className="col-lg-3 col-md-3 col-sm-5 col-lg-push-1 col-md-push-1 book-container">
