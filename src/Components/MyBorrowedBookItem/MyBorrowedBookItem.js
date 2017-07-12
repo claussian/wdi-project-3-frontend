@@ -18,12 +18,8 @@ class MyBorrowedBookItem extends Component {
     return reservedBy ? "book-not-available-btn" : "book-available-btn";
   }
 
-  renderAvailableMessage = (reservedBy) => {
-    return reservedBy ? "Reserved by @" + reservedBy.username : "available";
-  }
-
   onClick = (e) => {
-    console.log("Return the book ", this.props.contents.title, " to ", this.props.owner.username);
+    console.log("Return the book ", this.props.contents.title, " to ", this.props.contents.owner);
   }
 
   // onMouseOver = (e) => {
@@ -49,16 +45,13 @@ class MyBorrowedBookItem extends Component {
             <div className="booklistitemreview"
                  id={this.props.contents.title}
                  onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
+              <h5><b>Owner:</b> {this.props.contents.owner}</h5>
             </div>
             <hr className="booklistitem-footer-line"/>
           </div>
         </div>
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-            <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
-              {this.renderAvailableMessage(this.props.contents.reservedBy)}
-            </div>
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
