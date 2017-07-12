@@ -36,6 +36,7 @@
 
 .book-reserve-btn {
   border-width: 0px;
+  position: relative;
   float: right;
 }
 

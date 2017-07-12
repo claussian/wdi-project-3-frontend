@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 // Import action-creators and thunks
 import {triggerNotification} from '../../Actions/appActions';
+import {searchBooks} from '../../API/booksAPI';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Gallery.css';
@@ -48,19 +49,19 @@ class Gallery extends Component {
   render() {
 
     const renderBooks = (books) => {
-        if(books.length === 0) {
-          return (
-              <div className="col-md-11 col-sm-10 col-xs-8">
-                <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
-              </div>
-          )
-        }
-        return books.map( (book) => {
-          return (
-            <Book id={book._id} key={book._id} contents={book}/>
-          )
-        });
+      if(books.length === 0) {
+        return (
+            <div className="col-md-11 col-sm-10 col-xs-8">
+              <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
+            </div>
+        )
       }
+      return books.map( (book) => {
+        return (
+          <Book id={book._id} key={book._id} contents={book}/>
+        )
+      });
+    }
 
     return (
       <div class="container">
@@ -72,7 +73,7 @@ class Gallery extends Component {
     </div>
     );
   }
-}
+};
 
 // pass these arguments to 'connect' to instantiate component with these methods
 
@@ -80,6 +81,7 @@ const mapStateToProps = (state) => {
   return {
     books: state.books,
     user: state.user,
+    searchTerm: state.searchTerm,
     latestAction: state.latestAction
   }
 }

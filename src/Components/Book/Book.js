@@ -53,7 +53,9 @@ class Book extends Component {
 
   render() {
 
-    let bgColor = this.props.contents.reserved ? "rgba(209,209,209,1)" : "rgba(0,103,109,0.7)";
+    let bookReserveColour = this.props.contents.reserved ? "rgba(209,209,209,1)" : "rgba(0,103,109,0.7)";
+
+    let bookReserveMsg = this.props.contents.reserved ? "Reserved" : "Reserve";
 
     return (
       <div className="col-lg-3 col-md-3 col-sm-5 col-lg-push-1 col-md-push-1 book-container">
@@ -84,10 +86,10 @@ class Book extends Component {
             </div>
             <div className="col-md-6 col-sm-6 col-xs-6">
               <button className="btn btn-success book-reserve-btn"
-                      style={{backgroundColor: bgColor}}
+                      style={{backgroundColor: bookReserveColour}}
                       onClick={this.onClick}
                       id={this.props.id}>
-                Reserve
+                {bookReserveMsg}
               </button>
             </div>
           </div>
