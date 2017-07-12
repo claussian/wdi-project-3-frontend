@@ -28,8 +28,6 @@ class MyBorrowedBookItem extends Component {
 
   render() {
 
-    let bgColor = "rgba(0,103,109,0.7)";
-
     return (
       <div className="row booklistitem-container">
         <div className="row">
@@ -55,7 +53,6 @@ class MyBorrowedBookItem extends Component {
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
-                    style={{backgroundColor: bgColor}}
                     onClick={this.onClick}
                     id={this.props.id}>
               Return
