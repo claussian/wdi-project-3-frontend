@@ -11,7 +11,6 @@ import './App.css';
 
 //Importing React Components
 import Landing from '../Landing/Landing';
-import LandingUser from '../Landing/LandingUser';
 
 console.log("Start of Component App.js.");
 
@@ -25,8 +24,6 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Landing}/>
-          <Route path="/:id" component={LandingUser}/>
-          <Route path="/usertest" component={LandingUser}/>
         </Switch>
       </Router>
     );

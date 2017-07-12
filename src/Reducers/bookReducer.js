@@ -1,6 +1,6 @@
 const bookReducer = (state = [], action) => {
 
-  console.log(action);
+  // console.log(action);
 
   switch (action.type) {
     case "CREATE_BOOK":
@@ -9,7 +9,6 @@ const bookReducer = (state = [], action) => {
       return action.books || [];
       break;
     case "RESERVE_BOOK":
-      
       break;
     case "DELETE_BOOK":
       break;
@@ -17,6 +16,5 @@ const bookReducer = (state = [], action) => {
         return state;
   }
 }
-
 
 export default bookReducer;

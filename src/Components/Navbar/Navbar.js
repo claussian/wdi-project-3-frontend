@@ -6,6 +6,9 @@ import {connect} from 'react-redux';
 // Import thunk
 import {localLogin} from '../../Actions/userActions';
 
+//Importing React components
+import NotificationHeader from '../NotificationHeader/NotificationHeader';
+
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
 import logo from './swap-books-med-logo.svg';
@@ -92,6 +95,11 @@ class Navbar extends Component {
                   </ul>
                 </div>
               </div>
+              <div className="row">
+                <div className="col-lg-12">
+                {this.props.notification ? <NotificationHeader/> : null}
+              </div>
+              </div>
             </div>
           </div>
         </nav>
@@ -104,7 +112,8 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    notification: state.notification
   }
 }
 

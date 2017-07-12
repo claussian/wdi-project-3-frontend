@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import action-creators and thunks
+import {triggerNotification} from '../../Actions/appActions';
+
 //Importing static assets (i.e. stylesheets, images)
 import './Gallery.css';
 
@@ -14,9 +17,33 @@ class Gallery extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      change: false
+    }
   }
 
+  whichMessage = (latestAction) => {
+    switch (latestAction.type) {
+      case "CREATE_BOOK_ACTION":
+        break;
+      case "RESERVE_BOOK_ACTION":
+        let newBook = latestAction.book;
+        return "You have placed a reservation for '" + newBook.title + "'. Kindly contact @" + newBook.owner.username + " at " + newBook.owner.email;
+        break;
+      case "EDIT_BOOK_ACTION":
+        break;
+      case "DELETE_BOOK_ACTION":
+        break;
+      default:
+          return "";
+    }
+  }
 
+  componentWillReceiveProps(nextProps) {
+    if(this.props.latestAction != nextProps.latestAction){
+      this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
+    }
+  }
 
   render() {
 
@@ -40,39 +67,30 @@ class Gallery extends Component {
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
-          {renderBooks(this.props.library)}
-          {/*  /*Book components get generated below via axios.
-            <Book title="A Medium Book Title" author="Author McAuthor"/>
-            <Book title="Book!" author="A. A. Auth"/>
-            <Book title="A Very Super Long Book Title Hot Damn!" author="The Author With A Really Long Name"/>
-            <Book title="Bk" author="Abo Ok"/>
-            <Book title="A Fairly Alright Book" author="Apret Tymed Iumname"/>
-            <Book title="The Longest Book In The History of the World And Its Still Going And Going" author="Anincrediblylong Nameanditsstillgoing Andgoingandgoingand going"/>
-            <Book title="Book!" author="A. A. Auth"/>
-            <Book title="Book!" author="A. A. Auth"/>
-            <Book title="Book!" author="A. A. Auth"/>
-            Book components get generated above via axios.
-          </div> */}
+          {renderBooks(this.props.books)}
       </div>
     </div>
     );
   }
+
 }
 
 // pass these arguments to 'connect' to instantiate component with these methods
 
 const mapStateToProps = (state) => {
   return {
-    library: state.books
+    books: state.books,
+    user: state.user,
+    latestAction: state.latestAction
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     completeTodo: (id, completed) => {dispatch(completeTodo(id, completed)); }
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+  }
+}
 
 console.log("End of Component Gallery.js.");
 
-export default connect(mapStateToProps)(Gallery);
+export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
