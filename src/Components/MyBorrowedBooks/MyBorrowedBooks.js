@@ -50,10 +50,10 @@ class MyBorrowedBooks extends Component {
     return (
       <div>
         <header className="jumbotron my-borrowed-books">
-          <h2>My Borrowed Books</h2>
+          <h2>My borrowed books</h2>
           <div className="search-bar">
             <div className="input-group">
-              <input type="text" className="search-query form-control" placeholder="MyBorrowedBooks title" />
+              <input type="text" className="search-query form-control" placeholder="Search my borrowed books" />
               <span className="input-group-btn">
                 <button className="btn btn-md btn-primary btn-block" type="submit">
                   <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
