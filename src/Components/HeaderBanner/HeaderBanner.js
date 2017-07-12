@@ -17,14 +17,14 @@ class HeaderBanner extends Component {
         <header className="jumbotron welcome-msg">
           <h1>Read & share offline books online</h1>
           <p>
-            Encounter new books to read.
-            <br/><br/>
-            Or divulge your books with fellow readers and book lovers near you.
-            <br/><br/>
-            <b>How can I start?</b>
+            Encounter exciting books to borrow and browse.
             <br/>
-            Simply sign up for a account and start reserving books on the Bookshelf you want to read.
-            <br/><br />
+            Bestow your books for fellow bookworms.
+            <br/>
+            For free forever.
+            <hr/>
+            <h3>How can I start?</h3>
+            Simply sign up for a account and you can immediately start reserving books you want to borrow on <b>The Bookshelf</b> below. To start sharing your books, submit your books in <b>My Books</b> .
           </p>
           <p>
             <a className="btn btn-primary btn-large find-out-more-btn">Start now</a>
