@@ -9,7 +9,7 @@ import {triggerNotification} from '../../Actions/appActions';
 import './MyBorrowedBooks.css';
 
 //Importing React Components
-import MyBookListItem from '../MyBookListItem/MyBookListItem';
+import MyBorrowedBookItem from '../MyBorrowedBookItem/MyBorrowedBookItem';
 
 console.log("Start of Component MyBorrowedBooks.js.");
 
@@ -22,6 +22,24 @@ class MyBorrowedBooks extends Component {
   }
 
   render() {
+
+    //Populates all books that the user has borrowed
+    const renderBooks = (books) => {
+        console.log('books.length = ', books.length);
+        if(books.length === 0) {
+          return (
+              <div className="col-md-11 col-sm-10 col-xs-8">
+                <h4 className="card-title">No books borrowed</h4>
+              </div>
+          )
+        }
+        return books.map( (book) => {
+          return (
+            <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
+          )
+        });
+      }
+
     return (
       <div>
         <header className="jumbotron my-borrowed-books">
@@ -38,10 +56,6 @@ class MyBorrowedBooks extends Component {
           </div>
           <div className="row">
             {renderBooks(this.props.books)}
-
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
           </div>
         </header>
       </div>

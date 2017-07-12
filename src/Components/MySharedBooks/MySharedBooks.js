@@ -30,9 +30,9 @@ class MySharedBooks extends Component {
             </div>
           </div>
           <div className='row'>
+            {/*<MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
             <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
+            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>*/}
           </div>
         </header>
       </div>

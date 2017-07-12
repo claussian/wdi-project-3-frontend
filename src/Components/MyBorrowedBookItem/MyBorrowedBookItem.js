@@ -3,15 +3,32 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 //Importing static assets (i.e. stylesheets, images)
-import './MyBookListItem.css';
+import './MyBorrowedBookItem.css';
 
 console.log("Start of Component Book.js.");
 
-class MyBookListItem extends Component {
+class MyBorrowedBookItem extends Component {
 
   constructor(props) {
     super(props);
   }
+
+  //Message on the Book item which shows whomever borrows the book
+  renderAvailableClass = (reservedBy) => {
+    return reservedBy ? "book-not-available-btn" : "book-available-btn";
+  }
+
+  renderAvailableMessage = (reservedBy) => {
+    return reservedBy ? "Reserved by @" + reservedBy.username : "available";
+  }
+
+  onClick = (e) => {
+    console.log("Return the book ", this.props.contents.title, " to ", this.props.owner.username);
+  }
+
+  // onMouseOver = (e) => {
+  //   console.log("e.target.id is", e.target.id);
+  // }
 
   render() {
 
@@ -32,7 +49,7 @@ class MyBookListItem extends Component {
             <div className="booklistitemreview"
                  id={this.props.contents.title}
                  onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
+              <h5><b>Owner:</b> {this.props.contents.username}</h5>
             </div>
             <hr className="booklistitem-footer-line"/>
           </div>
@@ -47,8 +64,8 @@ class MyBookListItem extends Component {
             <button className="btn btn-success booklistitem-update-btn"
                     style={{backgroundColor: bgColor}}
                     onClick={this.onClick}
-                    id="test">
-              Update >
+                    id={this.props.id}>
+              Return
             </button>
           </div>
         </div>
@@ -61,6 +78,9 @@ class MyBookListItem extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    books: state.books,
+    user: state.user,
+    latestAction: state.latestAction
   }
 }
 
@@ -70,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 console.log("End of Component Navbar.js.");
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyBookListItem);
+export default connect(mapStateToProps, mapDispatchToProps)(MyBorrowedBookItem);
