@@ -189,7 +189,7 @@
 
   /*These styles below are for the log out button*/
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn {
+  .log-out-btn {
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     border: 2px solid rgba(110,107,102,1);
     background-color: rgba(110,107,102,1);
@@ -200,16 +200,23 @@
   }
 
     #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a {
-      color: rgba(248,240,214,1);
       top: 5px;
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a > a {
+      color: rgba(248,240,214,1);
+      text-decoration: none;
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover,
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:active {
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(124,35,69,1);
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a > a,
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:active > a > a,
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:focus > a > a {
       color: rgba(248,240,214,1);
     }
 
@@ -217,7 +224,7 @@
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(248,240,214,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a > a {
       color: rgba(124,35,69,1);
     }
 /*These styles below are for the log out button*/
