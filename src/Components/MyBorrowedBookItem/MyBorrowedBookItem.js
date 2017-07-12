@@ -49,7 +49,7 @@ class MyBorrowedBookItem extends Component {
             <div className="booklistitemreview"
                  id={this.props.contents.title}
                  onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> {this.props.contents.username}</h5>
+              <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
             </div>
             <hr className="booklistitem-footer-line"/>
           </div>

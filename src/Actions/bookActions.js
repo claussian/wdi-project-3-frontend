@@ -22,6 +22,29 @@ export const getBooks = () => {
   };
 }
 
+const loadBorrowedBooks = (borrowedBooks) => {
+  return {
+    type: "LOAD_BORROWED_BOOKS",
+    borrowedBooks
+  }
+}
+
+export const getBorrowedBooks = () => {
+  return (dispatch) => {
+    axios.get('/api/borrowed')
+      .then( (response) => {
+        const borrowedBooks = response.data;
+        console.log("borrowedBooks are ", response.data);
+        dispatch(loadBorrowedBooks(borrowedBooks));
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not get borrowed books @ '/api/borrowed'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  };
+}
+
 export const getBook = (id, reserve) => {
   return (dispatch) => {
     axios.get('/api/book/' + id)

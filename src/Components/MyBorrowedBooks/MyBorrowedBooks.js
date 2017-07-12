@@ -25,7 +25,7 @@ class MyBorrowedBooks extends Component {
 
     //Populates all books that the user has borrowed
     const renderBooks = (books) => {
-        console.log('books.length = ', books.length);
+        console.log('Borrowed books.length = ', books.length);
         if(books.length === 0) {
           return (
               <div className="col-md-11 col-sm-10 col-xs-8">
@@ -33,11 +33,12 @@ class MyBorrowedBooks extends Component {
               </div>
           )
         }
-        return books.map( (book) => {
-          return (
-            <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
-          )
-        });
+        return books
+                .map( (book) => {
+                  return (
+                    <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
+                  )
+                });
       }
 
     return (
@@ -67,7 +68,7 @@ class MyBorrowedBooks extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    books: state.books,
+    books: state.borrowedBooks,
     user: state.user,
     latestAction: state.latestAction
   }
