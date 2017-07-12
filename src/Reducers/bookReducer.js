@@ -9,6 +9,8 @@ const bookReducer = (state = [], action) => {
     case "LOAD_BOOKS":
       return action.books || [];
       break;
+    case "LOAD_SHARED_BOOKS":
+      return action.books || [];
     case "RESERVE_BOOK":
       break;
     case "DELETE_BOOK":

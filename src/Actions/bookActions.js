@@ -98,7 +98,7 @@ export const reserveBook = (id) => {
     axios.put('/api/reserve/'+ id)
       .then( (response) => {
         const book = response.data;
-        dispatch(getBooks()); // reload bookstore
+        //dispatch(getBooks()); // reload bookstore
         dispatch(getBook(book._id, true)); // get book info and update latestAction
       })
       .catch((error)=> {
@@ -113,5 +113,27 @@ const reserveBookAction = (book) => {
   return {
     type: "RESERVE_BOOK_ACTION",
     book
+  }
+}
+
+export const getSharedBooks = () => {
+  return (dispatch) => {
+    axios.get('/api/shared')
+      .then( (response) => {
+        const books = response.data;
+        dispatch(loadSharedBooks(books));
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not get books @ '/api/book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  };
+}
+
+const loadSharedBooks = (books) => {
+  return {
+    type: "LOAD_SHARED_BOOKS",
+    books
   }
 }
