@@ -21,25 +21,31 @@ class MyBorrowedBooks extends Component {
     }
   }
 
-  render() {
+  //Populates all books that the user has borrowed
 
-    //Populates all books that the user has borrowed
-    const renderBooks = (books) => {
-        console.log('Borrowed books.length = ', books.length);
-        if(books.length === 0) {
-          return (
-              <div className="col-md-11 col-sm-10 col-xs-8">
-                <h4 className="card-title">No books borrowed</h4>
-              </div>
-          )
+
+  render() {
+    const renderBorrowedBooks = (books, user) => {
+          console.log("current book length", books.length)
+          if(books.length === 0) {
+            return (
+                <div className="col-md-11 col-sm-10 col-xs-8">
+                  <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
+                </div>
+            )
+          }
+          else{
+            return books.map( (book) => {
+            if(user.booksBorrowed.indexOf(book._id) > -1) {
+              console.log("render borrowed book");
+            return (
+              <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
+              )
+            }
+          });
         }
-        return books
-                .map( (book) => {
-                  return (
-                    <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
-                  )
-                });
       }
+
 
     return (
       <div>
@@ -56,7 +62,7 @@ class MyBorrowedBooks extends Component {
             </div>
           </div>
           <div className="row">
-            {renderBooks(this.props.books)}
+            {renderBorrowedBooks(this.props.books, this.props.user)}
           </div>
         </header>
       </div>
@@ -68,9 +74,8 @@ class MyBorrowedBooks extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    books: state.borrowedBooks,
-    user: state.user,
-    latestAction: state.latestAction
+    books: state.books,
+    user: state.user
   }
 }
 

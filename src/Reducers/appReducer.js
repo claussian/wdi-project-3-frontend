@@ -1,6 +1,6 @@
 const appReducer = (state = "", action) => {
 
-  console.log(action);
+  //console.log(action);
 
   switch (action.type) {
     case "TRIGGER_NOTIFICATION":

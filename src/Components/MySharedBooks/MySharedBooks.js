@@ -19,8 +19,10 @@ class MySharedBooks extends Component {
 
 
   render() {
-    const renderBooks = (books) => {
+    const renderBooks = (books, user) => {
+        console.log("current book length shared", books.length)
         if(books.length === 0) {
+          console.log("current book length shared in ", books.length)
           return (
               <div className="col-md-11 col-sm-10 col-xs-8">
                 <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
@@ -28,9 +30,11 @@ class MySharedBooks extends Component {
           )
         }
         return books.map( (book) => {
+          if(user.booksOwned.indexOf(book._id) > -1) {
           return (
             <MyBookListItem id={book._id} key={book._id} contents={book}/>
           )
+        }
         });
       }
 
@@ -49,7 +53,7 @@ class MySharedBooks extends Component {
             </div>
           </div>
           <div className='row'>
-            {renderBooks(this.props.sharedBooks)}
+            {renderBooks(this.props.books, this.props.user)}
           </div>
         </header>
       </div>
@@ -61,7 +65,8 @@ console.log("End of Component MySharedBooks.js.");
 
 const mapStateToProps = (state) => {
   return {
-    sharedBooks: state.sharedBooks
+    books: state.books,
+    user: state.user
   }
 }
 
