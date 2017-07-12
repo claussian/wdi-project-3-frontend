@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 // Import action-creators and thunks
 import {triggerNotification} from '../../Actions/appActions';
-import {searchBooks} from '../../API/booksAPI';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Gallery.css';
@@ -47,15 +46,33 @@ class Gallery extends Component {
   }
 
   render() {
-
-    const renderBooks = (books) => {
+    const renderBooks = (books, searchTerm) => {
       if(books.length === 0) {
         return (
-            <div className="col-md-11 col-sm-10 col-xs-8">
-              <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
+            <div className="col-md-11 col-sm-10 col-xs-8" id="empty-gallery-msg">
+              <h4>
+                “It was not the feeling of completeness I so needed, but the feeling of not being empty.”
+              </h4>
+              <h5>
+                Jonathan Safran Foer, <i>Everything Is Illuminated</i>
+              </h5>
+              <h3>Be a groundbreaker. Be the first to share a book!</h3>
             </div>
         )
-      }
+      };
+
+      console.log('In Gallery.js, we have just begun filtering the books accordingly. We attempt to search: ', searchTerm, 'in the books: ', books);
+
+      console.log("Is there a search term? > ", searchTerm !== undefined, "it is ", searchTerm);
+
+      if(searchTerm !== "" || searchTerm !== undefined) {
+
+        books = books.filter((book) => {
+          return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
+          });
+      };
+      return books
+
       return books.map( (book) => {
         return (
           <Book id={book._id} key={book._id} contents={book}/>
@@ -68,9 +85,9 @@ class Gallery extends Component {
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
-          {renderBooks(this.props.books)}
+          {renderBooks(this.props.books,this.props.searchTerm)}
+        </div>
       </div>
-    </div>
     );
   }
 };
@@ -81,7 +98,7 @@ const mapStateToProps = (state) => {
   return {
     books: state.books,
     user: state.user,
-    searchTerm: state.searchTerm,
+    searchTerm: state.searches.searchTerm,
     latestAction: state.latestAction
   }
 }

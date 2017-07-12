@@ -11,7 +11,7 @@ import latestActionReducer from '../Reducers/latestActionReducer.js';
 export let initStore = () => {
 
   const reducer = combineReducers( {
-    searchQuery: searchReducer,
+    searches: searchReducer,
     books: bookReducer,
     user: userReducer,
     notification: appReducer,
