@@ -11,6 +11,7 @@ import NavbarUser from '../Navbar/NavbarUser';
 import MySharedBooks from '../MySharedBooks/MySharedBooks';
 import MyBorrowedBooks from '../MyBorrowedBooks/MyBorrowedBooks';
 import BookForm from '../BookForm/BookForm';
+import BookFormEdit from '../BookFormEdit/BookFormEdit';
 import Footer from '../Footer/Footer';
 
 console.log("Start of Component MyBooks.js. The MyBooks page for the current user:");
@@ -18,7 +19,16 @@ console.log("Start of Component MyBooks.js. The MyBooks page for the current use
 class MyBooks extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      editForm: true
+    }
   };
+
+  activatePost = () => {
+    this.setState({
+      editForm: false
+    })
+  }
 
   render() {
 
@@ -41,8 +51,8 @@ class MyBooks extends Component {
             <MySharedBooks />
             <MyBorrowedBooks />
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6">
-            <BookForm />
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          {this.state.editForm ? <BookFormEdit activatePost={this.activatePost}/> : <BookForm />}
           </div>
         </div> {/* /row */}
         <Footer />
