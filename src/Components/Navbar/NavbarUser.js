@@ -24,6 +24,7 @@ class NavbarUser extends Component {
   execLogout = (e) => {
     e.preventDefault();
     this.props.Logout();
+    window.location.href = "/";
   }
 
   render() {
