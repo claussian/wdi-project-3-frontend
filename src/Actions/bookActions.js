@@ -39,8 +39,8 @@ export const getBooks = () => {
         dispatch(loadBooks(books));
       })
       .catch((error)=> {
-        console.error("AJAX: Could not get books @ '/api/book'");
-        console.log(error);
+        console.error("AJAX: Could not execute getBooks @ '/api/book'");
+        //console.log(error);
         // dispatch(loadBooks({}));
       });
   };
@@ -52,52 +52,6 @@ const loadBooks = (books) => {
     books
   }
 }
-
-export const getBorrowedBooks = () => {
-  return (dispatch) => {
-    axios.get('/api/borrowed')
-      .then( (response) => {
-        const borrowedBooks = response.data;
-        console.log("borrowedBooks are ", response.data);
-        dispatch(loadBorrowedBooks(borrowedBooks));
-      })
-      .catch((error)=> {
-        console.error("AJAX: Could not get borrowed books @ '/api/borrowed'");
-        console.log(error);
-        // dispatch(loadBooks({}));
-      });
-  };
-}
-
-const loadBorrowedBooks = (borrowedBooks) => {
-  return {
-    type: "LOAD_BORROWED_BOOKS",
-    borrowedBooks
-  }
-}
-
-export const getSharedBooks = () => {
-  return (dispatch) => {
-    axios.get('/api/shared')
-      .then( (response) => {
-        const books = response.data;
-        dispatch(loadSharedBooks(books));
-      })
-      .catch((error)=> {
-        console.error("AJAX: Could not get books @ '/api/book'");
-        console.log(error);
-        // dispatch(loadBooks({}));
-      });
-  };
-}
-
-const loadSharedBooks = (sharedBooks) => {
-  return {
-    type: "LOAD_SHARED_BOOKS",
-    sharedBooks
-  }
-}
-
 
 export const reserveBook = (id) => {
   return (dispatch) => {
