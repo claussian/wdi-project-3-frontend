@@ -23,6 +23,7 @@ class NavbarUser extends Component {
   execLogout = (e) => {
     e.preventDefault();
     this.props.Logout();
+    window.location.href = "/";
   }
 
   render() {
@@ -38,7 +39,7 @@ class NavbarUser extends Component {
                 {/*Three Icon Bars in mobile displays*/}
                 <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
               </button>
-              <a className="navbar-brand" href="/"><img src={logo} alt="Swap Books" /></a>
+              <a href="/" className="navbar-brand"><img src={logo} alt="Swap Books" /></a>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <div className="row">
@@ -48,7 +49,7 @@ class NavbarUser extends Component {
                       {/*User Login*/}
                       <div className="row user-profile-group">
                         <div className="col-xs-4 col-sm-5">
-                          <a className="profile-picture" href="./usertest"><img src="http://via.placeholder.com/70x70"/></a>
+                          <a className="profile-picture"><img src="http://via.placeholder.com/70x70"/></a>
                         </div>
                         <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
@@ -57,7 +58,7 @@ class NavbarUser extends Component {
                       </div>
                     </li>
                     <li className="post-a-book-btn">
-                      <a href="./post">Post a book</a>
+                      <a href={this.props.linkRef}>{this.props.linkTitle}</a>
                     </li>
                     <li className="log-out-btn">
                       <a onClick={this.execLogout}>Log out</a>

@@ -71,7 +71,7 @@ class Navbar extends Component {
                 {/*Three Icon Bars in mobile displays*/}
                 <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
               </button>
-              <a className="navbar-brand" href="/"><img src={logo} alt="Swap Books" /></a>
+              <a href="./" className="navbar-brand"><img src={logo} alt="Swap Books" /></a>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <div className="row">
@@ -81,28 +81,28 @@ class Navbar extends Component {
                     {/*Email and Password Login & its button*/}
                       <form className="form-inline login-group">
                         <div className="form-group">
-                          <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.onChange}/>
+                          <input type="email" name="email" className="form-control" id="navbar-email-input" placeholder="Email" onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
-                          <input type="password" name="password" className="form-control" placeholder="Password" onChange={this.onChange}/>
+                          <input type="password" name="password" className="form-control" id="navbar-password-input" placeholder="Password" onChange={this.onChange}/>
                         </div>
                         <button type="submit" className="btn btn-default" onClick={this.localLogin}>Log in</button>
                       </form>
                     </li>
                     <li className="nav-sign-up">
-                      <a href="./usertest">Sign up</a>
+                      <a href="./signup">Sign up</a>
                     </li>
-                  </ul>
+                  </ul>{/* /nav narbar-nav */}
                 </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
                 {this.props.notification ? <NotificationHeader/> : null}
-              </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+              </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
+              </div>{/* /row */}
+            </div>{/* /bs-example-navbar-collapse-1 */}
+          </div>{/* container */}
+        </nav>{/* navbar navbar-inverse navbar-fixed-top */}
       </div>
     );
   }

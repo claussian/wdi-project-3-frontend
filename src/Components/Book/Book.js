@@ -61,6 +61,7 @@ class Book extends Component {
           <img src={this.props.contents.cover} alt="..." />
           <h3>{this.props.contents.title}</h3>
           <h4>{this.props.contents.author}</h4>
+          <h5>{this.props.contents.genre}</h5>
           <div className="bookreview"
                id={this.props.contents.title}
                onMouseOver={this.onMouseOver}>
