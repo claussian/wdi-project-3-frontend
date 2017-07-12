@@ -53,7 +53,7 @@ onClick = (e) => {
       <div>
         <header className="jumbotron book-form">
         <form>
-          <h2>Post / Update A Book</h2>
+          <h2>Post A Book</h2>
           <div className="form-group">
             <label>Title</label>
             <input type="title"
@@ -95,6 +95,24 @@ onClick = (e) => {
           </div>
 
           <div className="form-group">
+          {this.props.notification ?
+          <div className="well book-form-release-well">
+            <div className="container">
+            <div className="row">
+            <h4>User @xxx has reserved this title. Would you like to release it?</h4>
+            </div>
+            <div className="row">
+            <div className="dropdown book-form-release-btn">
+              <select className="form-control" aria-labelledby="dropdownMenu1" name="release">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+            </div>
+            </div>
+          </div>: null}
+          </div>
+          <div className="form-group">
             <label>Upload book cover</label>
             <input className="upload-book-cover-file" type="file" id="image" onChange={this.onChange}/>
             <label className="help-block">You should only upload jpg, png files. - Cloudinary</label>
@@ -102,12 +120,6 @@ onClick = (e) => {
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <button type="button" className="btn btn-default post-book-btn" onClick={this.onClick}>Post</button>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="button" className="btn btn-default update-book-btn">Update</button>
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="button" className="btn btn-default delete-book-btn">Delete</button>
             </div>
           </div>
 
