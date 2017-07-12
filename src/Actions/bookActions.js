@@ -7,6 +7,37 @@ const loadBooks = (books) => {
   }
 }
 
+export const createBook = (book) => {
+  return {
+    type: "CREATE_BOOK",
+    book
+  }
+}
+
+// Add a book into the array of books
+export const addBook = (image, book) => {
+  console.log('book', book)
+  return (dispatch) => {
+
+    let addBookToBackEnd = new FormData();
+    console.log('book', book)
+    addBookToBackEnd.append('book.cover', image);
+    addBookToBackEnd.append('book.title', book.title);
+    addBookToBackEnd.append('book.author', book.author);
+    addBookToBackEnd.append('book.genre', book.genre);
+    addBookToBackEnd.append('book.review', book.review);
+
+    axios.post('/api/book', addBookToBackEnd)
+      .then( (response) => {
+        dispatch(createBook(response.data))
+      })
+      .catch((error) =>{
+        console.error("AJAX: Could not create book @ '/api/book'");
+        console.log(error);
+      })
+  }
+}
+
 export const getBooks = () => {
   return (dispatch) => {
     axios.get('/api/book')
