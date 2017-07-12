@@ -50,11 +50,32 @@
   border-color: solid 1px rgba(94,96,94,1);
 }
 
+/*These styles below are for the update-book button.*/
 .booklistitem-update-btn {
+  color: white;
+  background-color: rgba(0,103,109,0.7);
+  border: 2px solid rgba(0,103,109,0.7);
+  position: relative;
   border-width: 0px;
   float: right;
-  position: relative;
 }
+
+/*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
+.booklistitem-update-btn:hover,
+.booklistitem-update-btn:active:focus,
+.booklistitem-update-btn:focus,
+.booklistitem-update-btn:active {
+  color: rgba(0,103,109,0.7);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(0,103,109,0.7);
+}
+
+.booklistitem-update-btn:active:hover {
+  color: rgba(110,107,102,1);
+  background-color: rgba(254,239,154,1);
+  border: 2px solid rgba(254,239,154,1);
+}
+/*These styles above are for the update-book button.*/
 
 .booklistitem-reserved-msg {
   text-transform: uppercase;
