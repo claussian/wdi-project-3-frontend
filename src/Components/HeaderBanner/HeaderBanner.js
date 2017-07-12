@@ -15,11 +15,19 @@ class HeaderBanner extends Component {
     return (
       <div>
         <header className="jumbotron welcome-msg">
-          <h1>Welcome to Swap Books!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+          <h1>Read & share offline books online</h1>
+          <p>
+            Encounter new books to read.
+            <br/><br/>
+            Or divulge your books with fellow readers and book lovers near you.
+            <br/><br/>
+            <b>How can I start?</b>
+            <br/>
+            Simply sign up for a account and start reserving books on the Bookshelf you want to read.
+            <br/><br />
           </p>
           <p>
-            <a className="btn btn-primary btn-large find-out-more-btn">Find out more</a>
+            <a className="btn btn-primary btn-large find-out-more-btn">Start now</a>
           </p>
         </header>
       </div>
