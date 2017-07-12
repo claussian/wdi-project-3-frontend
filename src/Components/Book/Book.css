@@ -33,3 +33,14 @@
   border-width: 0px;
   float: right;
 }
+
+.book-available-btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #329999
+}
+
+.book-not-available-btn {
+  font-style: italic;
+}

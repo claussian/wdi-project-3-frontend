@@ -1,5 +1,10 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
+// Import action-creators and thunks
+import {triggerNotification} from '../../Actions/appActions';
+import {reserveBook} from '../../Actions/bookActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Book.css';
@@ -10,24 +15,45 @@ class Book extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      isReserved: false,
+  }
+
+  renderAvailableClass = (reservedBy) => {
+    return reservedBy ? "book-not-available-btn" : "book-available-btn";
+  }
+
+  renderAvailableMessage = (reservedBy) => {
+    return reservedBy ? "Reserved by @" + reservedBy.username : "available";
+  }
+
+
+
+  onClick = (e) => {
+
+    if (!this.props.user._id) { // user has not logged in
+      this.props.triggerNotification("Please log in or sign up to borrow a book");
     }
+    else if (this.props.contents.reserved) { // book is already reserved
+      this.props.triggerNotification("Sorry, this book has been borrowed by @" + this.props.contents.reservedBy.username);
+    }
+    else if (this.props.contents.owner._id == this.props.user._id) {
+      this.props.triggerNotification("You cannot reserve your own book.");
+    }
+    else {
+      this.props.reserveBook(e.target.id);
+    }
+    // e.target.id check against
+
   }
 
-  changeColor() {
-    this.setState({
-      isReserved: !this.state.isReserved
-    })
-  }
 
-  onMouseOver = (e) => {
-    console.log("e.target.id is", e.target.id);
-  }
+
+  // onMouseOver = (e) => {
+  //   console.log("e.target.id is", e.target.id);
+  // }
 
   render() {
 
-    let bgColor = this.state.isReserved ? "rgba(124,35,69,1)" : "rgba(0,103,109,0.7)";
+    let bgColor = this.props.contents.reserved ? "rgba(209,209,209,1)" : "rgba(0,103,109,0.7)";
 
     return (
       <div className="col-lg-3 col-md-3 col-sm-5 col-lg-push-1 col-md-push-1 book-container">
@@ -52,14 +78,15 @@ class Book extends Component {
                 <span className="glyphicon glyphicon-star"></span>
                 <span className="glyphicon glyphicon-star-empty"></span>
               </div>*/}
-              <button className="btn btn-success book-available-btn">
-                Available
-              </button>
+              <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
+                {this.renderAvailableMessage(this.props.contents.reservedBy)}
+              </div>
             </div>
             <div className="col-md-6 col-sm-6 col-xs-6">
               <button className="btn btn-success book-reserve-btn"
                       style={{backgroundColor: bgColor}}
-                      onClick={this.changeColor.bind(this)}>
+                      onClick={this.onClick}
+                      id={this.props.id}>
                 Reserve
               </button>
             </div>
@@ -70,4 +97,21 @@ class Book extends Component {
   }
 }
 
-export default Book;
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    notification: state.notification
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); },
+    reserveBook: (id) => {dispatch(reserveBook(id))}
+  }
+}
+console.log("End of Component Navbar.js.");
+
+export default connect(mapStateToProps, mapDispatchToProps)(Book);
