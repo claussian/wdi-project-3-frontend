@@ -1,20 +1,46 @@
 //Importing required packages
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+// Import action-creators and thunks
+import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './MyBorrowedBooks.css';
 
 //Importing React Components
-import MyBookListItem from '../MyBookListItem/MyBookListItem';
+import MyBorrowedBookItem from '../MyBorrowedBookItem/MyBorrowedBookItem';
 
 console.log("Start of Component MyBorrowedBooks.js.");
 
 class MyBorrowedBooks extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      change: false
+    }
   }
 
   render() {
+
+    //Populates all books that the user has borrowed
+    const renderBooks = (books) => {
+        console.log('Borrowed books.length = ', books.length);
+        if(books.length === 0) {
+          return (
+              <div className="col-md-11 col-sm-10 col-xs-8">
+                <h4 className="card-title">No books borrowed</h4>
+              </div>
+          )
+        }
+        return books
+                .map( (book) => {
+                  return (
+                    <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
+                  )
+                });
+      }
+
     return (
       <div>
         <header className="jumbotron my-borrowed-books">
@@ -30,9 +56,7 @@ class MyBorrowedBooks extends Component {
             </div>
           </div>
           <div className="row">
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
+            {renderBooks(this.props.books)}
           </div>
         </header>
       </div>
@@ -40,6 +64,22 @@ class MyBorrowedBooks extends Component {
   }
 }
 
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.borrowedBooks,
+    user: state.user,
+    latestAction: state.latestAction
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    //triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+  }
+}
+
 console.log("End of Component MyBorrowedBooks.js.");
 
-export default MyBorrowedBooks;
+export default connect(mapStateToProps, mapDispatchToProps)(MyBorrowedBooks);

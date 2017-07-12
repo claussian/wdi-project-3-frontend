@@ -20,7 +20,7 @@ class MyBooks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editForm: true
+      editForm: false
     }
   };
 

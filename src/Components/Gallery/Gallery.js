@@ -72,7 +72,6 @@ class Gallery extends Component {
     </div>
     );
   }
-
 }
 
 // pass these arguments to 'connect' to instantiate component with these methods

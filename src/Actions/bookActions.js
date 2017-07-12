@@ -7,6 +7,37 @@ const loadBooks = (books) => {
   }
 }
 
+export const createBook = (book) => {
+  return {
+    type: "CREATE_BOOK",
+    book
+  }
+}
+
+// Add a book into the array of books
+export const addBook = (image, book) => {
+  console.log('book', book)
+  return (dispatch) => {
+
+    let addBookToBackEnd = new FormData();
+    console.log('book', book)
+    addBookToBackEnd.append('book.cover', image);
+    addBookToBackEnd.append('book.title', book.title);
+    addBookToBackEnd.append('book.author', book.author);
+    addBookToBackEnd.append('book.genre', book.genre);
+    addBookToBackEnd.append('book.review', book.review);
+
+    axios.post('/api/book', addBookToBackEnd)
+      .then( (response) => {
+        dispatch(createBook(response.data))
+      })
+      .catch((error) =>{
+        console.error("AJAX: Could not create book @ '/api/book'");
+        console.log(error);
+      })
+  }
+}
+
 export const getBooks = () => {
   return (dispatch) => {
     axios.get('/api/book')
@@ -16,6 +47,29 @@ export const getBooks = () => {
       })
       .catch((error)=> {
         console.error("AJAX: Could not get books @ '/api/book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  };
+}
+
+const loadBorrowedBooks = (borrowedBooks) => {
+  return {
+    type: "LOAD_BORROWED_BOOKS",
+    borrowedBooks
+  }
+}
+
+export const getBorrowedBooks = () => {
+  return (dispatch) => {
+    axios.get('/api/borrowed')
+      .then( (response) => {
+        const borrowedBooks = response.data;
+        console.log("borrowedBooks are ", response.data);
+        dispatch(loadBorrowedBooks(borrowedBooks));
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not get borrowed books @ '/api/borrowed'");
         console.log(error);
         // dispatch(loadBooks({}));
       });
@@ -44,7 +98,7 @@ export const reserveBook = (id) => {
     axios.put('/api/reserve/'+ id)
       .then( (response) => {
         const book = response.data;
-        dispatch(getBooks()); // reload bookstore
+        //dispatch(getBooks()); // reload bookstore
         dispatch(getBook(book._id, true)); // get book info and update latestAction
       })
       .catch((error)=> {
@@ -59,5 +113,27 @@ const reserveBookAction = (book) => {
   return {
     type: "RESERVE_BOOK_ACTION",
     book
+  }
+}
+
+export const getSharedBooks = () => {
+  return (dispatch) => {
+    axios.get('/api/shared')
+      .then( (response) => {
+        const books = response.data;
+        dispatch(loadSharedBooks(books));
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not get books @ '/api/book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  };
+}
+
+const loadSharedBooks = (books) => {
+  return {
+    type: "LOAD_SHARED_BOOKS",
+    books
   }
 }

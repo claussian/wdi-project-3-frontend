@@ -14,7 +14,23 @@ class MySharedBooks extends Component {
     super(props);
   }
 
+
   render() {
+    const renderBooks = (books) => {
+        if(books.length === 0) {
+          return (
+              <div className="col-md-11 col-sm-10 col-xs-8">
+                <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
+              </div>
+          )
+        }
+        return books.map( (book) => {
+          return (
+            <MyBookListItem id={book._id} key={book._id} contents={book}/>
+          )
+        });
+      }
+
     return (
       <div>
         <header className="jumbotron my-shared-books">
@@ -30,9 +46,13 @@ class MySharedBooks extends Component {
             </div>
           </div>
           <div className='row'>
+<<<<<<< HEAD
+            <MyBookListItem/>
+=======
+            {/*<MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
             <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
-            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
+            <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>*/}
+>>>>>>> a89ea21b1bd18ce76de69319f1bdd26f65b52f72
           </div>
         </header>
       </div>
