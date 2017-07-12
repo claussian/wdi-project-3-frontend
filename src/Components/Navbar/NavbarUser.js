@@ -1,6 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 // Import thunk
 import {localLogout} from '../../Actions/userActions';
@@ -23,7 +24,6 @@ class NavbarUser extends Component {
   execLogout = (e) => {
     e.preventDefault();
     this.props.Logout();
-    window.location.href = "/";
   }
 
   render() {
@@ -58,10 +58,10 @@ class NavbarUser extends Component {
                       </div>
                     </li>
                     <li className="post-a-book-btn">
-                      <a href={this.props.linkRef}>{this.props.linkTitle}</a>
+                      <Link to={this.props.linkRef}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">
-                      <a onClick={this.execLogout}>Log out</a>
+                      <a onClick={this.execLogout}><Link to='/'>Log out</Link></a>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}

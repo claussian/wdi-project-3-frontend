@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 
 //Importing static assets (i.e. stylesheets, images)
-import './BookForm.css';
+import './BookFormEdit.css';
 
-console.log("Start of Component BookForm.js.");
+console.log("Start of Component BookFormEdit.js.");
 
-class BookForm extends Component {
+class BookFormEdit extends Component {
   constructor(props) {
     super(props);
   }
@@ -16,7 +16,14 @@ class BookForm extends Component {
       <div>
         <header className="jumbotron book-form">
         <form>
-          <h2>Post A Book</h2>
+          <div className="row">
+            <div className="col-lg-6">
+              <h2>Update A Book</h2>
+            </div>
+            <div className="col-lg-6">
+              <span><button className="btn btn-default">Post</button></span>
+            </div>
+          </div>
           <div className="form-group">
             <label>Title</label>
             <input type="email" className="form-control" placeholder="Title"/>
@@ -62,7 +69,10 @@ class BookForm extends Component {
           </div>
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="submit" className="btn btn-default post-book-btn">Post</button>
+              <button type="submit" className="btn btn-default update-book-btn">Update</button>
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <button type="submit" className="btn btn-default delete-book-btn">Delete</button>
             </div>
           </div>
 
@@ -73,6 +83,6 @@ class BookForm extends Component {
   }
 }
 
-console.log("End of Component BookForm.js.");
+console.log("End of Component BookFormEdit.js.");
 
-export default BookForm;
+export default BookFormEdit;
