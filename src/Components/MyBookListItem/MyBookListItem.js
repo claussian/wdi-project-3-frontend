@@ -20,12 +20,12 @@ class MyBookListItem extends Component {
     return (
       <div className="row booklistitem-container">
         <div className="row">
-          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12 booklistitem-left">
+          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 booklistitem-left">
             <span className="booklistitem-thumbnail">
               <img src="http://via.placeholder.com/130x198" alt="..." />
             </span>
           </div>
-          <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12 booklistitem-info">
+          <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 booklistitem-info">
             <h3>{this.props.title}</h3>
             <h4>{this.props.author}</h4>
             <h5>{this.props.genre}</h5>
