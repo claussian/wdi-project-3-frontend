@@ -31,7 +31,7 @@ class MySharedBooks extends Component {
         return books.map( (book) => {
           if(user.booksOwned.indexOf(book._id) > -1) {
           return (
-            <MyBookListItem id={book._id} key={book._id} contents={book}/>
+            <MyBookListItem id={book._id} key={book._id} contents={book} activateEdit={this.props.activateEdit}/>
           )
         }
         });

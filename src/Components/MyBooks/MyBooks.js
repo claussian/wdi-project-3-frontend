@@ -30,6 +30,12 @@ class MyBooks extends Component {
     })
   }
 
+  activateEdit = () => {
+    this.setState({
+      editForm: true
+    })
+  }
+
   render() {
 
     const isLoggedIn = this.props.user._id;
@@ -48,7 +54,7 @@ class MyBooks extends Component {
         </div>
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
-            <MySharedBooks />
+            <MySharedBooks activateEdit={this.activateEdit}/>
             <MyBorrowedBooks />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">

@@ -43,7 +43,7 @@ class MyBookListItem extends Component {
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
                     style={{backgroundColor: bgColor}}
-                    onClick={this.onClick}
+                    onClick={this.props.activateEdit}
                     id="test">
               Update >
             </button>

@@ -21,7 +21,7 @@ class BookFormEdit extends Component {
               <h2>Update A Book</h2>
             </div>
             <div className="col-lg-6">
-              <span><button className="btn btn-default">Post</button></span>
+              <span><button className="btn btn-default" onClick={this.props.activatePost}>Post</button></span>
             </div>
           </div>
           <div className="form-group">
