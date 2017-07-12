@@ -1,5 +1,9 @@
 //Importing required packages
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+// Import action-creators and thunks
+import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './MyBorrowedBooks.css';
@@ -12,6 +16,9 @@ console.log("Start of Component MyBorrowedBooks.js.");
 class MyBorrowedBooks extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      change: false
+    }
   }
 
   render() {
@@ -30,6 +37,8 @@ class MyBorrowedBooks extends Component {
             </div>
           </div>
           <div className="row">
+            {renderBooks(this.props.books)}
+
             <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
             <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
             <MyBookListItem id="id" title="Hello World" author="Hello Hello" genre="Genre" ownerusername="tiffany" review="a review goes here" reservedBy="hanif"/>
@@ -40,6 +49,22 @@ class MyBorrowedBooks extends Component {
   }
 }
 
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.books,
+    user: state.user,
+    latestAction: state.latestAction
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    //triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+  }
+}
+
 console.log("End of Component MyBorrowedBooks.js.");
 
-export default MyBorrowedBooks;
+export default connect(mapStateToProps, mapDispatchToProps)(MyBorrowedBooks);
