@@ -24,10 +24,14 @@
   }
 
 .book-footer-line {
-  height: 1px;
-  margin-bottom: 5px;
-  position: sticky;
-  border-color: solid 1px rgba(94,96,94,1);
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  opacity: 0.4;
+  border-width: 1px;
 }
 
 .book-reserve-btn {
