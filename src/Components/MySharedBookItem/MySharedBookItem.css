@@ -1,4 +1,4 @@
-.sharedbookitem-container{
+.booklistitem-container{
   background-color: rgba(248,240,214,1);
   margin: 15px 15px 15px 15px;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
@@ -6,52 +6,52 @@
   box-shadow: 0px 0px 30px rgba(94,96,94,1);
 }
 
-  .sharedbookitem-container:hover {
+  .booklistitem-container:hover {
     box-shadow: 0px 0px 10px rgba(248,240,214,1);
     position: relative;
   }
 
-.sharedbookitem-thumbnail{
+.booklistitem-thumbnail{
   opacity: 1;
   position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  margin-right: 10px;
 }
 
-  .sharedbookitem-thumbnail img {
+  .booklistitem-thumbnail img {
     position: relative;
-    max-width: 7vw;
+    max-height: 10vw;
     min-width: 5vw;
     box-shadow: 0px 0px 30px rgba(94,96,94,1);
   }
 
-.sharedbookitem-info {
+.booklistitem-info {
   position: relative;
   top: -10px;
 }
 
-  .sharedbookitem-info h3 {
-    font-size: 3vh;
+  .booklistitem-info h3 {
+    font-size: 2.7vh;
+    max-width: 100vh;
     font-weight: bold;
   }
 
-  .sharedbookitem-info h4 {
+  .booklistitem-info h4 {
     font-size: 2vh;
   }
 
-  .sharedbookitem-info h5 {
+  .booklistitem-info h5 {
     font-size: 1.5vh;
   }
 
-.sharedbookitem-footer-line {
+.booklistitem-footer-line {
   margin-bottom: 5px;
   position: sticky;
   border-color: solid 1px rgba(94,96,94,1);
 }
 
 /*These styles below are for the update-book button.*/
-.sharedbookitem-update-btn {
+.booklistitem-update-btn {
   color: white;
   background-color: rgba(0,103,109,0.7);
   border: 2px solid rgba(0,103,109,0.7);
@@ -61,23 +61,23 @@
 }
 
 /*This allows me to kill the Bootstrap blue after clicking the button. These button element states are surprisingly not mutually exclusive.*/
-.sharedbookitem-update-btn:hover,
-.sharedbookitem-update-btn:active:focus,
-.sharedbookitem-update-btn:focus,
-.sharedbookitem-update-btn:active {
+.booklistitem-update-btn:hover,
+.booklistitem-update-btn:active:focus,
+.booklistitem-update-btn:focus,
+.booklistitem-update-btn:active {
   color: rgba(0,103,109,0.7);
   background-color: rgba(254,239,154,1);
   border: 2px solid rgba(0,103,109,0.7);
 }
 
-.sharedbookitem-update-btn:active:hover {
+.booklistitem-update-btn:active:hover {
   color: rgba(110,107,102,1);
   background-color: rgba(254,239,154,1);
   border: 2px solid rgba(254,239,154,1);
 }
 /*These styles above are for the update-book button.*/
 
-.sharedbookitem-reserved-msg {
+.booklistitem-reserved-msg {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 15px;
@@ -85,6 +85,6 @@
   margin-top: 11px;
 }
 
-.sharedbookitem-not-reserved-msg {
+.booklistitem-not-reserved-msg {
   font-style: italic;
 }
