@@ -54,8 +54,6 @@ class NotificationHeader extends Component {
     /*See above. When the user clicks on a book, it allows us to produce custom notification messages and styles based on whether the book.*/
 
     // console.log("Notification class is '",notificationState,"'.");
-    //
-    // console.log("End of Component Search.js.");
 
     return (
       <div className={this.renderNotificationClass(this.props.user)}>

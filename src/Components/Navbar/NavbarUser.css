@@ -142,7 +142,7 @@
   /*These styles above are for the profile picture group*/
   /*These styles below are for the post a book button*/
 
-  .post-a-book-btn {
+  .my-book-or-home-btn {
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(124,35,69,1);
@@ -157,7 +157,7 @@
       top: 3px;
     }
 
-  .post-a-book-btn:active {
+  .my-book-or-home-btn:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
@@ -166,7 +166,7 @@
     color: rgba(248,240,214,1);
   }
 
-  .post-a-book-btn:hover {
+  .my-book-or-home-btn:hover {
     border-color: rgba(124,35,69,1);
     background-color: rgba(248,240,214,1);
   }
@@ -175,7 +175,7 @@
       color: rgba(124,35,69,1);
     }
 
-  .post-a-book-btn:hover:active {
+  .my-book-or-home-btn:hover:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);

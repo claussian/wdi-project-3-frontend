@@ -53,7 +53,7 @@ class NavbarUser extends Component {
                         </div>
                         <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
-                          <h4>{this.props.user.username}</h4>
+                          <h4>@{this.props.user.username}</h4>
                         </div>
                       </div>
                     </li>
