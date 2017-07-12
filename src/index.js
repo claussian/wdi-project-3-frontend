@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 import { getUser } from './Actions/userActions';
-import { getBooks , getBorrowedBooks } from './Actions/bookActions';
+import { getBooks , getBorrowedBooks, getSharedBooks } from './Actions/bookActions';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -22,6 +22,7 @@ store.dispatch(getUser());
 // Load books
 store.dispatch(getBooks());
 store.dispatch(getBorrowedBooks());
+store.dispatch(getSharedBooks());
 
 ReactDOM.render( <Provider store={store}>
                   <App />
