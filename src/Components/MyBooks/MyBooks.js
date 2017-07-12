@@ -47,7 +47,7 @@ class MyBooks extends Component {
         {/*This if statement toggles between logged-in navbar and public navbar above*/}
         </div>
         <div className="row">
-          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
             <MySharedBooks />
             <MyBorrowedBooks />
           </div>
