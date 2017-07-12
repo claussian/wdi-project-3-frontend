@@ -21,11 +21,10 @@ class MySharedBooks extends Component {
   render() {
     const renderBooks = (books, user) => {
         console.log("current book length shared", books.length)
-        if(books.length === 0) {
-          console.log("current book length shared in ", books.length)
+        if(!user.booksOwned) {
           return (
               <div className="col-md-11 col-sm-10 col-xs-8">
-                <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
+                <h4 className="card-title">No books shared.</h4>
               </div>
           )
         }

@@ -61,7 +61,7 @@ class NavbarUser extends Component {
                       <Link to={this.props.linkRef}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">
-                      <a onClick={this.execLogout}><Link to='/'>Log out</Link></a>
+                      <a id="log-out-anchor" onClick={this.execLogout}><Link to='/'>Log out</Link></a>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}

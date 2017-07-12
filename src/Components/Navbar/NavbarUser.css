@@ -221,4 +221,7 @@
       color: rgba(124,35,69,1);
     }
 /*These styles below are for the log out button*/
+  #log-out-anchor {
+    color: rgba(248,240,214,1);
+  }
 }
