@@ -57,7 +57,7 @@ class NavbarUser extends Component {
                         </div>
                       </div>
                     </li>
-                    <li className="post-a-book-btn">
+                    <li className="my-book-or-home-btn">
                       <Link to={this.props.linkRef}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">
