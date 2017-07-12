@@ -21,6 +21,14 @@
     font-size: 20px;
   }
 
+  .switch-post-btn {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgba(254,239,154,1);
+    background-color: rgba(254,239,154,0);
+    border: 2px solid rgba(254,239,154,1);
+  }
+
 label.help-block {
   color: rgba(223,217,198,0.6);
   font-size: 12px;

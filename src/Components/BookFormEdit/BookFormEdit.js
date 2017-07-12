@@ -16,13 +16,15 @@ class BookFormEdit extends Component {
       <div>
         <header className="jumbotron book-form">
         <form>
+          <div className="form-group">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-8">
               <h2>Update A Book</h2>
             </div>
-            <div className="col-lg-6">
-              <span><button className="btn btn-default" onClick={this.props.activatePost}>Post</button></span>
+            <div className="col-lg-4">
+              <button className="btn btn-default switch-post-btn" onClick={this.props.activatePost}>Post a book instead</button>
             </div>
+          </div>
           </div>
           <div className="form-group">
             <label>Title</label>
