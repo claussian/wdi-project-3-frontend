@@ -46,6 +46,7 @@ class Gallery extends Component {
   }
 
   render() {
+
     const renderBooks = (books, searchTerm) => {
       if(books.length === 0) {
         return (
@@ -56,29 +57,33 @@ class Gallery extends Component {
               <h5>
                 Jonathan Safran Foer, <i>Everything Is Illuminated</i>
               </h5>
-              <h3>Be a groundbreaker. Be the first to share a book!</h3>
+              <h3>No books with the search term -- " {this.props.searchTerm} "</h3>
             </div>
         )
       };
 
       console.log('In Gallery.js, we have just begun filtering the books accordingly. We attempt to search: ', searchTerm, 'in the books: ', books);
 
-      console.log("Is there a search term? > ", searchTerm !== undefined, "it is ", searchTerm);
+      console.log("Is there a search term? > ", searchTerm === undefined);
 
       if(searchTerm !== "" || searchTerm !== undefined) {
 
-        books = books.filter((book) => {
+        // NOTE: Can't get the searched books to filter properly here!
+        let searchedBooks = books.filter((book) => {
           return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
           });
+
+        return searchedBooks.map( (book) => {
+          return (
+            <Book id={book._id} key={book._id} contents={book}/>
+          )
+        });
+
       };
+
       return books
 
-      return books.map( (book) => {
-        return (
-          <Book id={book._id} key={book._id} contents={book}/>
-        )
-      });
-    }
+    };
 
     return (
       <div class="container">
