@@ -16,44 +16,32 @@
   position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  margin-right: 10px;
 }
 
   .booklistitem-thumbnail img {
     position: relative;
-    min-width: 1vh;
-    max-width: 5vh;
+    max-width: 7vw;
+    min-width: 5vw;
     box-shadow: 0px 0px 30px rgba(94,96,94,1);
   }
 
 .booklistitem-info {
-  max-height: 7vh;
-  margin-top: 0px;
-  padding-top: 0px;
-  margin-bottom: 0;
-  padding-bottom: 0;
   position: relative;
-  top: -15px;
+  top: -10px;
 }
 
   .booklistitem-info h3 {
-    font-size: 1.3vh;
+    font-size: 3vh;
     font-weight: bold;
-    margin-top: 30px;
   }
 
   .booklistitem-info h4 {
-    font-size: 1vh;
-    margin-top: 0px;
+    font-size: 2vh;
   }
 
   .booklistitem-info h5 {
-    font-size: 0.8vh;
-    margin-top: 0px;
-  }
-
-  .booklistitemreview {
-    color: black;
-    font-size: 0.5vh;
+    font-size: 1.5vh;
   }
 
 .booklistitem-footer-line {
@@ -71,8 +59,7 @@
 .booklistitem-reserved-msg {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.8vh;
-  margin-top: 15px;
+  font-size: 15px;
   color: #329999;
 }
 
