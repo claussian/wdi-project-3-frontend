@@ -1,5 +1,6 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 //Importing static assets (i.e. stylesheets, images)
 import './MySharedBooks.css';
@@ -12,6 +13,8 @@ console.log("Start of Component MySharedBooks.js.");
 class MySharedBooks extends Component {
   constructor(props) {
     super(props);
+
+
   }
 
 
@@ -46,7 +49,7 @@ class MySharedBooks extends Component {
             </div>
           </div>
           <div className='row'>
-            <MyBookListItem/>
+            {renderBooks(this.props.sharedBooks)}
           </div>
         </header>
       </div>
@@ -56,4 +59,15 @@ class MySharedBooks extends Component {
 
 console.log("End of Component MySharedBooks.js.");
 
-export default MySharedBooks;
+const mapStateToProps = (state) => {
+  return {
+    sharedBooks: state.sharedBooks
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MySharedBooks);

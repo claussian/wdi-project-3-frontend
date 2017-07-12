@@ -39,9 +39,6 @@ class MyBookListItem extends Component {
         </div>
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-            <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
-              {this.renderAvailableMessage(this.props.contents.reservedBy)}
-            </div>
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
