@@ -18,25 +18,23 @@ class BookForm extends Component {
 }
 
 onChange = (e) => {
-  let key = e.target.name
-  let value = e.target.value
+  // let key = e.target.name
+  // let value = e.target.value
   //let pic = e.target.id
-  let state = this.state
   //console.log(e.target.files[0])
   // console.log('key :', key, 'value: ', value)
-  let image
+
     if (e.target.files) {
       console.log("image detected")
-      image = e.target.files[0]
-      state.image = image
-      this.setState(state)
+      this.setState({
+        image: e.target.files[0]
+      })
       console.log('state within image upload', this.state)
     }
+    let book = this.state.book
+    book[e.target.name] = e.target.value
   this.setState({
-    book: {
-      ...this.state.book,
-      [key]: value
-    }
+    book: book
   })
   console.log('state image', this.state)
 }
@@ -114,7 +112,7 @@ onClick = (e) => {
           </div>
           <div className="form-group">
             <label>Upload book cover</label>
-            <input className="upload-book-cover-file" type="file" id="image" onChange={this.onChange}/>
+            <input className="upload-book-cover-file" type="file" name="image" onChange={this.onChange}/>
             <label className="help-block">You should only upload jpg, png files. - Cloudinary</label>
           </div>
           <div className="row">

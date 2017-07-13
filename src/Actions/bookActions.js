@@ -7,24 +7,33 @@ export const addBook = (image, book) => {
 
     let addBookToBackEnd = new FormData();
     console.log('book', book)
-    addBookToBackEnd.append('book.cover', image);
-    addBookToBackEnd.append('book.title', book.title);
-    addBookToBackEnd.append('book.author', book.author);
-    addBookToBackEnd.append('book.genre', book.genre);
-    addBookToBackEnd.append('book.review', book.review);
+    addBookToBackEnd.append('cover', image); //req.body.book.cover
+    addBookToBackEnd.append('title', book.title);
+    addBookToBackEnd.append('author', book.author);
+    addBookToBackEnd.append('genre', book.genre);
+    addBookToBackEnd.append('review', book.review);
 
     axios.post('/api/book', addBookToBackEnd)
       .then( (response) => {
+        console.log(response.data)
         dispatch(createBook(response.data))
       })
       .catch((error) =>{
-        console.error("AJAX: Could not create book @ '/api/book'");
-        console.log(error);
+        // console.error("AJAX: Could not create book @ '/api/book'");
+        // console.log(error);
+        dispatch(loadingBookError(error))
       })
   }
 }
 
-export const createBook = (book) => {
+const loadingBookError = (error) => {
+  return {
+    type: "LOADING_BOOK_ERROR",
+    error,
+  }
+}
+
+const createBook = (book) => {
   return {
     type: "CREATE_BOOK",
     book
