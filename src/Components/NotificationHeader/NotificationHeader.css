@@ -2,7 +2,7 @@
 
 /*default state*/
 .notification-hidden {
-  display: none;
+  /*display: none;*/
 }
 
 /*Notification CLOSE Button Below*/
