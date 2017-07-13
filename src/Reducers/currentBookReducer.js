@@ -1,10 +1,10 @@
-const currentBookReducer = (state = "", action) => {
+const currentBookReducer = (state = {}, action) => {
 
   //console.log(action);
 
   switch (action.type) {
     case "GET_CURRENT_BOOK":
-      return action.id || "";
+      return action.currentBook || {};
       break;
     default:
         return state;

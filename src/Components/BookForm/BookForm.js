@@ -18,11 +18,6 @@ class BookForm extends Component {
 }
 
 onChange = (e) => {
-  // let key = e.target.name
-  // let value = e.target.value
-  //let pic = e.target.id
-  //console.log(e.target.files[0])
-  // console.log('key :', key, 'value: ', value)
 
     if (e.target.files) {
       console.log("image detected")
@@ -78,7 +73,7 @@ onClick = (e) => {
                     onChange={this.onChange}>
               <option>Learning & Development</option>
               <option>Romance</option>
-              <option>Science Fiction</option>
+              <option>Popular Science</option>
             </select>
           </div>
 
@@ -93,7 +88,7 @@ onClick = (e) => {
           </div>
 
           <div className="form-group">
-          {this.props.notification ?
+          {this.state.reserved ?
           <div className="well book-form-release-well">
             <div className="container">
             <div className="row">
