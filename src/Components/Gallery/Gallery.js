@@ -66,24 +66,17 @@ class Gallery extends Component {
 
       console.log('In Gallery.js, we have just begun filtering the books accordingly. We attempt to search: ', searchTerm, 'in the books: ', books);
 
-      console.log("Is there a search term? > undefined? ", searchTerm === undefined, ' // >null?',searchTerm === null, ' // > ""', searchTerm === "");
+      console.log("Is there a search term? > undefined? ", searchTerm === undefined, ' // >null?',searchTerm === null, ' // > ""', searchTerm === "", ' // > searchTerm ?', searchTerm ? true : false);
 
+      /*the search filter will only be triggered if there is a search term*/
       if(searchTerm) {
-
         /*This filters the books according to keyup searchTerm*/
         console.log('searchTerm = ', searchTerm);
         books = books.filter((book) => {
-
           // console.log('book.title = ', book.title);
           /*This filters the books according to keyup searchTerm*/
           return book.title.toLowerCase().includes(searchTerm.toLowerCase());
           });
-
-        // return books.map( (book) => {
-        //   return (
-        //     <Book id={book._id} key={book._id} contents={book}/>
-        //   )
-        // });
       };
 
       /*This common returns maps the Books according to keyup searchTerm*/
