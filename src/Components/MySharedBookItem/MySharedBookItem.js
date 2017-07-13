@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import action-creators and thunks
+import {getCurrentBook} from '../../Actions/bookActions';
+
 //Importing static assets (i.e. stylesheets, images)
 import './MySharedBookItem.css';
 
@@ -11,6 +14,11 @@ class MySharedBookItem extends Component {
 
   constructor(props) {
     super(props);
+  }
+
+  onClick = (e) => {
+    this.props.getCurrentBook(e.target.id);
+    this.props.activateEdit();
   }
 
   render() {
@@ -41,7 +49,7 @@ class MySharedBookItem extends Component {
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
                     onClick={this.onClick}
-                    id="test">
+                    id={this.props.id}>
               Update >
             </button>
           </div>
@@ -60,6 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getCurrentBook: (id) => {dispatch(getCurrentBook(id)); }
   }
 }
 

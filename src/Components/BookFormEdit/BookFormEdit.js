@@ -64,21 +64,20 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Title</label>
-            <input type="email" className="form-control" placeholder={this.state.book.title} defaultValue={this.state.book.title}/>
+            <input name="title" className="form-control" placeholder={this.state.book.title} defaultValue={this.state.book.title}/>
           </div>
           <div className="form-group">
             <label>Author</label>
-            <input type="password" className="form-control" placeholder={this.state.book.author}/>
+            <input name="author" className="form-control" placeholder={this.state.book.author} defaultValue={this.state.book.author}/>
           </div>
           <div className="form-group">
             <label>Genre</label>
             <select className="form-control" name="genre">
-              {this.selectGenre(this.props.books, this.state.book)}
             </select>
           </div>
           <div className="form-group">
             <label>Your review</label>
-            <textarea className="form-control" rows="3" placeholder={this.state.book.review}></textarea>
+            <textarea name="review" className="form-control" rows="3" placeholder={this.state.book.review} defaultValue={this.state.book.review}></textarea>
           </div>
           <div className="form-group">
           {this.state.book.reserved ?
