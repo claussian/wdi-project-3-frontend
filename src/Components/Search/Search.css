@@ -20,6 +20,7 @@
   font-size: 25px;
   padding: 5px 9px 5px 9px;
   height: 49px;
+  z-index: 2;
 }
 /*These styles above are for the main search bar.*/
 

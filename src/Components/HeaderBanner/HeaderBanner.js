@@ -19,7 +19,7 @@ class HeaderBanner extends Component {
           <p>
             Encounter exciting books to borrow and browse.
             <br/>
-            Bestow your books for fellow bookworms.
+            Bestow your books unto fellow bookworms.
             <br/>
             For free forever.
             <hr/>

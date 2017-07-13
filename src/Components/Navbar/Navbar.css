@@ -106,7 +106,7 @@
     text-align: center;
     width: 24vw;
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > button {
       top: 0;
       color: rgba(248,240,214,1);
     }
@@ -117,7 +117,7 @@
     border: 2px solid rgba(124,35,69,1);
     color: rgba(124,35,69,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > button {
       color: rgba(124,35,69,1);
     }
   /*Mobile Sign Up Button : Hover - above*/
@@ -127,7 +127,7 @@
     color: rgba(248,240,214,1);
     border: 2px solid rgba(110,107,102,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > button {
       color: rgba(248,240,214,1);
     }
   /*Mobile Sign Up Button : Hover : Active - above*/

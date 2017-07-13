@@ -7,6 +7,21 @@ const updateUser = (user) => {
   }
 }
 
+/* Signup user */
+export const addUser = (user) => {
+  return (dispatch) => {
+
+    axios.post('/auth/signup', user)
+    .then ( (response) => {
+      const user = response.data;
+      dispatch(getUser());
+    })
+    .catch((error) => {
+      console.error("AJAX: Could not signup user @ '/auth/signup'")
+    })
+  }
+}
+
 /* Obtain credentialed user via passport object */
 export const getUser = () => {
   return (dispatch) => {

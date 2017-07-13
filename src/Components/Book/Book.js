@@ -31,6 +31,7 @@ class Book extends Component {
 
     if (!this.props.user._id) { // user has not logged in
       this.props.triggerNotification("Please log in or sign up to borrow a book");
+
     }
     else if (this.props.contents.reserved) { // book is already reserved
       this.props.triggerNotification("Sorry, this book has been borrowed by @" + this.props.contents.reservedBy.username);

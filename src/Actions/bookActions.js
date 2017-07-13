@@ -7,6 +7,7 @@ export const addBook = (image, book) => {
 
     let addBookToBackEnd = new FormData();
     console.log('book', book)
+    // ('referring to backend', 'referring to frontend')
     addBookToBackEnd.append('cover', image); //req.body.book.cover
     addBookToBackEnd.append('title', book.title);
     addBookToBackEnd.append('author', book.author);

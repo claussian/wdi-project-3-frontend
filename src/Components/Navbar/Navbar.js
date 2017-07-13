@@ -8,6 +8,7 @@ import {localLogin} from '../../Actions/userActions';
 
 //Importing React components
 import NotificationHeader from '../NotificationHeader/NotificationHeader';
+import Signup from '../Signup/Signup'
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
@@ -22,7 +23,8 @@ class Navbar extends Component {
     this.state = {
       email: "",
       password: "",
-      error: ""
+      error: "",
+      showSignup: false
     }
   }
 
@@ -33,6 +35,12 @@ class Navbar extends Component {
 
     state[key] = value;
     this.setState(state);
+  }
+
+  onClick = (e) => {
+    e.preventDefault();
+    this.setState({showSignup: true})
+    console.log("click!")
   }
 
 
@@ -61,9 +69,10 @@ class Navbar extends Component {
   }
 
   render() {
+
     return (
       <div>
-        <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
+        <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div className="container">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -90,7 +99,8 @@ class Navbar extends Component {
                       </form>
                     </li>
                     <li className="nav-sign-up">
-                      <a href="./signup">Sign up</a>
+                        <a onClick={this.onClick}>Sign up</a>
+                        <Signup signUpState={this.state.showSignup}/>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>
@@ -98,7 +108,7 @@ class Navbar extends Component {
               <div className="row">
                 <div className="col-lg-12">
                 {this.props.notification ? <NotificationHeader/> : null}
-              </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
+                </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
               </div>{/* /row */}
             </div>{/* /bs-example-navbar-collapse-1 */}
           </div>{/* container */}
@@ -113,7 +123,7 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    notification: state.notification
+    notification: state.notification,
   }
 }
 
