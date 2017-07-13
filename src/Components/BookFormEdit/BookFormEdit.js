@@ -12,15 +12,21 @@ class BookFormEdit extends Component {
     super(props);
 
     this.state = {
-      book: this.props.currentBookObj
+      book: {}
     }
   }
 
   componentWillReceiveProps(nextProps) {
     console.log("componentWillUpdate called");
-    //if(this.state.book != nextProps.currentBook) {
-
-  //  }
+    if(this.state.book != nextProps.currentBookObj) {
+      console.log("nextProps.currentBookObj", nextProps.currentBookObj);
+      const currbook = nextProps.currentBookObj
+      this.setState ({
+        book: currbook
+      });
+      // this.setState(state);
+      console.log("updatedstate", this.state.book);
+    }
   }
 
   // helper function to render selected
@@ -28,28 +34,46 @@ class BookFormEdit extends Component {
 
   render() {
     //console.log(this.selectGenre(this.props.books, this.state.book));
+    console.log("newstate", this.state.book);
+    // const selectGenre = (books, currentBook) => {
+    //   let genres = books.map( (book) => {
+    //     return book.genre;
+    //   });
+    //   let unique = genres.filter((v, i, a) => {
+    //     return a.indexOf(v) === i; // return only first instance of v
+    //   });
+    //   let selected =
+    //   unique.forEach( (elem) => {
+    //     if(elem == currentBook.genre)  {
+    //       selected += <option selected>{elem}</option>
+    //     }
+    //     else {
+    //       selected += <option>{elem}</option>
+    //     }
+    //   });
+    //   return selected;
+    // }
 
-    const selectGenre = (books, currentBook) => {
-      let genres = books.map( (book) => {
-        return book.genre;
+    const initialProps = (books, currentBookId) => {
+      console.log(books);
+      console.log(currentBookId);
+      let newbook = books.filter( (book) => {
+        return book._id == currentBookId;
       });
-      let unique = genres.filter((v, i, a) => {
-        return a.indexOf(v) === i; // return only first instance of v
+      console.log("newbook", newbook[0]);
+      console.log("this.state.book", this.state.book)
+      if(!this.state.book.title) {
+        console.log("inside!")
+        this.setState({
+        book: newbook[0]
       });
-      let selected =
-      unique.forEach( (elem) => {
-        if(elem == currentBook.genre)  {
-          selected += <option selected>{elem}</option>
-        }
-        else {
-          selected += <option>{elem}</option>
-        }
-      });
-      return selected;
+    }
+      console.log("initialProps", this.state.book);
     }
 
     return (
       <div>
+        {initialProps(this.props.books,this.props.currentBook)}
         <header className="jumbotron book-form">
         <form>
           <div className="form-group">
@@ -64,7 +88,7 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Title</label>
-            <input name="title" className="form-control" placeholder={this.state.book.title} defaultValue={this.state.book.title}/>
+            <input name="title" className="form-control" placeholder={this.state.book.title} value={this.state.book.title}/>
           </div>
           <div className="form-group">
             <label>Author</label>
