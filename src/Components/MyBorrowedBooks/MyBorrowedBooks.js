@@ -1,9 +1,9 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchBorrowedTerm } from '../../Actions/searchActions';
 
 // Import action-creators and thunks
+import { searchBorrowedTerm } from '../../Actions/searchActions';
 import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)

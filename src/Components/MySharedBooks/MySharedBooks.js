@@ -1,6 +1,8 @@
 //Importing required packages
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+
+// Import action-creators and thunks
 import { searchSharedTerm } from '../../Actions/searchActions';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -34,38 +36,38 @@ class MySharedBooks extends Component {
 
   render() {
     const renderSharedBooks = (books, user, searchSharedTerm) => {
-        console.log("No. of books on Bookshelf = ", books.length)
-        if(!user.booksOwned) {
-          return (
-              <div className="col-md-11 col-sm-10 col-xs-8">
-                <h4 className="card-title">No books shared.</h4>
-              </div>
-          )
-        } else {
+      console.log("No. of books on Bookshelf = ", books.length)
+      if(!user.booksOwned) {
+        return (
+            <div className="col-md-11 col-sm-10 col-xs-8">
+              <h4 className="card-title">Why not share a book today?</h4>
+            </div>
+        )
+      } else {
 
-          /*The search filter will only be triggered if there is a search term for shared books*/
+        /*The search filter will only be triggered if there is a search term for shared books*/
 
-          if(searchSharedTerm) {
+        if(searchSharedTerm) {
+          /*This filters the books according to keyup searchSharedTerm*/
+          console.log('searchSharedTerm = ', searchSharedTerm);
+          books = books.filter((book) => {
+            // console.log('book.title = ', book.title);
             /*This filters the books according to keyup searchSharedTerm*/
-            console.log('searchSharedTerm = ', searchSharedTerm);
-            books = books.filter((book) => {
-              // console.log('book.title = ', book.title);
-              /*This filters the books according to keyup searchSharedTerm*/
-              return book.title.toLowerCase().includes(searchSharedTerm.toLowerCase());
-              });
-          };
+            return book.title.toLowerCase().includes(searchSharedTerm.toLowerCase());
+            });
+        };
 
-          return books.map( (book) => {
-            if(user.booksShared.indexOf(book._id) > -1) {
-            return (
-              <MySharedBookItem id={book._id} key={book._id} contents={book}/>
-            )
-          }
+        return books.map( (book) => {
+          if(user.booksOwned.indexOf(book._id) > -1) {
+          return (
+            <MySharedBookItem id={book._id} key={book._id} contents={book} activateEdit={this.props.activateEdit}/>
+          )
+        }
         });
       };
     };
 
-    console.log("Before return render, this.props.searchSharedTerm", this.props.searchSharedTerm);
+    console.log("Before return render, this.props.searchSharedTerm is", this.props.searchSharedTerm);
 
     return (
       <div>
@@ -73,7 +75,9 @@ class MySharedBooks extends Component {
           <h2>My shared books</h2>
           <div className="search-bar">
             <div className="input-group">
-              <input type="text" className="search-query form-control" placeholder="Search my shared books" />
+              <input  type="text"
+                      className="search-query form-control" placeholder="Search my shared books"
+                      onKeyUp={this.onChange} />
               <span className="input-group-btn">
                 <button className="btn btn-md btn-primary btn-block" type="submit">
                   <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
