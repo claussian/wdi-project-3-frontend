@@ -11,65 +11,32 @@ class BookFormEdit extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   book: {}
-    // }
+    this.state = {
+      book: {},
+      image: ""
+    }
   }
 
-  componentWillMount() {
-  //   const initialProps = (books, currentBookId) => {
-  //     // console.log(books);
-  //     // console.log(currentBookId);
-  //     let newbook = books.filter( (book) => {
-  //       return book._id == currentBookId;
-  //     });
-  //     // console.log("newbook", newbook[0]);
-  //     // console.log("this.state.book", this.state.book)
-  //     if(!this.state.book.title) {
-  //       console.log("inside initialProps!")
-  //       this.setState({
-  //       book: newbook[0]
-  //     });
-  //   }
-  // }
-  //   initialProps(this.props.books, this.props.currentBook);
-  //   console.log("initialProps",this.state.book)
+  onChange = (e) => {
+
+    if (e.target.files) {
+      console.log("image detected")
+      this.setState({
+        image: e.target.files[0]
+      });
+      console.log('state within image upload', this.state);
+    }
+    let book = this.state.book;
+    book[e.target.name] = e.target.value
+    this.setState({
+      book: book
+    });
+    console.log('state image', this.state);
   }
 
-  componentWillReceiveProps(nextProps) {
-    // console.log("componentWillUpdate called");
-    // if(this.state.book != nextProps.currentBookObj) {
-    //   const newbook = nextProps.currentBookObj;
-    //   console.log("inside nextProps.currentBookObj",newbook);
-    //   //this.state.book = newbook;
-    //   this.setState ({
-    //     book: newbook
-    //   });
-    //   // this.setState(state);
-    //   console.log("updatedstate", this.state.book);
-    // }
-  }
+  onClick = (e) => {
+    e.preventDefault();
 
-  // helper function to render selected
-  //  initialProps = (books, currentBookId) => {
-  //   // console.log(books);
-  //   // console.log(currentBookId);
-  //   let newbook = books.filter( (book) => {
-  //     return book._id == currentBookId;
-  //   });
-  //   // console.log("newbook", newbook[0]);
-  //   // console.log("this.state.book", this.state.book)
-  //   if(!this.state.book.title) {
-  //     console.log("inside!")
-  //     this.setState({
-  //     book: newbook[0]
-  //   });
-  // }
-  //   console.log("initialProps", this.state.book);
-  //}
-
-  componentDidMount() {
-    // this.initialProps(this.props.books,this.props.currentBook);
   }
 
   render() {
@@ -83,7 +50,7 @@ class BookFormEdit extends Component {
           <div className="form-group">
           <div className="row">
             <div className="col-lg-8">
-              <h2>Update A Book</h2>
+              <h2>Update Your Book</h2>
             </div>
             <div className="col-lg-4">
               <button className="btn btn-default switch-post-btn" onClick={this.props.activatePost}>Post a book instead</button>
@@ -115,7 +82,7 @@ class BookFormEdit extends Component {
           <div className="well book-form-release-well">
             <div className="container">
             <div className="row">
-            <h4>User @xxx has reserved this title. Would you like to release it?</h4>
+            <h4>User @{this.props.currentBook.reservedBy.usename} has reserved this title. Would you like to release it?</h4>
             </div>
             <div className="row">
             <div className="dropdown book-form-release-btn">
@@ -135,7 +102,7 @@ class BookFormEdit extends Component {
           </div>
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="submit" className="btn btn-default update-book-btn">Update</button>
+              <button type="submit" className="btn btn-default update-book-btn" onClick={this.onClick}>Update</button>
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <button type="submit" className="btn btn-default delete-book-btn">Delete</button>
