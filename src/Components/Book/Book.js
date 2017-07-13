@@ -59,42 +59,42 @@ class Book extends Component {
 
     return (
         <div className="book">
-          <span className="book-thumbnail">
-            <img src={this.props.contents.cover} alt="..." />
-            <h3>{this.props.contents.title}</h3>
-            <h4>{this.props.contents.author}</h4>
-            <h5>{this.props.contents.genre}</h5>
-            <div className="bookreview"
-                 id={this.props.contents.title}
-                 onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
-              <p>{this.props.contents.review}</p>
-            </div>
-            <hr className="book-footer-line"/>
-            <div className="row">
-              <div className="col-md-6 col-sm-6 col-xs-6">
-                {/*<div className="ratings">
-                  <span className="glyphicon glyphicon-star"></span>
-                  <span className="glyphicon glyphicon-star"></span>
-                  <span className="glyphicon glyphicon-star"></span>
-                  <span className="glyphicon glyphicon-star"></span>
-                  <span className="glyphicon glyphicon-star-empty"></span>
-                </div>*/}
-                <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
-                  {this.renderAvailableMessage(this.props.contents.reservedBy)}
+            <span className="book-thumbnail">
+              <img src={this.props.contents.cover} alt="..." />
+              <h3>{this.props.contents.title}</h3>
+              <h4>{this.props.contents.author}</h4>
+              <h5>{this.props.contents.genre}</h5>
+              <div className="bookreview"
+                   id={this.props.contents.title}
+                   onMouseOver={this.onMouseOver}>
+                <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
+                <p>{this.props.contents.review}</p>
+              </div>
+              <hr className="book-footer-line"/>
+              <div className="row">
+                <div className="col-md-6 col-sm-6 col-xs-6">
+                  {/*<div className="ratings">
+                    <span className="glyphicon glyphicon-star"></span>
+                    <span className="glyphicon glyphicon-star"></span>
+                    <span className="glyphicon glyphicon-star"></span>
+                    <span className="glyphicon glyphicon-star"></span>
+                    <span className="glyphicon glyphicon-star-empty"></span>
+                  </div>*/}
+                  <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
+                    {this.renderAvailableMessage(this.props.contents.reservedBy)}
+                  </div>
+                </div>
+                <div className="col-md-6 col-sm-6 col-xs-6">
+                  <button className="btn btn-success book-reserve-btn"
+                          style={{backgroundColor: bookReserveColour}}
+                          onClick={this.onClick}
+                          id={this.props.id}>
+                    {bookReserveMsg}
+                  </button>
                 </div>
               </div>
-              <div className="col-md-6 col-sm-6 col-xs-6">
-                <button className="btn btn-success book-reserve-btn"
-                        style={{backgroundColor: bookReserveColour}}
-                        onClick={this.onClick}
-                        id={this.props.id}>
-                  {bookReserveMsg}
-                </button>
-              </div>
-            </div>
-          </span>
-        </div>
+            </span>
+      </div>
     )
   }
 }
