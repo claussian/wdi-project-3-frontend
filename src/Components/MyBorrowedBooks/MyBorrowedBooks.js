@@ -45,23 +45,28 @@ class MyBorrowedBooks extends Component {
               </div>
             )
           } else {
+
+            /*the search filter will only be triggered if there is a search term for borrowed books*/
+
+            if(searchBorrowedTerm) {
+              /*This filters the books according to keyup searchBorrowedTerm*/
+              console.log('searchBorrowedTerm = ', searchBorrowedTerm);
+              books = books.filter((book) => {
+                // console.log('book.title = ', book.title);
+                /*This filters the books according to keyup searchBorrowedTerm*/
+                return book.title.toLowerCase().includes(searchBorrowedTerm.toLowerCase());
+                });
+            };
+
             return books.map( (book) => {
               if(user.booksBorrowed.indexOf(book._id) > -1) {
 
                 console.log("IN > Borrowed books about to be rendered with: ", user.booksBorrowed, "by searchBorrowedTerm: ", searchBorrowedTerm);
 
-                /*the search filter will only be triggered if there is a search term for borrowed books*/
 
-                if(searchBorrowedTerm) {
-                  /*This filters the books according to keyup searchBorrowedTerm*/
-                  console.log('searchBorrowedTerm = ', searchBorrowedTerm);
-                  books = books.filter((book) => {
-                    // console.log('book.title = ', book.title);
-                    /*This filters the books according to keyup searchBorrowedTerm*/
-                    return book.title.toLowerCase().includes(searchBorrowedTerm.toLowerCase());
-                    });
-                };
+
                 console.log("OUT > Borrowed books rendered with: ", user.booksBorrowed, "by searchBorrowedTerm: ", searchBorrowedTerm, ". No. of results = ", books.length);
+
               return (
                 <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
               )
