@@ -24,10 +24,10 @@
 /*These styles above are for the main search bar.*/
 
 /*These styles below are for the search button.*/
-.my-borrowed-books > .search-bar > div > span > button {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+.search-borrowed-books-btn {
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
   font-size: 25px;
   height: 100%;
   border-style: solid;
@@ -35,22 +35,22 @@
   padding: 5px 9px 5px 9px;
 }
 /*This style below is for the glyphicon on the search button.*/
-.my-borrowed-books > .search-bar > div > span > button > span {
+.search-borrowed-books-btn > span {
   top: 3px;
 }
 
-.my-borrowed-books > .search-bar > div > span > button:hover,
-.my-borrowed-books > .search-bar > div > span > button:active,
-.my-borrowed-books > .search-bar > div > span > button:focus {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+.search-borrowed-books-btn:hover,
+.search-borrowed-books-btn:active,
+.search-borrowed-books-btn:focus {
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
 }
 
-.my-borrowed-books > .search-bar > div > span > button:active:hover {
+.search-borrowed-books-btn:active:hover {
   background-color: rgba(223,217,198,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(110,107,102,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
 }
 
 /*These styles above are for the search button on the search-bar.*/

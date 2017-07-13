@@ -24,10 +24,10 @@
 /*These styles above are for the main search bar.*/
 
 /*These styles below are for the search button.*/
-.my-shared-books > .search-bar > div > span > button {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+.search-bar > div > span > button {
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
   font-size: 25px;
   height: 100%;
   border-style: solid;
@@ -35,22 +35,22 @@
   padding: 5px 9px 5px 9px;
 }
 /*This style below is for the glyphicon on the search button.*/
-.my-shared-books > .search-bar > div > span > button > span {
+.search-shared-btn > span {
   top: 3px;
 }
 
 .my-shared-books > .search-bar > div > span > button:hover,
 .my-shared-books > .search-bar > div > span > button:active,
 .my-shared-books > .search-bar > div > span > button:focus {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
 }
 
 .my-shared-books > .search-bar > div > span > button:active:hover {
   background-color: rgba(223,217,198,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(110,107,102,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(124,35,69,1);
 }
 
 /*These styles above are for the search button on the search-bar.*/
