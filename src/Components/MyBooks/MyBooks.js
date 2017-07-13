@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import action-creators and thunks
+import {getCurrentBook} from '../../Actions/bookActions';
 import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -49,6 +51,7 @@ class MyBooks extends Component {
   componentWillReceiveProps(nextProps) {
     if(this.props.latestAction != nextProps.latestAction){
       this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
+      this.props.getCurrentBook(nextProps.currentBook._id,nextProps.books);
     }
   }
 
@@ -117,7 +120,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); },
+    getCurrentBook: (id, books) => {dispatch(getCurrentBook(id, books)); }
   }
 }
 
