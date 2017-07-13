@@ -1,4 +1,4 @@
-@media only screen and (min-width: 502px) {
+@media only screen and (min-width: 800px) {
 
     #gallery {
       -moz-column-count: 3;
@@ -8,7 +8,7 @@
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 799px) {
 
     #gallery {
       -moz-column-count: 2;
