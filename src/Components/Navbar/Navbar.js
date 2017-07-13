@@ -107,7 +107,11 @@ class Navbar extends Component {
               </div>
               <div className="row">
                 <div className="col-lg-12">
+<<<<<<< HEAD
                 {this.props.notification ? <NotificationHeader/> : null}
+=======
+                  {this.props.notification ? <NotificationHeader/> : null}
+>>>>>>> master
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
               </div>{/* /row */}
             </div>{/* /bs-example-navbar-collapse-1 */}

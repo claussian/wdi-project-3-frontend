@@ -17,7 +17,7 @@ class MySharedBookItem extends Component {
   }
 
   onClick = (e) => {
-    this.props.getCurrentBook(e.target.id);
+    this.props.getCurrentBook(e.target.id, this.props.books);
     this.props.activateEdit();
   }
 
@@ -63,12 +63,13 @@ class MySharedBookItem extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    books: state.books
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrentBook: (id) => {dispatch(getCurrentBook(id)); }
+    getCurrentBook: (id, books) => {dispatch(getCurrentBook(id, books)); }
   }
 }
 

@@ -7,7 +7,6 @@ export const addBook = (image, book) => {
 
     let addBookToBackEnd = new FormData();
     console.log('book', book)
-    // ('referring to backend', 'referring to frontend')
     addBookToBackEnd.append('cover', image); //req.body.book.cover
     addBookToBackEnd.append('title', book.title);
     addBookToBackEnd.append('author', book.author);
@@ -16,14 +15,22 @@ export const addBook = (image, book) => {
 
     axios.post('/api/book', addBookToBackEnd)
       .then( (response) => {
-        console.log(response.data)
-        dispatch(createBook(response.data))
+        console.log('/api/book response.data ==', response.data)
+        dispatch(createBook(response.data));
+        dispatch(notifySuccessfulCreate(response.data));
       })
       .catch((error) =>{
         // console.error("AJAX: Could not create book @ '/api/book'");
         // console.log(error);
         dispatch(loadingBookError(error))
       })
+  }
+}
+
+const notifySuccessfulCreate = (book) => {
+  return {
+    type: "CREATE_BOOK_ACTION",
+    book
   }
 }
 
@@ -103,9 +110,14 @@ const reserveBookAction = (book) => {
   }
 }
 
-export const getCurrentBook = (id) => {
+export const getCurrentBook = (id, books) => {
+  let currentBook = books.filter( (book) => {
+    return book._id == id;
+  });
+  //console.log("action currentBook",currentBook);
+
   return {
     type: "GET_CURRENT_BOOK",
-    id
+    currentBook: currentBook[0]
   }
 }

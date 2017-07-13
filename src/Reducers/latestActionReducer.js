@@ -2,6 +2,7 @@ const latestActionReducer = (state = {}, action) => {
 
   switch (action.type) {
     case "CREATE_BOOK_ACTION":
+    return action;
       break;
     case "RESERVE_BOOK_ACTION":
     return action;
@@ -9,7 +10,7 @@ const latestActionReducer = (state = {}, action) => {
     case "DELETE_BOOK_ACTION":
       break;
     default:
-        return state;
+      return state;
   }
 }
 

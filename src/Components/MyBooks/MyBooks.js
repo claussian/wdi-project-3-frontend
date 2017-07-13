@@ -8,6 +8,7 @@ import './MyBooks.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import NavbarUser from '../Navbar/NavbarUser';
+import NotificationHeader from '../NotificationHeader/NotificationHeader';
 import MySharedBooks from '../MySharedBooks/MySharedBooks';
 import MyBorrowedBooks from '../MyBorrowedBooks/MyBorrowedBooks';
 import BookForm from '../BookForm/BookForm';
@@ -41,7 +42,7 @@ class MyBooks extends Component {
       return book._id == currentBookId;
     });
   }
-
+  // currentBookObj={this.currentBookObj(this.props.books, this.props.currentBook)[0]
   render() {
 
     const isLoggedIn = this.props.user._id;
@@ -67,7 +68,7 @@ class MyBooks extends Component {
             <MyBorrowedBooks />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          {this.state.editForm ? <BookFormEdit activatePost={this.activatePost} currentBookObj={this.currentBookObj(this.props.books, this.props.currentBook)[0]}/> : <BookForm />}
+          {this.state.editForm ? <BookFormEdit activatePost={this.activatePost}/> : <BookForm />}
           </div>
         </div> {/* /row */}
         <Footer />

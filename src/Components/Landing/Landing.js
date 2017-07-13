@@ -12,7 +12,6 @@ import Footer from '../Footer/Footer';
 import Search from '../Search/Search';
 import HeaderBanner from '../HeaderBanner/HeaderBanner';
 import Gallery from '../Gallery/Gallery';
-import Signup from '../Signup/Signup'
 
 console.log("Start of Component Landing.js. The landing page everyone sees without logging in.");
 
@@ -37,11 +36,10 @@ class Landing extends Component {
           <Navbar />
         )}
         </div>
-        <Search />
         <HeaderBanner />
+        <Search />
         <Gallery />
         <Footer />
-        <Signup />
       </div>
 
       );

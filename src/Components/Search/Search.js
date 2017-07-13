@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchTerm, showCompleted } from '../../Actions/searchActions';
+import { searchTerm } from '../../Actions/searchActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Search.css';
@@ -25,17 +25,20 @@ class Search extends Component {
   }
 
   render() {
+
     return (
       <div>
         <header className="jumbotron search-form">
           <div className="search-bar">
             <div className="input-group">
-              <input type="text" className="search-query form-control" placeholder="Search title" onKeyUp={this.onChange}/>
               <span className="input-group-btn">
-                <button className="btn btn-md btn-primary btn-block" type="submit">
+                <button className="btn btn-md btn-primary btn-block"
+                        type="submit">
                   <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
+              <input  type="text"
+                      className="search-query form-control" placeholder="Search by title in the Bookshelf" onKeyUp={this.onChange}/>
             </div>
           </div>
         </header>
