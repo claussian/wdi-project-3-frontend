@@ -1,6 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {getCurrentBook} from '../../Actions/bookActions'
 
 //Importing static assets (i.e. stylesheets, images)
 import './MyBookListItem.css';
@@ -13,6 +14,10 @@ class MyBookListItem extends Component {
     super(props);
   }
 
+  onClick = (e) => {
+    this.props.getCurrentBook(e.target.id);
+    this.props.activateEdit();
+  }
   render() {
 
     let bgColor = "rgba(0,103,109,0.7)";
@@ -43,8 +48,8 @@ class MyBookListItem extends Component {
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
                     style={{backgroundColor: bgColor}}
-                    onClick={this.props.activateEdit}
-                    id="test">
+                    onClick={this.onClick}
+                    id={this.props.contents._id}>
               Update >
             </button>
           </div>
@@ -63,6 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getCurrentBook: (id) => {dispatch(getCurrentBook(id)); }
   }
 }
 console.log("End of Component Navbar.js.");

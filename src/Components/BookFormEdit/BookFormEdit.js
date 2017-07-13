@@ -1,5 +1,6 @@
 //Importing required packages
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 //Importing static assets (i.e. stylesheets, images)
 import './BookFormEdit.css';
@@ -9,9 +10,44 @@ console.log("Start of Component BookFormEdit.js.");
 class BookFormEdit extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      book: this.props.currentBookObj
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("componentWillUpdate called");
+    //if(this.state.book != nextProps.currentBook) {
+
+  //  }
+  }
+
+  // helper function to render selected
+  selectGenre = (books, currentBook) => {
+    let genres = books.map( (book) => {
+      return book.genre;
+    });
+    let unique = genres.filter((v, i, a) => {
+      return a.indexOf(v) === i; // return only first instance of v
+    });
+    let selected = ""
+    unique.forEach( (elem) => {
+      if(elem == currentBook.genre)  {
+        selected += "<option selected>" + elem + "</option>"
+      }
+      else {
+        selected += "<option>" + elem + "</option>"
+      }
+    });
+    return selected;
   }
 
   render() {
+    //console.log(this.selectGenre(this.props.books, this.state.book));
+
+
+
     return (
       <div>
         <header className="jumbotron book-form">
@@ -28,26 +64,24 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Title</label>
-            <input type="email" className="form-control" placeholder="Title"/>
+            <input type="email" className="form-control" placeholder={this.state.book.title} defaultValue={this.state.book.title}/>
           </div>
           <div className="form-group">
             <label>Author</label>
-            <input type="password" className="form-control" placeholder="Author"/>
+            <input type="password" className="form-control" placeholder={this.state.book.author}/>
           </div>
           <div className="form-group">
             <label>Genre</label>
             <select className="form-control" name="genre">
-              <option>Learning & Development</option>
-              <option>Romance</option>
-              <option>Science Fiction</option>
+              {this.selectGenre(this.props.books, this.state.book)}
             </select>
           </div>
           <div className="form-group">
             <label>Your review</label>
-            <textarea className="form-control" rows="3" placeholder="Reviews are for readers, not writers. If I get a bad one, I shrug it off. If I get a good one, I don't believe it. ~ William Meikle"></textarea>
+            <textarea className="form-control" rows="3" placeholder={this.state.book.review}></textarea>
           </div>
           <div className="form-group">
-          {this.props.notification ?
+          {this.state.book.reserved ?
           <div className="well book-form-release-well">
             <div className="container">
             <div className="row">
@@ -87,4 +121,18 @@ class BookFormEdit extends Component {
 
 console.log("End of Component BookFormEdit.js.");
 
-export default BookFormEdit;
+// pass these arguments to 'connect' to instantiate component with these methods
+
+const mapStateToProps = (state) => {
+  return {
+    currentBook: state.currentBook,
+    books: state.books
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookFormEdit);

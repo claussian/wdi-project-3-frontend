@@ -2,6 +2,7 @@ import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import bookReducer from '../Reducers/bookReducer.js';
+import currentBookReducer from '../Reducers/currentBookReducer.js';
 import userReducer from '../Reducers/userReducer.js';
 import appReducer from '../Reducers/appReducer.js';
 import latestActionReducer from '../Reducers/latestActionReducer.js';
@@ -11,6 +12,7 @@ export let initStore = () => {
 
   const reducer = combineReducers( {
     books: bookReducer,
+    currentBook: currentBookReducer,
     user: userReducer,
     notification: appReducer,
     latestAction: latestActionReducer
