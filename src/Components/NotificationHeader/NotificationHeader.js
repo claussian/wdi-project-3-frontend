@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 // Import action-creator
-import {closeNotification} from '../../Actions/appActions';
+import {triggerNotification, closeNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './NotificationHeader.css';
