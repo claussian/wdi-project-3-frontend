@@ -75,14 +75,15 @@ class MySharedBooks extends Component {
           <h2>My shared books</h2>
           <div className="search-bar">
             <div className="input-group">
-              <input  type="text"
-                      className="search-query form-control" placeholder="Search my shared books"
-                      onKeyUp={this.onChange} />
               <span className="input-group-btn">
-                <button className="btn btn-md btn-primary btn-block" type="submit">
+                <button className="btn btn-md btn-primary btn-block search-sharedbtn" type="submit">
                   <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>{/* /input-group-btn */}
+              <input  type="text"
+                      className="search-query form-control"
+                      placeholder="Search title"
+                      onKeyUp={this.onChange} />
             </div>{/* /input-group */}
           </div>{/* /search-bar */}
           <div className='row'>

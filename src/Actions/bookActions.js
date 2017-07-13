@@ -15,14 +15,22 @@ export const addBook = (image, book) => {
 
     axios.post('/api/book', addBookToBackEnd)
       .then( (response) => {
-        console.log(response.data)
-        dispatch(createBook(response.data))
+        console.log('/api/book response.data ==', response.data)
+        dispatch(createBook(response.data));
+        dispatch(notifySuccessfulCreate(response.data));
       })
       .catch((error) =>{
         // console.error("AJAX: Could not create book @ '/api/book'");
         // console.log(error);
         dispatch(loadingBookError(error))
       })
+  }
+}
+
+const notifySuccessfulCreate = (book) => {
+  return {
+    type: "CREATE_BOOK_ACTION",
+    book
   }
 }
 

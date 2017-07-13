@@ -1,7 +1,11 @@
 //Importing required packages
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {addBook} from '../../Actions/bookActions'
+
+// Import action-creators and thunks
+import {triggerNotification, closeNotification} from '../../Actions/appActions';
+import {addBook} from '../../Actions/bookActions';
+
 //Importing static assets (i.e. stylesheets, images)
 import './BookForm.css';
 
@@ -13,8 +17,28 @@ class BookForm extends Component {
 
     this.state = {
       book: {},
-      image: ""
+      image: "",
     }
+}
+
+whichMessage = (latestAction) => {
+  switch (latestAction.type) {
+    case "CREATE_BOOK_ACTION":
+      let createBook = latestAction.book;
+      console.log("You have successfully uploaded '" + createBook.title + "' by" + createBook.author);
+      return "You have successfully uploaded '" + createBook.title + "' by" + createBook.author;
+      break;
+    default:
+        return "";
+  }
+};
+
+componentWillReceiveProps(nextProps) {
+  if(this.props.latestAction != nextProps.latestAction){
+    console.log('this.props.latestAction != nextProps.latestAction is ', this.props.latestAction, nextProps.latestAction);
+    this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
+    
+  }
 }
 
 onChange = (e) => {
@@ -39,6 +63,10 @@ onClick = (e) => {
   console.log("submitting", this.state.book)
   console.log('image', this.state.image)
   this.props.addBook(this.state.image, this.state.book)
+
+  if (!this.state.book) { // book failed to pass to state
+    this.props.triggerNotification("Book upload failed. Try again?");
+  }
 }
 
   render() {
@@ -107,15 +135,18 @@ onClick = (e) => {
           </div>
           <div className="form-group">
             <label>Upload book cover</label>
-            <input className="upload-book-cover-file" type="file" name="image" onChange={this.onChange}/>
+            <input  className="upload-book-cover-file"
+                    type="file"
+                    name="image"
+                    onChange={this.onChange}/>
             <label className="help-block">You should only upload jpg, png files. - Cloudinary</label>
           </div>
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="button" className="btn btn-default post-book-btn" onClick={this.onClick}>Post</button>
+              <button type="button"
+                      className="btn btn-default post-book-btn" onClick={this.onClick}>Post</button>
             </div>
           </div>
-
         </form>
         </header>
       </div>
@@ -125,13 +156,15 @@ onClick = (e) => {
 
 const mapStateToProps = (state) => {
   return {
-    book: state.book
+    book: state.book,
+    latestAction: state.latestAction
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addBook: (image, book) => {dispatch(addBook(image, book))}
+    addBook: (image, book) => {dispatch(addBook(image, book))},
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
   }
 }
 

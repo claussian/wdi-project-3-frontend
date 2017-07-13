@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import action-creator
+import {triggerNotification, closeNotification} from '../../Actions/appActions';
+import {addBook} from '../../Actions/bookActions';
+
 //Importing static assets (i.e. stylesheets, images)
 import './BookFormEdit.css';
 

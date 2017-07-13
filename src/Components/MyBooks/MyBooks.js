@@ -8,6 +8,7 @@ import './MyBooks.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import NavbarUser from '../Navbar/NavbarUser';
+import NotificationHeader from '../NotificationHeader/NotificationHeader';
 import MySharedBooks from '../MySharedBooks/MySharedBooks';
 import MyBorrowedBooks from '../MyBorrowedBooks/MyBorrowedBooks';
 import BookForm from '../BookForm/BookForm';

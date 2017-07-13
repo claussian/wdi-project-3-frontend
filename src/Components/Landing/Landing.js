@@ -36,8 +36,8 @@ class Landing extends Component {
           <Navbar />
         )}
         </div>
-        <Search />
         <HeaderBanner />
+        <Search />
         <Gallery />
         <Footer />
       </div>
