@@ -47,32 +47,55 @@ class Gallery extends Component {
 
   render() {
 
-    const renderBooks = (books) => {
-        if(books.length === 0) {
-          return (
-              <div className="col-md-11 col-sm-10 col-xs-8">
-                <h4 className="card-title">Nothing to do. Have a Covfefe</h4>
-              </div>
-          )
-        }
-        return books.map( (book) => {
+    const renderBooks = (books, searchTerm) => {
+      if(books.length === 0) {
+        return (
+            <div className="col-md-11 col-sm-10 col-xs-8" id="empty-gallery-msg">
+              <h4>
+                “It was not the feeling of completeness I so needed, but the feeling of not being empty.”
+              </h4>
+              <h5>
+                Jonathan Safran Foer, <i>Everything Is Illuminated</i>
+              </h5>
+              <h3>No books with the search term -- " {this.props.searchTerm} "</h3>
+            </div>
+        )
+      };
+
+      console.log('In Gallery.js, we have just begun filtering the books accordingly. We attempt to search: ', searchTerm, 'in the books: ', books);
+
+      console.log("Is there a search term? > ", searchTerm === undefined);
+
+      if(searchTerm !== "" || searchTerm !== undefined) {
+
+        // NOTE: Can't get the searched books to filter properly here!
+        let searchedBooks = books.filter((book) => {
+          return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
+          });
+
+        return searchedBooks.map( (book) => {
           return (
             <Book id={book._id} key={book._id} contents={book}/>
           )
         });
-      }
+
+      };
+
+      return books
+
+    };
 
     return (
       <div class="container">
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
-          {renderBooks(this.props.books)}
+          {renderBooks(this.props.books,this.props.searchTerm)}
+        </div>
       </div>
-    </div>
     );
   }
-}
+};
 
 // pass these arguments to 'connect' to instantiate component with these methods
 
@@ -80,6 +103,7 @@ const mapStateToProps = (state) => {
   return {
     books: state.books,
     user: state.user,
+    searchTerm: state.searches.searchTerm,
     latestAction: state.latestAction
   }
 }

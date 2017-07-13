@@ -37,46 +37,37 @@
     /*User Name - Above*/
   /*These styles above are for the profile picture group*/
 
-  /*Mobile Post a Book Button - below*/
+  /*Mobile My Books Button - below*/
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn {
     background-color: rgba(124,35,69,1);
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
-    width: 110px;
+    width: 24vw;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn > a {
       color: rgba(248,240,214,1);
+      text-align: center;
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:hover {
     background-color: rgba(248,240,214,1);
     border: 2px solid rgba(124,35,69,1);
-    width: 110px;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:hover > a {
       color: rgba(124,35,69,1);
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover:active {
+  #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:hover:active {
     background-color: rgba(110,107,102,1);
     border: 2px solid rgba(110,107,102,1);
-    width: 110px;
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:hover:active > a {
       color: rgba(248,240,214,1);
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:nth-child(2):active {
-    background-color: rgba(110,107,102,1);
-    border: 2px solid rgba(110,107,102,1);
-    width: 110px;
-  }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover:active > a {
-      color: rgba(248,240,214,1);
-    }
   /*Mobile Post a Book Button - above*/
   /* Log out Button - below*/
 
@@ -86,19 +77,22 @@
     background-color: rgba(110,107,102,1);
     color: rgba(248,240,214,1);
     margin-top: 10px;
-    width: 85px;
+    width: 24vw;
+    text-align: center;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a > a {
       color: rgba(248,240,214,1);
+      text-decoration: none;
     }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover {
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(124,35,69,1);
+    text-decoration: none;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a > a {
       color: rgba(248,240,214,1);
     }
 
@@ -106,7 +100,7 @@
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(248,240,214,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a > a {
       color: rgba(124,35,69,1);
     }
 
@@ -142,7 +136,7 @@
   /*These styles above are for the profile picture group*/
   /*These styles below are for the post a book button*/
 
-  .post-a-book-btn {
+  .my-book-or-home-btn {
     border: 2px solid rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(124,35,69,1);
@@ -152,12 +146,12 @@
     left: 20px;
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn > a {
       color: rgba(248,240,214,1);
       top: 3px;
     }
 
-  .post-a-book-btn:active {
+  .my-book-or-home-btn:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
@@ -166,30 +160,30 @@
     color: rgba(248,240,214,1);
   }
 
-  .post-a-book-btn:hover {
+  .my-book-or-home-btn:hover {
     border-color: rgba(124,35,69,1);
     background-color: rgba(248,240,214,1);
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:hover > a {
       color: rgba(124,35,69,1);
     }
 
-  .post-a-book-btn:hover:active {
+  .my-book-or-home-btn:hover:active {
     border-style: solid;
     border-width: 2px;
     border-color: rgba(110,107,102,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: rgba(110,107,102,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.post-a-book-btn:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.my-book-or-home-btn:active > a {
       color: rgba(248,240,214,1);
     }
   /*These styles below are for the post a book button*/
 
   /*These styles below are for the log out button*/
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn {
+  .log-out-btn {
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     border: 2px solid rgba(110,107,102,1);
     background-color: rgba(110,107,102,1);
@@ -200,16 +194,23 @@
   }
 
     #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a {
-      color: rgba(248,240,214,1);
       top: 5px;
     }
 
-  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn > a > a {
+      color: rgba(248,240,214,1);
+      text-decoration: none;
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover,
+  #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:active {
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(124,35,69,1);
   }
 
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover > a > a,
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:active > a > a,
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:focus > a > a {
       color: rgba(248,240,214,1);
     }
 
@@ -217,7 +218,7 @@
     border: 2px solid rgba(124,35,69,1);
     background-color: rgba(248,240,214,1);
   }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a {
+    #bs-example-navbar-collapse-1 > div > div > ul > li.log-out-btn:hover:active > a > a {
       color: rgba(124,35,69,1);
     }
 /*These styles below are for the log out button*/

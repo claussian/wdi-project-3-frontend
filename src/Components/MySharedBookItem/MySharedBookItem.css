@@ -21,7 +21,7 @@
 
   .booklistitem-thumbnail img {
     position: relative;
-    max-width: 7vw;
+    max-height: 10vw;
     min-width: 5vw;
     box-shadow: 0px 0px 30px rgba(94,96,94,1);
   }
@@ -32,7 +32,8 @@
 }
 
   .booklistitem-info h3 {
-    font-size: 3vh;
+    font-size: 2.7vh;
+    max-width: 100vh;
     font-weight: bold;
   }
 
@@ -53,10 +54,9 @@
 /*These styles below are for the update-book button.*/
 .booklistitem-update-btn {
   color: white;
-  background-color: rgba(0,103,109,0.7);
-  border: 2px solid rgba(0,103,109,0.7);
+  background-color: rgba(0,103,109,1);
+  border: 2px solid rgba(0,103,109,1);
   position: relative;
-  border-width: 0px;
   float: right;
 }
 
@@ -65,9 +65,9 @@
 .booklistitem-update-btn:active:focus,
 .booklistitem-update-btn:focus,
 .booklistitem-update-btn:active {
-  color: rgba(0,103,109,0.7);
-  background-color: rgba(254,239,154,1);
-  border: 2px solid rgba(0,103,109,0.7);
+  color: rgba(0,103,109,1);
+  background-color: rgba(248,240,214,1);
+  border: 2px solid rgba(0,103,109,1);
 }
 
 .booklistitem-update-btn:active:hover {

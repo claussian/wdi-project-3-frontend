@@ -32,6 +32,7 @@ class MySharedBooks extends Component {
           if(user.booksOwned.indexOf(book._id) > -1) {
           return (
             <MySharedBookItem id={book._id} key={book._id} contents={book} activateEdit={this.props.activateEdit}/>
+
           )
         }
         });
@@ -40,7 +41,7 @@ class MySharedBooks extends Component {
     return (
       <div>
         <header className="jumbotron my-shared-books">
-          <h2>My Shared Books</h2>
+          <h2>My shared books</h2>
           <div className="search-bar">
             <div className="input-group">
               <input type="text" className="search-query form-control" placeholder="Search my shared books" />

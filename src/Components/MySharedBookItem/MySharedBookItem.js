@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 //Importing static assets (i.e. stylesheets, images)
 import './MySharedBookItem.css';
 
-console.log("Start of Component Book.js.");
+console.log("Start of Component MySharedBookItem.js.");
 
 class MySharedBookItem extends Component {
 
@@ -14,8 +14,6 @@ class MySharedBookItem extends Component {
   }
 
   render() {
-
-    let bgColor = "rgba(0,103,109,0.7)";
 
     return (
       <div className="row booklistitem-container">
@@ -32,20 +30,16 @@ class MySharedBookItem extends Component {
             <div className="booklistitemreview"
                  id={this.props.contents.title}
                  onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> {this.props.contents.owner.username}</h5>
+              <h5><b>Owner:</b> @{this.props.contents.owner.username}</h5>
             </div>
             <hr className="booklistitem-footer-line"/>
           </div>
         </div>
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-            <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
-              {this.renderAvailableMessage(this.props.contents.reservedBy)}
-            </div>
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
-                    style={{backgroundColor: bgColor}}
                     onClick={this.onClick}
                     id="test">
               Update >
@@ -68,6 +62,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
   }
 }
-console.log("End of MySharedBookItem.js.");
+
+console.log("End of Component MySharedBookItem.js.");
 
 export default connect(mapStateToProps, mapDispatchToProps)(MySharedBookItem);

@@ -24,6 +24,7 @@ class NavbarUser extends Component {
   execLogout = (e) => {
     e.preventDefault();
     this.props.Logout();
+    window.location.href = "/";
   }
 
   render() {
@@ -53,11 +54,11 @@ class NavbarUser extends Component {
                         </div>
                         <div className="col-xs-8 col-sm-7">
                           <h3>Welcome,</h3>
-                          <h4>{this.props.user.username}</h4>
+                          <h4>@{this.props.user.username}</h4>
                         </div>
                       </div>
                     </li>
-                    <li className="post-a-book-btn">
+                    <li className="my-book-or-home-btn">
                       <Link to={this.props.linkRef}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">

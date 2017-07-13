@@ -5,12 +5,14 @@ import bookReducer from '../Reducers/bookReducer.js';
 import currentBookReducer from '../Reducers/currentBookReducer.js';
 import userReducer from '../Reducers/userReducer.js';
 import appReducer from '../Reducers/appReducer.js';
+import searchReducer from '../Reducers/searchReducer.js';
 import latestActionReducer from '../Reducers/latestActionReducer.js';
 
 
 export let initStore = () => {
 
   const reducer = combineReducers( {
+    searches: searchReducer,
     books: bookReducer,
     currentBook: currentBookReducer,
     user: userReducer,
