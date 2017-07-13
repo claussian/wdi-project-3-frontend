@@ -78,6 +78,7 @@
     color: rgba(124,35,69,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     left: 10px;
+    width: 24vw;
   }
 
   #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover {
@@ -102,11 +103,11 @@
     color: rgba(248,240,214,1);
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     height: 100%;
-    width: 30%;
+    text-align: center;
+    width: 24vw;
   }
     #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > a {
       top: 0;
-      left: 10px;
       color: rgba(248,240,214,1);
     }
   /*Mobile Sign Up Button : default - above*/

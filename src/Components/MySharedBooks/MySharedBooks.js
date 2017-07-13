@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import './MySharedBooks.css';
 
 //Importing React Components
-import MyBookListItem from '../MyBookListItem/MyBookListItem';
+import MySharedBookItem from '../MySharedBookItem/MySharedBookItem';
 
 console.log("Start of Component MySharedBooks.js.");
 
@@ -31,7 +31,7 @@ class MySharedBooks extends Component {
         return books.map( (book) => {
           if(user.booksOwned.indexOf(book._id) > -1) {
           return (
-            <MyBookListItem id={book._id} key={book._id} contents={book}/>
+            <MySharedBookItem id={book._id} key={book._id} contents={book}/>
           )
         }
         });
@@ -40,7 +40,7 @@ class MySharedBooks extends Component {
     return (
       <div>
         <header className="jumbotron my-shared-books">
-          <h2>My Shared Books</h2>
+          <h2>My shared books</h2>
           <div className="search-bar">
             <div className="input-group">
               <input type="text" className="search-query form-control" placeholder="Search my shared books" />
