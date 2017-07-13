@@ -1,23 +1,18 @@
 //Importing required packages
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {getCurrentBook} from '../../Actions/bookActions'
 
 //Importing static assets (i.e. stylesheets, images)
-import './MyBookListItem.css';
+import './MySharedBookItem.css';
 
 console.log("Start of Component Book.js.");
 
-class MyBookListItem extends Component {
+class MySharedBookItem extends Component {
 
   constructor(props) {
     super(props);
   }
 
-  onClick = (e) => {
-    this.props.getCurrentBook(e.target.id);
-    this.props.activateEdit();
-  }
   render() {
 
     let bgColor = "rgba(0,103,109,0.7)";
@@ -44,12 +39,15 @@ class MyBookListItem extends Component {
         </div>
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <div className={this.renderAvailableClass(this.props.contents.reservedBy)}>
+              {this.renderAvailableMessage(this.props.contents.reservedBy)}
+            </div>
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <button className="btn btn-success booklistitem-update-btn"
                     style={{backgroundColor: bgColor}}
                     onClick={this.onClick}
-                    id={this.props.contents._id}>
+                    id="test">
               Update >
             </button>
           </div>
@@ -68,9 +66,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrentBook: (id) => {dispatch(getCurrentBook(id)); }
   }
 }
-console.log("End of Component Navbar.js.");
+console.log("End of MySharedBookItem.js.");
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyBookListItem);
+export default connect(mapStateToProps, mapDispatchToProps)(MySharedBookItem);

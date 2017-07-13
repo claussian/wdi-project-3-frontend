@@ -24,29 +24,29 @@ class BookFormEdit extends Component {
   }
 
   // helper function to render selected
-  selectGenre = (books, currentBook) => {
-    let genres = books.map( (book) => {
-      return book.genre;
-    });
-    let unique = genres.filter((v, i, a) => {
-      return a.indexOf(v) === i; // return only first instance of v
-    });
-    let selected = ""
-    unique.forEach( (elem) => {
-      if(elem == currentBook.genre)  {
-        selected += "<option selected>" + elem + "</option>"
-      }
-      else {
-        selected += "<option>" + elem + "</option>"
-      }
-    });
-    return selected;
-  }
+
 
   render() {
     //console.log(this.selectGenre(this.props.books, this.state.book));
 
-
+    const selectGenre = (books, currentBook) => {
+      let genres = books.map( (book) => {
+        return book.genre;
+      });
+      let unique = genres.filter((v, i, a) => {
+        return a.indexOf(v) === i; // return only first instance of v
+      });
+      let selected =
+      unique.forEach( (elem) => {
+        if(elem == currentBook.genre)  {
+          selected += <option selected>{elem}</option>
+        }
+        else {
+          selected += <option>{elem}</option>
+        }
+      });
+      return selected;
+    }
 
     return (
       <div>
