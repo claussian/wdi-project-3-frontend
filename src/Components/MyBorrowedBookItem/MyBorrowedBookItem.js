@@ -48,6 +48,7 @@ class MyBorrowedBookItem extends Component {
             <hr className="booklistitem-footer-line"/>
           </div>
         </div>
+        { /* commented out return button *//*
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
           </div>
@@ -55,10 +56,11 @@ class MyBorrowedBookItem extends Component {
             <button className="btn btn-success booklistitem-return-bk-btn"
                     onClick={this.onClick}
                     id={this.props.id}>
-               To return this book, contact @{this.props.contents.owner.username} directly.
+               Contact @{this.props.contents.owner.username} to return.
             </button>
           </div>
         </div>
+        */ }
       </div>
     )
   }
