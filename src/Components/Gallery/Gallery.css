@@ -38,9 +38,10 @@
 }
 
 #empty-gallery-msg h4, #empty-gallery-msg h5 {
-  color: rgba(248,240,214,0.6);
+  color: rgba(248,240,214,0.4);
 }
 
 #empty-gallery-msg h3 {
   color: rgba(248,240,214,1);
+  font-style: italic;
 }

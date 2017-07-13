@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { getUser } from './Actions/userActions';
 import { getBooks } from './Actions/bookActions';
-import { searchTerm } from './Actions/searchActions';
+import { searchTerm , searchBorrowedTerm } from './Actions/searchActions';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -25,6 +25,7 @@ store.dispatch(getBooks());
 
 // Search book title
 store.dispatch(searchTerm());
+store.dispatch(searchBorrowedTerm());
 
 ReactDOM.render( <Provider store={store}>
                   <App />
