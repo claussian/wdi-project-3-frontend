@@ -56,7 +56,7 @@ class Gallery extends Component {
               <h5>
                 Jonathan Safran Foer, <i>Everything Is Illuminated</i>
               </h5>
-              <h3>No books with the search term -- " {this.props.searchTerm} "</h3>
+              <h3>No results searching for " {this.props.searchTerm} "</h3>
             </div>
         )
       };
