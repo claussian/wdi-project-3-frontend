@@ -18,11 +18,6 @@ class BookForm extends Component {
 }
 
 onChange = (e) => {
-  // let key = e.target.name
-  // let value = e.target.value
-  //let pic = e.target.id
-  //console.log(e.target.files[0])
-  // console.log('key :', key, 'value: ', value)
 
     if (e.target.files) {
       console.log("image detected")

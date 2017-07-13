@@ -106,7 +106,7 @@ export const getCurrentBook = (id, books) => {
   let currentBook = books.filter( (book) => {
     return book._id == id;
   });
-  console.log("action currentBook",currentBook);
+  //console.log("action currentBook",currentBook);
 
   return {
     type: "GET_CURRENT_BOOK",

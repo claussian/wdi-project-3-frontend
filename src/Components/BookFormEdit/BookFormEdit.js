@@ -12,26 +12,49 @@ class BookFormEdit extends Component {
     super(props);
 
     this.state = {
-      book: {},
-      image: ""
+      book: {
+        title: "",
+        author: "",
+        genre:"",
+        review:""
+      },
+      image: "",
+      count:0
     }
   }
 
-  onChange = (e) => {
-
-    if (e.target.files) {
-      console.log("image detected")
-      this.setState({
-        image: e.target.files[0]
-      });
-      console.log('state within image upload', this.state);
-    }
-    let book = this.state.book;
-    book[e.target.name] = e.target.value
+  componentWillReceiveProps(){
     this.setState({
-      book: book
+      book: {},
+      count: 0
     });
-    console.log('state image', this.state);
+  }
+
+  onChange = (e) => {
+    if (this.state.count < 1) {
+      let book = {...this.props.currentBook};
+      this.setState({
+        book: book,
+        count: 1
+      });
+    }
+    else {
+      let book = this.state.book;
+      if (e.target.files) {
+        console.log("image detected")
+        this.setState({
+          image: e.target.files[0]
+        });
+        console.log('state within image upload', this.state);
+      }
+      book[e.target.name] = e.target.value
+      this.setState({
+        book: book
+      });
+      console.log("onchange state", this.state.book)
+      console.log('state image', this.state);
+    }
+
   }
 
   onClick = (e) => {
@@ -41,7 +64,7 @@ class BookFormEdit extends Component {
 
   render() {
 
-    console.log("BookFormEdit currentBook",this.props.currentBook);
+    console.log("BookFormEdit currentBook",this.state.book);
 
     return (
       <div>
@@ -59,15 +82,26 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Title</label>
-            <input name="title" className="form-control" value={this.props.currentBook.title}/>
+            <input name="title"
+                   className="form-control"
+                   placeholder = {this.props.currentBook.title}
+                   value={this.state.book.title ? this.state.book.title : ""}
+                   onChange={this.onChange}/>
           </div>
           <div className="form-group">
             <label>Author</label>
-            <input name="author" className="form-control" value={this.props.currentBook.author}/>
+            <input name="author"
+                   className="form-control"
+                   placeholder = {this.props.currentBook.author}
+                   value={this.state.book.author ? this.state.book.author : ""}
+                   onChange={this.onChange}/>
           </div>
           <div className="form-group">
             <label>Genre</label>
-            <select className="form-control" name="genre" value={this.props.currentBook.genre}>
+            <select className="form-control"
+                    name="genre"
+                    value={this.state.book.genre ? this.state.book.genre : this.props.currentBook.genre}
+                    onChange={this.onChange}>
               <option>Learning & Development</option>
               <option>Romance</option>
               <option>Popular Science</option>
@@ -75,14 +109,18 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Your review</label>
-            <textarea name="review" className="form-control" rows="3" value={this.props.currentBook.review}></textarea>
+            <textarea name="review"
+                      className="form-control"
+                      rows="3"
+                      placeholder = {this.props.currentBook.review}
+                      value={this.state.book.review ? this.state.book.review : ""}></textarea>
           </div>
           <div className="form-group">
           {this.props.currentBook.reserved ?
           <div className="well book-form-release-well">
             <div className="container">
             <div className="row">
-            <h4>User @{this.props.currentBook.reservedBy.usename} has reserved this title. Would you like to release it?</h4>
+            <h4>User @{this.props.currentBook.reservedBy.username} has reserved this title. Would you like to release it?</h4>
             </div>
             <div className="row">
             <div className="dropdown book-form-release-btn">
