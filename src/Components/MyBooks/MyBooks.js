@@ -37,7 +37,7 @@ class MyBooks extends Component {
         break;
       case "UPDATE_BOOK_ACTION":
         let updatedBook = latestAction.book;
-        return "You have updated " + updatedBook.title + "!"
+        return "You have updated " + updatedBook.title + " by " + updatedBook.author + "!"
         break;
       case "DELETE_BOOK_ACTION":
         break;

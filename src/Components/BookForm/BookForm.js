@@ -37,7 +37,7 @@ componentWillReceiveProps(nextProps) {
   if(this.props.latestAction != nextProps.latestAction){
     console.log('this.props.latestAction != nextProps.latestAction is ', this.props.latestAction, nextProps.latestAction);
     this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
-    
+
   }
 }
 
@@ -59,10 +59,10 @@ onChange = (e) => {
 }
 
 onClick = (e) => {
-  e.preventDefault()
-  console.log("submitting", this.state.book)
-  console.log('image', this.state.image)
-  this.props.addBook(this.state.image, this.state.book)
+  e.preventDefault();
+  console.log("submitting", this.state.book);
+  console.log('image', this.state.image);
+  this.props.addBook(this.state.image, this.state.book);
 
   if (!this.state.book) { // book failed to pass to state
     this.props.triggerNotification("Book upload failed. Try again?");

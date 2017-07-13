@@ -38,10 +38,12 @@ class BookFormEdit extends Component {
   onChange = (e) => {
     if (this.state.count < 1) {
       let book = {...this.props.currentBook};
+      book[e.target.name] = e.target.value
       this.setState({
         book: book,
         count: 1
       });
+      console.log("initial state onchange", this.state.book)
     }
     else {
       let book = this.state.book;
@@ -50,7 +52,7 @@ class BookFormEdit extends Component {
         this.setState({
           image: e.target.files[0]
         });
-        console.log('state within image upload', this.state);
+        console.log('state within image uplod', this.state);
       }
       book[e.target.name] = e.target.value
       this.setState({
@@ -64,6 +66,9 @@ class BookFormEdit extends Component {
 
   updateOnClick = (e) => {
     e.preventDefault();
+    if(!this.state.book.title && this.state.book.release != 'Yes') {
+      this.props.updateBookNoPic(this.props.currentBook);
+    }
     if(!this.state.image){
         console.log("Fire update with no pic");
         console.log(this.state.book);
@@ -137,7 +142,7 @@ class BookFormEdit extends Component {
             </div>
             <div className="row">
             <div className="dropdown book-form-release-btn">
-              <select className="form-control" aria-labelledby="dropdownMenu1" name="release">
+              <select className="form-control" aria-labelledby="dropdownMenu1" name="release" onChange={this.onChange}>
                 <option>No</option>
                 <option>Yes</option>
               </select>

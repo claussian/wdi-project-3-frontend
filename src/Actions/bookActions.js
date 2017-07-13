@@ -16,8 +16,8 @@ export const addBook = (image, book) => {
     axios.post('/api/book', addBookToBackEnd)
       .then( (response) => {
         console.log('/api/book response.data ==', response.data)
-        dispatch(createBook(response.data));
-        dispatch(notifySuccessfulCreate(response.data));
+        const book = response.data;
+        dispatch(getBook(book._id, 'create'));
       })
       .catch((error) =>{
         // console.error("AJAX: Could not create book @ '/api/book'");
@@ -93,6 +93,10 @@ export const getBook = (id, actionType) => {
         if(actionType == 'reserve') {
           dispatch(reserveBookInStore(book));
           dispatch(reserveBookAction(book));
+        }
+        else if(actionType == 'create') {
+          dispatch(createBook(book));
+          dispatch(notifySuccessfulCreate(book));
         }
         else {
           dispatch(updateBook(book));
