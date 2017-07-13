@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import thunks
+import {updateBookNoPic, updateBookWithPic} from '../../Actions/bookActions';
 //Importing static assets (i.e. stylesheets, images)
 import './BookFormEdit.css';
 
@@ -18,7 +20,7 @@ class BookFormEdit extends Component {
         genre:"",
         review:""
       },
-      image: "",
+      image: null,
       count:0
     }
   }
@@ -57,9 +59,17 @@ class BookFormEdit extends Component {
 
   }
 
-  onClick = (e) => {
+  updateOnClick = (e) => {
     e.preventDefault();
+    if(!this.state.image){
+        console.log("Fire update with no pic");
+        console.log(this.state.book);
+        this.props.updateBookNoPic(this.state.book);
 
+      }else{
+        console.log("Fire update with pic")
+        this.props.updateBookWithPic(this.state.image,this.state.book);
+      }
   }
 
   render() {
@@ -140,7 +150,7 @@ class BookFormEdit extends Component {
           </div>
           <div className="row">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="submit" className="btn btn-default update-book-btn" onClick={this.onClick}>Update</button>
+              <button type="submit" className="btn btn-default update-book-btn" onClick={this.updateOnClick}>Update</button>
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <button type="submit" className="btn btn-default delete-book-btn">Delete</button>
@@ -167,6 +177,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    updateBookNoPic: (book) => {dispatch(updateBookNoPic(book)); },
+    updateBookWithPic: (image, book) => {dispatch(updateBookWithPic(image, book)); },
   }
 }
 

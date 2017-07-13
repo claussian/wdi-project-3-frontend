@@ -67,8 +67,7 @@ export const reserveBook = (id) => {
     axios.put('/api/reserve/'+ id)
       .then( (response) => {
         const book = response.data;
-        //dispatch(getBooks()); // reload bookstore
-        dispatch(getBook(book._id, true)); // get book info and update latestAction
+        dispatch(getBook(book._id, 'reserve')); // get book info and update latestAction
       })
       .catch((error)=> {
         console.error("AJAX: Could not reserve book'");
@@ -78,13 +77,18 @@ export const reserveBook = (id) => {
   }
 }
 
-export const getBook = (id, reserve) => {
+export const getBook = (id, actionType) => {
   return (dispatch) => {
     axios.get('/api/book/' + id)
       .then( (response) => {
         const book = response.data;
-        if(reserve) {
+        if(actionType == 'reserve') {
+          dispatch(reserveBookInStore(book));
           dispatch(reserveBookAction(book));
+        }
+        else {
+          dispatch(updateBook(book));
+          dispatch(updateBookAction(book));
         }
       })
       .catch((error)=> {
@@ -93,6 +97,13 @@ export const getBook = (id, reserve) => {
         // dispatch(loadBooks({}));
       });
   };
+}
+
+const reserveBookInStore = (book) => {
+  return {
+    type: "RESERVE_BOOK",
+    book
+  }
 }
 
 const reserveBookAction = (book) => {
@@ -111,5 +122,63 @@ export const getCurrentBook = (id, books) => {
   return {
     type: "GET_CURRENT_BOOK",
     currentBook: currentBook[0]
+  }
+}
+
+
+export const updateBookNoPic = (book) => {
+  return (dispatch) => {
+
+    axios.put('/api/booknopic/'+ book._id, book)
+      .then( (response) => {
+        const book = response.data;
+        //dispatch(getBooks()); // reload bookstore
+        dispatch(getBook(book._id, 'update')); // get book info and update latestAction
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not update book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  }
+}
+
+export const updateBookWithPic = (image, book) => {
+  return (dispatch) => {
+
+    let updateBookToBackEnd = new FormData();
+
+    updateBookToBackEnd.append('cover', image);
+    updateBookToBackEnd.append('title', book.title);
+    updateBookToBackEnd.append('author', book.author);
+    updateBookToBackEnd.append('genre', book.genre);
+    updateBookToBackEnd.append('review', book.review);
+
+    axios.put('/api/book/'+ book._id, updateBookToBackEnd)
+      .then( (response) => {
+        const book = response.data;
+        console.log("axios complete, updated book",book);
+        //dispatch(getBooks()); // reload bookstore
+        dispatch(getBook(book._id, 'update')); // get book info and update latestAction
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not update book'");
+        console.log(error);
+        // dispatch(loadBooks({}));
+      });
+  }
+}
+
+const updateBook = (book) => {
+  return {
+    type: "UPDATE_BOOK",
+    book
+  }
+}
+
+const updateBookAction = (book) => {
+  return {
+    type: "UPDATE_BOOK_ACTION",
+    book
   }
 }

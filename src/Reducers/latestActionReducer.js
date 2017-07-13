@@ -6,6 +6,9 @@ const latestActionReducer = (state = {}, action) => {
     case "RESERVE_BOOK_ACTION":
     return action;
       break;
+    case "UPDATE_BOOK_ACTION":
+    return action;
+      break;
     case "DELETE_BOOK_ACTION":
       break;
     default:

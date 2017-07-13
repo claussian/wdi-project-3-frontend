@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+import {triggerNotification} from '../../Actions/appActions';
+
 //Importing static assets (i.e. stylesheets, images)
 import './MyBooks.css';
 
@@ -24,6 +26,31 @@ class MyBooks extends Component {
     }
   };
 
+  whichMessage = (latestAction) => {
+    switch (latestAction.type) {
+      case "CREATE_BOOK_ACTION":
+        break;
+      case "RESERVE_BOOK_ACTION":
+        let newBook = latestAction.book;
+        return "You have placed a reservation for '" + newBook.title + "'. Kindly contact @" + newBook.owner.username + " at " + newBook.owner.email;
+        break;
+      case "UPDATE_BOOK_ACTION":
+        let updatedBook = latestAction.book;
+        return "You have updated " + updatedBook.title + "!"
+        break;
+      case "DELETE_BOOK_ACTION":
+        break;
+      default:
+          return "";
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.latestAction != nextProps.latestAction){
+      this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
+    }
+  }
+
   activatePost = () => {
     this.setState({
       editForm: false
@@ -36,11 +63,11 @@ class MyBooks extends Component {
     })
   }
 
-  currentBookObj = (books, currentBookId) => {
-    return books.filter( (book) => {
-      return book._id == currentBookId;
-    });
-  }
+  // currentBookObj = (books, currentBookId) => {
+  //   return books.filter( (book) => {
+  //     return book._id == currentBookId;
+  //   });
+  // }
   // currentBookObj={this.currentBookObj(this.props.books, this.props.currentBook)[0]
   render() {
 
@@ -82,10 +109,17 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     currentBook: state.currentBook,
-    books: state.books
+    books: state.books,
+    latestAction: state.latestAction
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
   }
 }
 
 console.log("End of Component Post.js.");
 
-export default connect(mapStateToProps)(MyBooks);
+export default connect(mapStateToProps, mapDispatchToProps)(MyBooks);
