@@ -1,13 +1,16 @@
-const bookReducer = (state = [], action) => {
+const bookReducer = (state = [], actions) => {
 
   // console.log(action);
 
-  switch (action.type) {
+  switch (actions.type) {
     case "CREATE_BOOK":
-      return action.book
+      return [
+        ...state,
+        actions.book
+      ]
       break;
     case "LOAD_BOOKS":
-      return action.books || [];
+      return actions.books || [];
       break;
     case "RESERVE_BOOK":
       break;

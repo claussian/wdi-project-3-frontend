@@ -66,22 +66,27 @@ class Gallery extends Component {
 
       console.log("Is there a search term? > ", searchTerm === undefined);
 
-      if(searchTerm !== "" || searchTerm !== undefined) {
+      // if(searchTerm !== "" || searchTerm !== undefined) {
+      //
+      //   // NOTE: Can't get the searched books to filter properly here!
+      //   let searchedBooks = books.filter((book) => {
+      //     return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
+      //     });
+      //
+      //   return searchedBooks.map( (book) => {
+      //     return (
+      //       <Book id={book._id} key={book._id} contents={book}/>
+      //     )
+      //   });
+      //
+      // };
 
-        // NOTE: Can't get the searched books to filter properly here!
-        let searchedBooks = books.filter((book) => {
-          return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
-          });
-
-        return searchedBooks.map( (book) => {
-          return (
-            <Book id={book._id} key={book._id} contents={book}/>
-          )
-        });
-
-      };
-
-      return books
+      // return books
+      return books.map( (book) => {
+        return (
+          <Book id={book._id} key={book._id} contents={book}/>
+        )
+      });
 
     };
 
@@ -90,7 +95,7 @@ class Gallery extends Component {
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
-          {renderBooks(this.props.books,this.props.searchTerm)}
+          {renderBooks(this.props.books)}
         </div>
       </div>
     );
