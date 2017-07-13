@@ -52,10 +52,10 @@ class MyBorrowedBookItem extends Component {
           <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
           </div>
           <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <button className="btn btn-success booklistitem-update-btn"
+            <button className="btn btn-success booklistitem-return-bk-btn"
                     onClick={this.onClick}
                     id={this.props.id}>
-              Return
+               To return this book, contact @{this.props.contents.owner.username} directly.
             </button>
           </div>
         </div>
