@@ -11,69 +11,73 @@ class BookFormEdit extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      book: {}
-    }
+    // this.state = {
+    //   book: {}
+    // }
+  }
+
+  componentWillMount() {
+  //   const initialProps = (books, currentBookId) => {
+  //     // console.log(books);
+  //     // console.log(currentBookId);
+  //     let newbook = books.filter( (book) => {
+  //       return book._id == currentBookId;
+  //     });
+  //     // console.log("newbook", newbook[0]);
+  //     // console.log("this.state.book", this.state.book)
+  //     if(!this.state.book.title) {
+  //       console.log("inside initialProps!")
+  //       this.setState({
+  //       book: newbook[0]
+  //     });
+  //   }
+  // }
+  //   initialProps(this.props.books, this.props.currentBook);
+  //   console.log("initialProps",this.state.book)
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("componentWillUpdate called");
-    if(this.state.book != nextProps.currentBookObj) {
-      console.log("nextProps.currentBookObj", nextProps.currentBookObj);
-      const currbook = nextProps.currentBookObj
-      this.setState ({
-        book: currbook
-      });
-      // this.setState(state);
-      console.log("updatedstate", this.state.book);
-    }
+    // console.log("componentWillUpdate called");
+    // if(this.state.book != nextProps.currentBookObj) {
+    //   const newbook = nextProps.currentBookObj;
+    //   console.log("inside nextProps.currentBookObj",newbook);
+    //   //this.state.book = newbook;
+    //   this.setState ({
+    //     book: newbook
+    //   });
+    //   // this.setState(state);
+    //   console.log("updatedstate", this.state.book);
+    // }
   }
 
   // helper function to render selected
+  //  initialProps = (books, currentBookId) => {
+  //   // console.log(books);
+  //   // console.log(currentBookId);
+  //   let newbook = books.filter( (book) => {
+  //     return book._id == currentBookId;
+  //   });
+  //   // console.log("newbook", newbook[0]);
+  //   // console.log("this.state.book", this.state.book)
+  //   if(!this.state.book.title) {
+  //     console.log("inside!")
+  //     this.setState({
+  //     book: newbook[0]
+  //   });
+  // }
+  //   console.log("initialProps", this.state.book);
+  //}
 
+  componentDidMount() {
+    // this.initialProps(this.props.books,this.props.currentBook);
+  }
 
   render() {
-    //console.log(this.selectGenre(this.props.books, this.state.book));
-    console.log("newstate", this.state.book);
-    // const selectGenre = (books, currentBook) => {
-    //   let genres = books.map( (book) => {
-    //     return book.genre;
-    //   });
-    //   let unique = genres.filter((v, i, a) => {
-    //     return a.indexOf(v) === i; // return only first instance of v
-    //   });
-    //   let selected =
-    //   unique.forEach( (elem) => {
-    //     if(elem == currentBook.genre)  {
-    //       selected += <option selected>{elem}</option>
-    //     }
-    //     else {
-    //       selected += <option>{elem}</option>
-    //     }
-    //   });
-    //   return selected;
-    // }
 
-    const initialProps = (books, currentBookId) => {
-      console.log(books);
-      console.log(currentBookId);
-      let newbook = books.filter( (book) => {
-        return book._id == currentBookId;
-      });
-      console.log("newbook", newbook[0]);
-      console.log("this.state.book", this.state.book)
-      if(!this.state.book.title) {
-        console.log("inside!")
-        this.setState({
-        book: newbook[0]
-      });
-    }
-      console.log("initialProps", this.state.book);
-    }
+    console.log("BookFormEdit currentBook",this.props.currentBook);
 
     return (
       <div>
-        {initialProps(this.props.books,this.props.currentBook)}
         <header className="jumbotron book-form">
         <form>
           <div className="form-group">
@@ -88,23 +92,26 @@ class BookFormEdit extends Component {
           </div>
           <div className="form-group">
             <label>Title</label>
-            <input name="title" className="form-control" placeholder={this.state.book.title} value={this.state.book.title}/>
+            <input name="title" className="form-control" value={this.props.currentBook.title}/>
           </div>
           <div className="form-group">
             <label>Author</label>
-            <input name="author" className="form-control" placeholder={this.state.book.author} defaultValue={this.state.book.author}/>
+            <input name="author" className="form-control" value={this.props.currentBook.author}/>
           </div>
           <div className="form-group">
             <label>Genre</label>
-            <select className="form-control" name="genre">
+            <select className="form-control" name="genre" value={this.props.currentBook.genre}>
+              <option>Learning & Development</option>
+              <option>Romance</option>
+              <option>Popular Science</option>
             </select>
           </div>
           <div className="form-group">
             <label>Your review</label>
-            <textarea name="review" className="form-control" rows="3" placeholder={this.state.book.review} defaultValue={this.state.book.review}></textarea>
+            <textarea name="review" className="form-control" rows="3" value={this.props.currentBook.review}></textarea>
           </div>
           <div className="form-group">
-          {this.state.book.reserved ?
+          {this.props.currentBook.reserved ?
           <div className="well book-form-release-well">
             <div className="container">
             <div className="row">

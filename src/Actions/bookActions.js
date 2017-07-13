@@ -102,9 +102,14 @@ const reserveBookAction = (book) => {
   }
 }
 
-export const getCurrentBook = (id) => {
+export const getCurrentBook = (id, books) => {
+  let currentBook = books.filter( (book) => {
+    return book._id == id;
+  });
+  console.log("action currentBook",currentBook);
+
   return {
     type: "GET_CURRENT_BOOK",
-    id
+    currentBook: currentBook[0]
   }
 }
