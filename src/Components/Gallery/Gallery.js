@@ -46,8 +46,7 @@ class Gallery extends Component {
   }
 
   render() {
-
-    const renderBooks = (books, searchTerm) => {
+    const initBooks = (books, searchTerm) => {
       if(books.length === 0) {
         return (
             <div className="col-md-11 col-sm-10 col-xs-8" id="empty-gallery-msg">
@@ -61,28 +60,38 @@ class Gallery extends Component {
             </div>
         )
       };
+    };
+
+    const renderBooks = (books, searchTerm) => {
 
       console.log('In Gallery.js, we have just begun filtering the books accordingly. We attempt to search: ', searchTerm, 'in the books: ', books);
 
-      console.log("Is there a search term? > ", searchTerm === undefined);
+      console.log("Is there a search term? > undefined? ", searchTerm === undefined, ' // >null?',searchTerm === null, ' // > ""', searchTerm === "");
 
-      if(searchTerm !== "" || searchTerm !== undefined) {
+      if(searchTerm) {
 
-        // NOTE: Can't get the searched books to filter properly here!
-        let searchedBooks = books.filter((book) => {
-          return book.title.text.toLowerCase().includes(searchTerm.toLowerCase());
+        /*This filters the books according to keyup searchTerm*/
+        console.log('searchTerm = ', searchTerm);
+        books = books.filter((book) => {
+
+          // console.log('book.title = ', book.title);
+          /*This filters the books according to keyup searchTerm*/
+          return book.title.toLowerCase().includes(searchTerm.toLowerCase());
           });
 
-        return searchedBooks.map( (book) => {
-          return (
-            <Book id={book._id} key={book._id} contents={book}/>
-          )
-        });
-
+        // return books.map( (book) => {
+        //   return (
+        //     <Book id={book._id} key={book._id} contents={book}/>
+        //   )
+        // });
       };
 
-      return books
-
+      /*This common returns maps the Books according to keyup searchTerm*/
+      return books.map( (book) => {
+        return (
+          <Book id={book._id} key={book._id} contents={book}/>
+        )
+      });
     };
 
     return (
@@ -90,6 +99,7 @@ class Gallery extends Component {
         <hr/>
         <h1 id="gallery-header">The Bookshelf</h1>
         <div className="row" id="gallery">
+          {initBooks(this.props.books,this.props.searchTerm)}
           {renderBooks(this.props.books,this.props.searchTerm)}
         </div>
       </div>
