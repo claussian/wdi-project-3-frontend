@@ -82,7 +82,8 @@ class MyBorrowedBooks extends Component {
                 </button>
               </span>{ /* input-group-btn */ }
               <input  type="text"
-                      className="search-query form-control" placeholder="Search my borrowed books"
+                      className="search-query form-control"
+                      placeholder="Search title"
                       onKeyUp={this.onChange} />
             </div>{ /* input-group */ }
           </div>{/* /search-bar */}
