@@ -75,7 +75,7 @@ export const getBook = (id, reserve) => {
       .then( (response) => {
         const book = response.data;
         if(reserve) {
-          dispatch(reserveBookAction(book))
+          dispatch(reserveBookAction(book));
         }
       })
       .catch((error)=> {
@@ -90,5 +90,12 @@ const reserveBookAction = (book) => {
   return {
     type: "RESERVE_BOOK_ACTION",
     book
+  }
+}
+
+export const getCurrentBook = (id) => {
+  return {
+    type: "GET_CURRENT_BOOK",
+    id
   }
 }

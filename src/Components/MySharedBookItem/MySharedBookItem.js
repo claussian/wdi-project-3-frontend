@@ -62,6 +62,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
   }
 }
+
 console.log("End of Component MySharedBookItem.js.");
 
 export default connect(mapStateToProps, mapDispatchToProps)(MySharedBookItem);

@@ -30,12 +30,27 @@ class MyBooks extends Component {
     })
   }
 
+  activateEdit = () => {
+    this.setState({
+      editForm: true
+    })
+  }
+
+  currentBookObj = (books, currentBookId) => {
+    return books.filter( (book) => {
+      return book._id == currentBookId;
+    });
+  }
+
   render() {
 
     const isLoggedIn = this.props.user._id;
 
+    //console.log(this.currentBookObj(this.props.books, this.props.currentBook)[0]);
+
 
     return (
+
       <div className="container">
         <div className="row">
           {/*This if statement toggles between logged-in navbar and public navbar below*/}
@@ -48,11 +63,11 @@ class MyBooks extends Component {
         </div>
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
-            <MySharedBooks />
+            <MySharedBooks activateEdit={this.activateEdit}/>
             <MyBorrowedBooks />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          {this.state.editForm ? <BookFormEdit activatePost={this.activatePost}/> : <BookForm />}
+          {this.state.editForm ? <BookFormEdit activatePost={this.activatePost} currentBookObj={this.currentBookObj(this.props.books, this.props.currentBook)[0]}/> : <BookForm />}
           </div>
         </div> {/* /row */}
         <Footer />
@@ -65,7 +80,9 @@ class MyBooks extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    currentBook: state.currentBook,
+    books: state.books
   }
 }
 
