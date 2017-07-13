@@ -25,9 +25,9 @@
 
 /*These styles below are for the search button.*/
 .search-bar > div > span > button {
-  background-color: rgba(124,35,69,1);
-  border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(110,107,102,1);
   font-size: 25px;
   height: 100%;
   border-style: solid;
@@ -42,14 +42,20 @@
 .search-bar > div > span > button:hover,
 .search-bar > div > span > button:active,
 .search-bar > div > span > button:focus {
-  background-color: rgba(124,35,69,1);
+  /*background-color: rgba(124,35,69,1);
   border-color: rgba(124,35,69,1);
-  color: rgba(223,217,198,1);
+  color: rgba(223,217,198,1);*/
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
+  color: rgba(110,107,102,1);
 }
 
 .search-bar > div > span > button:active:hover {
-  background-color: rgba(223,217,198,1);
+  /*background-color: rgba(223,217,198,1);
   border-color: rgba(124,35,69,1);
+  color: rgba(110,107,102,1);*/
+  background-color: rgba(223,217,198,1);
+  border-color: rgba(223,217,198,1);
   color: rgba(110,107,102,1);
 }
 

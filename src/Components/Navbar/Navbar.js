@@ -97,8 +97,8 @@ class Navbar extends Component {
               </div>
               <div className="row">
                 <div className="col-lg-12">
-                {this.props.notification ? <NotificationHeader/> : null}
-              </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
+                  {this.props.notification ? <NotificationHeader/> : null}
+                </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
               </div>{/* /row */}
             </div>{/* /bs-example-navbar-collapse-1 */}
           </div>{/* container */}
@@ -113,7 +113,7 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    notification: state.notification
+    notification: state.notification,
   }
 }
 

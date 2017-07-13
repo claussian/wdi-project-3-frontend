@@ -1,9 +1,11 @@
 /*Jumbotron Box Editing*/
 
+/*default state*/
 .notification-hidden {
-  display: none;
+  /*display: none;*/
 }
 
+/*Notification CLOSE Button Below*/
 #notification-close-btn {
   position: absolute;
   padding-top: 0;
@@ -29,7 +31,8 @@
   #notification-close-btn:hover:active span:hover:active {
     color: rgba(254,239,154,1);
   }
-
+/*Notification CLOSE Button Above*/
+/*Notification RESERVED Banner Below*/
 .notification-reserved {
   position: absolute;
   box-shadow: 0px 0px 30px black;
@@ -53,6 +56,8 @@
     color: rgba(223,217,198,1);
   }
 
+/*Notification Reserved Banner Above*/
+/*Notification Error Banner Below*/
 .notification-error {
   position: absolute;
   box-shadow: 0px 0px 30px black;
@@ -70,3 +75,4 @@
     position: relative;
     top: -5px;
   }
+/*Notification Error Banner Above*/

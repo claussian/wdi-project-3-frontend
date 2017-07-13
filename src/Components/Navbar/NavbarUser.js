@@ -70,7 +70,7 @@ class NavbarUser extends Component {
             </div>{/* /bs-example-navbar-collapse-1 */}
           <div className="row">
             <div className="col-lg-12">
-            {this.props.notification ? <NotificationHeader user={this.props.user} /> : null}
+              {this.props.notification ? <NotificationHeader user={this.props.user} /> : null}
             </div>
           </div>
           </div>{/* container */}
