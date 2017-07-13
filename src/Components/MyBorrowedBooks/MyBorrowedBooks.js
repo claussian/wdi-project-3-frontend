@@ -1,9 +1,9 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchBorrowedTerm } from '../../Actions/searchActions';
 
 // Import action-creators and thunks
+import { searchBorrowedTerm } from '../../Actions/searchActions';
 import {triggerNotification} from '../../Actions/appActions';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -60,13 +60,6 @@ class MyBorrowedBooks extends Component {
 
             return books.map( (book) => {
               if(user.booksBorrowed.indexOf(book._id) > -1) {
-
-                console.log("IN > Borrowed books about to be rendered with: ", user.booksBorrowed, "by searchBorrowedTerm: ", searchBorrowedTerm);
-
-
-
-                console.log("OUT > Borrowed books rendered with: ", user.booksBorrowed, "by searchBorrowedTerm: ", searchBorrowedTerm, ". No. of results = ", books.length);
-
               return (
                 <MyBorrowedBookItem id={book._id} key={book._id} contents={book}/>
               )
@@ -96,14 +89,13 @@ class MyBorrowedBooks extends Component {
           <div className="row">
             {renderBorrowedBooks(this.props.books, this.props.user, this.props.searchBorrowedTerm)}
           </div>
-        </header>
+        </header>{/* /jumbotron my-borrowed-books */}
       </div>
     );
   }
 }
 
 // pass these arguments to 'connect' to instantiate component with these methods
-
 // Define state within the component from the store
 const mapStateToProps = (state) => {
   return {
@@ -116,7 +108,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeBorrowedSearchTerm: (text) => { dispatch(searchBorrowedTerm(text)); },
-    //triggerNotification: (message) => {dispatch(triggerNotification(message)); }
   }
 }
 
