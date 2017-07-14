@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 // Import thunks
 import {updateBookNoPic, updateBookWithPic} from '../../Actions/bookActions';
 import {triggerNotification, closeNotification} from '../../Actions/appActions';
-import {addBook} from '../../Actions/bookActions';
+import {deleteBook} from '../../Actions/bookActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './BookFormEdit.css';
@@ -38,10 +38,12 @@ class BookFormEdit extends Component {
   onChange = (e) => {
     if (this.state.count < 1) {
       let book = {...this.props.currentBook};
+      book[e.target.name] = e.target.value
       this.setState({
         book: book,
         count: 1
       });
+      console.log("initial state onchange", this.state.book)
     }
     else {
       let book = this.state.book;
@@ -50,7 +52,7 @@ class BookFormEdit extends Component {
         this.setState({
           image: e.target.files[0]
         });
-        console.log('state within image upload', this.state);
+        console.log('state within image uplod', this.state);
       }
       book[e.target.name] = e.target.value
       this.setState({
@@ -64,6 +66,9 @@ class BookFormEdit extends Component {
 
   updateOnClick = (e) => {
     e.preventDefault();
+    if(!this.state.book.title && this.state.book.release != 'Yes') {
+      this.props.updateBookNoPic(this.props.currentBook);
+    }
     if(!this.state.image){
         console.log("Fire update with no pic");
         console.log(this.state.book);
@@ -73,6 +78,12 @@ class BookFormEdit extends Component {
         console.log("Fire update with pic")
         this.props.updateBookWithPic(this.state.image,this.state.book);
       }
+  }
+
+  deleteOnClick = (e) => {
+    e.preventDefault();
+    console.log("Fire delete");
+    this.props.deleteBook(this.props.currentBook);
   }
 
   render() {
@@ -137,7 +148,7 @@ class BookFormEdit extends Component {
             </div>
             <div className="row">
             <div className="dropdown book-form-release-btn">
-              <select className="form-control" aria-labelledby="dropdownMenu1" name="release">
+              <select className="form-control" aria-labelledby="dropdownMenu1" name="release" onChange={this.onChange}>
                 <option>No</option>
                 <option>Yes</option>
               </select>
@@ -156,7 +167,7 @@ class BookFormEdit extends Component {
               <button type="submit" className="btn btn-default update-book-btn" onClick={this.updateOnClick}>Update</button>
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <button type="submit" className="btn btn-default delete-book-btn">Delete</button>
+              <button type="submit" className="btn btn-default delete-book-btn"onClick={this.deleteOnClick}>Delete</button>
             </div>
           </div>
 
@@ -182,6 +193,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateBookNoPic: (book) => {dispatch(updateBookNoPic(book)); },
     updateBookWithPic: (image, book) => {dispatch(updateBookWithPic(image, book)); },
+    deleteBook: (book) => {dispatch(deleteBook(book))}
   }
 }
 

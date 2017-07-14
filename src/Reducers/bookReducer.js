@@ -41,6 +41,13 @@ const bookReducer = (state = [], actions) => {
       });
       break;
     case "DELETE_BOOK":
+      let ids = state.map( (book) => {
+        return book._id;
+      });
+      console.log("state array", ids)
+      console.log("id to delete", actions.book._id)
+      return state
+      //.splice(ids.indexOf(actions.book._id),1);
       break;
     default:
         return state;

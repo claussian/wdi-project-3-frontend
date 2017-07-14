@@ -38,7 +38,11 @@ class MySharedBookItem extends Component {
             <div className="booklistitemreview"
                  id={this.props.contents.title}
                  onMouseOver={this.onMouseOver}>
-              <h5><b>Owner:</b> @{this.props.contents.owner.username}</h5>
+            {this.props.contents.reserved ?
+              <div className="well booklistitem-well">
+                <h4><b>Reserved by:</b> @{this.props.contents.reservedBy.username}</h4>
+                <h4><b>Email: </b>{this.props.contents.reservedBy.email}</h4>
+              </div> : null}
             </div>
             <hr className="booklistitem-footer-line"/>
           </div>

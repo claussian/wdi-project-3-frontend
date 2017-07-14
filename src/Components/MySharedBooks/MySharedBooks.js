@@ -46,18 +46,22 @@ class MySharedBooks extends Component {
       } else {
 
         /*The search filter will only be triggered if there is a search term for shared books*/
-
+        let newbooks;
         if(searchSharedTerm) {
           /*This filters the books according to keyup searchSharedTerm*/
           console.log('searchSharedTerm = ', searchSharedTerm);
-          books = books.filter((book) => {
+
+          newbooks = books.filter((book) => {
             // console.log('book.title = ', book.title);
             /*This filters the books according to keyup searchSharedTerm*/
             return book.title.toLowerCase().includes(searchSharedTerm.toLowerCase());
             });
-        };
+        }
+        else {
+          newbooks = books;
+        }
 
-        return books.map( (book) => {
+        return newbooks.map( (book) => {
           if(user.booksOwned.indexOf(book._id) > -1) {
           return (
             <MySharedBookItem id={book._id} key={book._id} contents={book} activateEdit={this.props.activateEdit}/>

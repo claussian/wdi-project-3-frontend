@@ -11,6 +11,7 @@ const latestActionReducer = (state = {}, action) => {
     return action;
       break;
     case "DELETE_BOOK_ACTION":
+    return action;
       break;
     default:
       return state;

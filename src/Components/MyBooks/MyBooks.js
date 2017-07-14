@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// Import action-creators and thunks
+import {getCurrentBook, loadBooks} from '../../Actions/bookActions';
 import {triggerNotification} from '../../Actions/appActions';
+import {getUser} from '../../Actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './MyBooks.css';
@@ -37,9 +40,11 @@ class MyBooks extends Component {
         break;
       case "UPDATE_BOOK_ACTION":
         let updatedBook = latestAction.book;
-        return "You have updated " + updatedBook.title + "!"
+        return "You have updated " + updatedBook.title + " by " + updatedBook.author + "!"
         break;
       case "DELETE_BOOK_ACTION":
+        let deletedBook = latestAction.book;
+        return "You have deleted " + deletedBook.title + " from your shared book collection!"
         break;
       default:
           return "";
@@ -49,6 +54,8 @@ class MyBooks extends Component {
   componentWillReceiveProps(nextProps) {
     if(this.props.latestAction != nextProps.latestAction){
       this.props.triggerNotification(this.whichMessage(nextProps.latestAction));
+      this.props.getCurrentBook(nextProps.currentBook._id,nextProps.books);
+      //this.props.loadBooks(nextProps.books);
     }
   }
 
@@ -117,7 +124,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    triggerNotification: (message) => {dispatch(triggerNotification(message)); }
+    triggerNotification: (message) => {dispatch(triggerNotification(message)); },
+    getCurrentBook: (id, books) => {dispatch(getCurrentBook(id, books)); },
+    loadBooks: (books) => {dispatch(loadBooks(books));},
+    getUser: () => {dispatch(getUser()); }
+
   }
 }
 
