@@ -63,3 +63,17 @@ export const localLogout = () => {
       });
     }
 }
+
+export const updateUserOwned = (id) => {
+  return {
+    type: "UPDATE_USER_OWNED",
+    id
+  }
+}
+
+export const updateUserBorrowed = (id) => {
+  return {
+    type: "UPDATE_USER_BORROWED",
+    id
+  }
+}
