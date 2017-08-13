@@ -137,7 +137,8 @@ class BookFormEdit extends Component {
                       className="form-control"
                       rows="3"
                       placeholder = {this.props.currentBook.review}
-                      value={this.state.book.review ? this.state.book.review : ""}></textarea>
+                      value={this.state.book.review ? this.state.book.review : ""}
+                      onChange={this.onChange}></textarea>
           </div>
           <div className="form-group">
           {this.props.currentBook.reserved ?
