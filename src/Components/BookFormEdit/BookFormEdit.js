@@ -38,7 +38,7 @@ class BookFormEdit extends Component {
   onChange = (e) => {
     if (this.state.count < 1) {
       let book = {...this.props.currentBook};
-      book[e.target.name] = e.target.value
+      // book[e.target.name] = e.target.value
       this.setState({
         book: book,
         count: 1
