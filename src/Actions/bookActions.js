@@ -200,12 +200,13 @@ const updateBookAction = (book) => {
 
 export const deleteBook = (book) => {
   return (dispatch) => {
-
+    console.log('/api/book/'+ book._id);
     axios.delete('/api/book/'+ book._id)
       .then( (response) => {
         console.log(response.data);
         console.log("inside book delete", book);
         dispatch(deleteBookInStore(book)); // get book info and update latestAction
+        dispatch(deleteBookInUser(book));
         dispatch(deleteBookAction(book));
       })
       .catch((error)=> {
@@ -218,6 +219,13 @@ export const deleteBook = (book) => {
 const deleteBookInStore = (book) => {
   return {
     type: "DELETE_BOOK",
+    book
+  }
+}
+
+const deleteBookInUser = (book) => {
+  return {
+    type: "DELETE_BOOK_IN_USER",
     book
   }
 }

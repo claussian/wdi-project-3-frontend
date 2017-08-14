@@ -13,6 +13,11 @@ const userReducer = (state = {}, action) => {
         let rrstate = {...state};
         rrstate.booksBorrowed.push(action.id);
         return rrstate;
+    case "DELETE_BOOK_IN_USER":
+        let ttstate = {...state};
+        let booksOwned = ttstate.booksOwned
+        booksOwned.splice(booksOwned.indexOf(action.book._id),1);
+        return ttstate;
     default:
         return state;
   }

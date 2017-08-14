@@ -46,7 +46,9 @@ const bookReducer = (state = [], actions) => {
       });
       console.log("state array", ids)
       console.log("id to delete", actions.book._id)
-      return state
+      let newbookArray = [...state];
+      newbookArray.splice(ids.indexOf(actions.book._id),1);
+      return newbookArray;
       //.splice(ids.indexOf(actions.book._id),1);
       break;
     default:

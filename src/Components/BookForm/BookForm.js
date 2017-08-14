@@ -16,7 +16,12 @@ class BookForm extends Component {
     super(props);
 
     this.state = {
-      book: {},
+      book: {
+        title: "",
+        author: "",
+        genre:"Learning & Development",
+        review:""
+      },
       image: "",
     }
 }
@@ -25,8 +30,8 @@ whichMessage = (latestAction) => {
   switch (latestAction.type) {
     case "CREATE_BOOK_ACTION":
       let createBook = latestAction.book;
-      console.log("You have successfully uploaded '" + createBook.title + "' by" + createBook.author);
-      return "You have successfully uploaded '" + createBook.title + "' by" + createBook.author;
+      //console.log("You have successfully uploaded '" + createBook.title + "' by " + createBook.author);
+      return "You have successfully uploaded '" + createBook.title + "' by " + createBook.author;
       break;
     default:
         return "";
@@ -50,7 +55,7 @@ onChange = (e) => {
       })
       console.log('state within image upload', this.state)
     }
-    let book = this.state.book
+    let book = this.state.book;
     book[e.target.name] = e.target.value
   this.setState({
     book: book

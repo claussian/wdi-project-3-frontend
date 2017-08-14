@@ -20,7 +20,7 @@ class BookFormEdit extends Component {
       book: {
         title: "",
         author: "",
-        genre:"",
+        genre:"Learning & Development",
         review:""
       },
       image: null,
@@ -43,7 +43,7 @@ class BookFormEdit extends Component {
         book: book,
         count: 1
       });
-      console.log("initial state onchange", this.state.book)
+      console.log("initial state onchange", this.state)
     }
     else {
       let book = this.state.book;
