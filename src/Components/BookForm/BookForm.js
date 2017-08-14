@@ -16,7 +16,12 @@ class BookForm extends Component {
     super(props);
 
     this.state = {
-      book: {},
+      book: {
+        title: "",
+        author: "",
+        genre:"Learning & Development",
+        review:""
+      },
       image: "",
     }
 }
@@ -51,7 +56,11 @@ onChange = (e) => {
       console.log('state within image upload', this.state)
     }
     let book = this.state.book
+    // console.log("new book")
+    // console.log(book);
     book[e.target.name] = e.target.value
+    // console.log("amended book");
+    // console.log(book);
   this.setState({
     book: book
   })
