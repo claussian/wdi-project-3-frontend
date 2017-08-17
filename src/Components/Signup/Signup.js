@@ -38,13 +38,13 @@ class Signup extends Component {
                   <div className="form-group signup-modal-form-group">
                     <input type="password" className="form-control" id="signup-modal-pw-input" placeholder="Enter password"/>
                   </div>
-                  <button type="submit" className="btn btn-primary signup-modal-btn-submit">Submit</button>
+                  <button type="submit" className="btn signup-modal-btn-submit">Submit</button>
                 </form>
               </div>
               <div className="modal-footer">
                 <div className="row">
-                  <button type="button" className="btn btn-primary signup-modal-form-btn-fb">Sign up with Facebook</button>
-                  <button type="button" className="btn btn-danger signup-modal-form-btn-google">Sign up with Google</button>
+                  <button type="button" className="btn signup-modal-form-btn-fb">Sign up with Facebook</button>
+                  <button type="button" className="btn signup-modal-form-btn-google">Sign up with Google</button>
                 </div>
               </div>{/* /.modal-footer */}
             </div>{ /* /.modal-content */ }

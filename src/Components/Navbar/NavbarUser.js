@@ -27,6 +27,12 @@ class NavbarUser extends Component {
     window.location.href = "/";
   }
 
+  scrollBackUp = (e) => {
+    /* This ensures the user is scrolled back up after clicking links */
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+  }
+
   render() {
     return (
       <div>
@@ -59,7 +65,7 @@ class NavbarUser extends Component {
                       </div>
                     </li>
                     <li className="my-book-or-home-btn">
-                      <Link to={this.props.linkRef}>{this.props.linkTitle}</Link>
+                      <Link to={this.props.linkRef} onClick={this.scrollBackUp}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">
                       <a id="log-out-anchor" onClick={this.execLogout}><Link to='/'>Log out</Link></a>

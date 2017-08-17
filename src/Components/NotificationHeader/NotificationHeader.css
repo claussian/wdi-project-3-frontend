@@ -42,6 +42,31 @@
   border-color: rgba(0,103,109,0.7);
   padding-left: 10px;
   background-color: rgba(0,103,109,1);
+  -webkit-animation: notificationFadesInFromAbove 0.4s;
+  -moz-animation: notificationFadesInFromAbove 0.4s;
+  animation: notificationFadesInFromAbove 0.4s;
+}
+
+@-webkit-keyframes notificationFadesInFromAbove {
+    from {
+      top: 0px;
+      opacity: 0;
+    }
+    to {
+      top: 26px;
+      opacity: 1;
+    }
+}
+
+@keyframes notificationFadesInFromAbove {
+    from {
+      top: 0px;
+      opacity: 0;
+    }
+    to {
+      top: 26px;
+      opacity: 1;
+    }
 }
 
   .notification-reserved h2 {
@@ -67,6 +92,9 @@
   border: solid 5px;
   border-color: rgba(94,96,94,0.7);
   background-color: rgba(124,35,69,1);
+  -webkit-animation: notificationFadesInFromAbove 0.4s;
+  -moz-animation: notificationFadesInFromAbove 0.4s;
+  animation: notificationFadesInFromAbove 0.4s;
 }
   .notification-error h2 {
     color: rgba(254,239,154,1);

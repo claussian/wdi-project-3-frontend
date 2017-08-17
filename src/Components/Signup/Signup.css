@@ -92,9 +92,18 @@
   color: rgba(248,240,214,1);
 }
 
-.signup-modal-btn-submit:focus, .signup-modal-btn-submit:hover, .signup-modal-btn-submit:hover:active, .signup-modal-btn-submit:active,
-.signup-modal-form-btn-fb:focus, .signup-modal-form-btn-fb:hover, .signup-modal-form-btn-fb:hover:active, .signup-modal-form-btn-fb:active,
-.signup-modal-form-btn-google:focus, .signup-modal-form-btn-google:hover, .signup-modal-form-btn-google:hover:active, .signup-modal-form-btn-google:active {
+.signup-modal-btn-submit:focus,
+.signup-modal-btn-submit:active,
+.signup-modal-btn-submit:hover,
+.signup-modal-btn-submit:hover:active,
+.signup-modal-form-btn-fb:focus,
+.signup-modal-form-btn-fb:active,
+.signup-modal-form-btn-fb:hover,
+.signup-modal-form-btn-fb:hover:active,
+.signup-modal-form-btn-google:focus,
+.signup-modal-form-btn-google:active,
+.signup-modal-form-btn-google:hover,
+.signup-modal-form-btn-google:hover:active {
   background-color: rgba(124,35,69,1);
   border: solid 2px rgba(124,35,69,1);
   color: rgba(248,240,214,1);
