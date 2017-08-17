@@ -27,7 +27,7 @@ class HeaderBanner extends Component {
             Simply sign up for a account and you can immediately start reserving books you want to borrow on <b>The Bookshelf</b> below. To start sharing your books, submit your books in <b>My Books</b> .
           </p>
           <p>
-            <a className="btn btn-primary btn-large find-out-more-btn">Start now</a>
+            <a className="btn btn-primary btn-large find-out-more-btn" data-toggle="modal" data-target="#signupModal">Start now</a>
           </p>
         </header>
       </div>

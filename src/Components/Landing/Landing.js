@@ -36,7 +36,7 @@ class Landing extends Component {
           <Navbar />
         )}
         </div>
-        <HeaderBanner />
+        {!isLoggedIn ? <HeaderBanner /> : <div></div> }
         <Search />
         <Gallery />
         <Footer />
