@@ -40,6 +40,10 @@ class Navbar extends Component {
   localLogin = (e) => {
     e.preventDefault();
     this.props.Login(this.state);
+    /* This ensures the user is scrolled back up after clicking links */
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+
     // axios.post('/auth/login', this.state)
     //   .then( (response) => {
     //     let data = response.data;
