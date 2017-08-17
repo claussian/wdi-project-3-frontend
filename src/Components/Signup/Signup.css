@@ -1,0 +1,101 @@
+.modal-backdrop {
+  z-index: 5; /* <== This is to ensure that modal appears before the modal backdrop by shifting the modal backdrop down the z-index*/
+}
+
+#signupModal {
+  z-index: 6; /* <== This must be higher than the .modal-backdrop */
+}
+
+/* Signup Modal Title Below*/
+#signupModalLabel {
+  display: inline;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+/* Signup Modal Title Above*/
+
+.signup-modal {
+  background-color: rgba(248,240,214,1);
+  border-radius: 1em 1em 1em 1em;
+}
+
+.signup-modal-header {
+  background-color: rgba(124,35,69,1);
+  border-radius: 1em 1em 0em 0em;
+  color: rgba(248,240,214,1);
+}
+
+.signup-modal-form-group > input {
+  background-color: rgba(223,217,198,1);
+}
+
+/*Signup Modal Close Button Below*/
+.signup-modal-close-btn {
+  position: relative;
+  padding-top: 0;
+  top: 0px;
+  background-color: rgba(0,103,109,0);
+  border-color: rgba(0,103,109,0);
+}
+
+  .signup-modal-close-btn span {
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: rgba(223,217,198,0.7);
+  }
+
+.signup-modal-close-btn:hover {
+}
+
+  .signup-modal-close-btn:hover span:hover {
+    color: rgba(223,217,198,1);
+  }
+
+.signup-modal-close-btn:hover:active {
+}
+
+  .signup-modal-close-btn:hover:active span:hover:active {
+    color: rgba(254,239,154,1);
+  }
+/*Signup Modal Close Button Above*/
+
+.signup-modal-form-btn-fb, .signup-modal-form-btn-google {
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin: 0px 0px 10px 15px;
+  width: 13em;
+}
+
+.signup-modal-form-btn-google {
+  left: 10px; /* <== alignment fix for buttons which refuse to align to the same margin. Note to come up with a better fix in CSS in future.*/
+}
+
+.signup-modal-btn-submit {
+  background-color: rgba(248,240,214,1);
+  border: 2px solid rgba(124,35,69,1);
+  color: rgba(124,35,69,1);
+}
+
+.signup-modal-form-btn-fb {
+  background-color: rgba(59, 89, 152, 1);
+  border: 2px solid rgba(59, 89, 152, 1);
+  color: rgba(248,240,214,1);
+}
+
+.signup-modal-form-btn-google {
+  background-color: rgba(211, 72, 54, 1);
+  border: 2px solid rgba(211, 72, 54, 1);
+  color: rgba(248,240,214,1);
+}
+
+.signup-modal-btn-submit:focus, .signup-modal-btn-submit:hover, .signup-modal-btn-submit:hover:active, .signup-modal-btn-submit:active,
+.signup-modal-form-btn-fb:focus, .signup-modal-form-btn-fb:hover, .signup-modal-form-btn-fb:hover:active, .signup-modal-form-btn-fb:active,
+.signup-modal-form-btn-google:focus, .signup-modal-form-btn-google:hover, .signup-modal-form-btn-google:hover:active, .signup-modal-form-btn-google:active {
+  background-color: rgba(124,35,69,1);
+  border: solid 2px rgba(124,35,69,1);
+  color: rgba(248,240,214,1);
+}

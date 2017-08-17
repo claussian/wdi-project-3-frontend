@@ -8,6 +8,7 @@ import {localLogin} from '../../Actions/userActions';
 
 //Importing React components
 import NotificationHeader from '../NotificationHeader/NotificationHeader';
+import Signup from '../Signup/Signup';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
@@ -90,7 +91,7 @@ class Navbar extends Component {
                       </form>
                     </li>
                     <li className="nav-sign-up">
-                      <a href="#">Sign up</a>
+                      <a data-toggle="modal" data-target="#signupModal">Sign up</a>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>
@@ -100,6 +101,11 @@ class Navbar extends Component {
                   {this.props.notification ? <NotificationHeader/> : null}
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
               </div>{/* /row */}
+              <div className="row">
+                <div className="col-lg-12">
+                  <Signup />
+                </div>
+              </div>
             </div>{/* /bs-example-navbar-collapse-1 */}
           </div>{/* container */}
         </nav>{/* navbar navbar-inverse navbar-fixed-top */}
