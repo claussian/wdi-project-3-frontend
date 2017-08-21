@@ -4,7 +4,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 
 // Import thunk
-import {localLogin} from '../../Actions/userActions';
+import {localSignup} from '../../Actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -14,7 +14,31 @@ console.log('Start of Component Signup.js.');
 class Signup extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      userdata: {
+        username: "",
+        email: "",
+        password: ""
+      }
+    }
   };
+
+  onChange = (e) => {
+    let userdata = this.state.userdata;
+    userdata[e.target.name] = e.target.value
+    this.setState({
+      userdata: userdata
+    })
+    console.log('signup state', this.state)
+  }
+
+  onClick = (e) => {
+    e.preventDefault();
+    console.log("Fire signup");
+    this.props.userSignup(this.state.userdata);
+    window.location.href = "/";
+  }
 
   render() {
     return (
@@ -33,12 +57,32 @@ class Signup extends Component {
                 {/* Signup Form */}
                 <form className="signup-modal-form">
                   <div className="form-group signup-modal-form-group">
-                    <input type="email" className="form-control" id="signup-modal-email-input" aria-describedby="emailHelp" placeholder="Enter email address"/>
+                    <input type="text"
+                           name="username"
+                           className="form-control"
+                           id="signup-modal-username-input"
+                           placeholder="Enter username"
+                           onChange={this.onChange}/>
                   </div>
                   <div className="form-group signup-modal-form-group">
-                    <input type="password" className="form-control" id="signup-modal-pw-input" placeholder="Enter password"/>
+                    <input type="email"
+                           name="email"
+                           className="form-control"
+                           id="signup-modal-email-input"
+                           placeholder="Enter email address"
+                           onChange={this.onChange}/>
                   </div>
-                  <button type="submit" className="btn signup-modal-btn-submit">Submit</button>
+                  <div className="form-group signup-modal-form-group">
+                    <input type="password"
+                           name="password"
+                           className="form-control"
+                           id="signup-modal-pw-input"
+                           placeholder="Enter password"
+                           onChange={this.onChange}/>
+                  </div>
+                  <button type="submit"
+                          className="btn signup-modal-btn-submit"
+                          onClick={this.onClick}>Submit</button>
                 </form>
               </div>
               <div className="modal-footer">
@@ -60,7 +104,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {
+    userSignup: (userdata) => {dispatch(localSignup(userdata)); },
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

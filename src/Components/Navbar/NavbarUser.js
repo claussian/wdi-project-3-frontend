@@ -68,7 +68,7 @@ class NavbarUser extends Component {
                       <Link to={this.props.linkRef} onClick={this.scrollBackUp}>{this.props.linkTitle}</Link>
                     </li>
                     <li className="log-out-btn">
-                      <a id="log-out-anchor" onClick={this.execLogout}><Link to='/'>Log out</Link></a>
+                      <a id="log-out-anchor" onClick={this.execLogout}>Log out</a>
                     </li>
                   </ul>{/* /nav narbar-nav */}
                 </div>{/* /col-md-push-2 col-md-8 col-lg-push-4 col-lg-5 */}
