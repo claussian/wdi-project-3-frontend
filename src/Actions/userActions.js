@@ -55,7 +55,7 @@ export const localLogout = () => {
           console.log(data.message)
         }else{
           console.error("AJAX: Logged out @ '/auth/logout'");
-          // window.location.href = "/";
+          window.location.href = "/";
         }
       })
       .catch((error)=> {
