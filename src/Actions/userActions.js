@@ -64,6 +64,27 @@ export const localLogout = () => {
     }
 }
 
+export const localSignup = (userdata) => {
+  return (dispatch) => {
+    axios.post('/auth/signup', userdata)
+      .then( (response) => {
+        // this data is just the user object but may not be a credentialed user from passport
+        const data = response.data;
+        // this returns a credentialed user from passport
+        dispatch(getUser());
+        if(data.error){
+          console.log(data.message)
+        }else{
+          console.error("AJAX: Logged in @ '/auth/user'");
+          // window.location.href = "/";
+        }
+      })
+      .catch((error)=> {
+        console.error("AJAX: Could not login @ '/auth/login'");
+      });
+    }
+}
+
 export const updateUserOwned = (id) => {
   return {
     type: "UPDATE_USER_OWNED",
